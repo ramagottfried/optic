@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B3F7BBEC-3D8E-4D26-A403-F9EBBCE9ACC7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>o.io.opencv</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</key>
+		<string>https://github.com/CNMAT/o.cv.git</string>
+		<key>73CD3912FF7E5D839C8BDA43B346354BE088DDE8</key>
+		<string>https://github.com/CNMAT/libo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>o.io.opencv/o.io.opencv.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</key>
+		<string>../../..</string>
+		<key>73CD3912FF7E5D839C8BDA43B346354BE088DDE8</key>
+		<string>../../../../libo</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/CNMAT/o.cv.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>73CD3912FF7E5D839C8BDA43B346354BE088DDE8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>libo</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>o.cv</string>
+		</dict>
+	</array>
+</dict>
+</plist>
