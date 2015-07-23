@@ -38,6 +38,18 @@
 		"subpatcher_template" : "no-menus",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 329.0, 323.0, 254.0, 20.0 ],
+					"style" : "",
+					"text" : "to test send once and wait to be disconnected"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-13",
@@ -46,7 +58,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 564.0, 103.0, 185.0, 34.0 ],
-					"text" : "/notice : \"disconnected\"",
+					"text" : "/notice : \"connected\"",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -88,7 +100,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 523.0, 222.0, 131.0, 48.0 ],
-					"text" : "/foo : 28,\n/bar : 0.028",
+					"text" : "/foo : 827,\n/bar : 0.827",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -117,9 +129,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 233.0, 375.0, 210.0, 38.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 0, 0, 44, 115, 0, 0, 108, 111, 99, 97, 108, 104, 111, 115, 116, 0, 0, 0, 0, 0, 0, 24, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 21, -77 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 0, 0, 44, 115, 0, 0, 49, 50, 55, 46, 48, 46, 48, 46, 49, 0, 0, 0, 0, 0, 0, 24, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 21, -77 ],
 					"saved_bundle_length" : 76,
-					"text" : "/active/ip : \"localhost\",\n/active/port : 5555",
+					"text" : "/active/ip : \"127.0.0.1\",\n/active/port : 5555",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
