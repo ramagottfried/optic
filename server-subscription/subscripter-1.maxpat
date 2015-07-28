@@ -75,7 +75,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
 					"patching_rect" : [ 708.0, 461.0, 50.0, 20.0 ],
-					"presentation_rect" : [ 854.0, 458.0, 0.0, 0.0 ],
 					"text" : "o.union"
 				}
 
@@ -104,7 +103,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_matrix", "", "" ],
-					"patching_rect" : [ 103.0, 280.0, 86.0, 48.0 ],
+					"patching_rect" : [ 103.0, 280.0, 87.0, 48.0 ],
 					"text" : "jit.net.recv @ip 127.0.0.1 @port 8888"
 				}
 
@@ -190,7 +189,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 953.5, 147.0, 34.0, 18.0 ],
-					"presentation_rect" : [ 892.5, 90.0, 0.0, 0.0 ],
 					"text" : "eth1"
 				}
 
@@ -8895,7 +8893,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"presentation_rect" : [ 666.0, 686.5, 0.0, 0.0 ],
 													"text" : "gate"
 												}
 
@@ -9061,7 +9058,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"presentation_rect" : [ 246.0, 193.0, 0.0, 0.0 ],
 																	"text" : "ip $1"
 																}
 
@@ -9073,8 +9069,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"presentation_rect" : [ 280.0, 272.0, 0.0, 0.0 ]
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -9446,7 +9441,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "jit_matrix" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
@@ -9762,7 +9757,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "jit_matrix" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 								}
 
@@ -10068,7 +10063,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 329.666656, 510.0, 150.0, 34.0 ],
-					"text" : "/report/0/gate : 1",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -10110,9 +10104,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.0, 553.5, 588.0, 51.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 115, 116, 97, 116, 101, 115, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 112, 111, 114, 116, 115, 0, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 17, 92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 47, 97, 108, 108, 47, 105, 112, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 49, 50, 56, 46, 51, 50, 46, 49, 50, 50, 46, 50, 50, 51, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0 ],
-					"saved_bundle_length" : 232,
-					"text" : "/all/states : [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ports : [4444, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ips : [\"128.32.122.223\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\"]",
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 115, 116, 97, 116, 101, 115, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 112, 111, 114, 116, 115, 0, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 105, 112, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0 ],
+					"saved_bundle_length" : 220,
+					"text" : "/all/states : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ports : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ips : [\"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\"]",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -10181,7 +10175,7 @@
 							"architecture" : "x86"
 						}
 ,
-						"rect" : [ 271.0, 45.0, 1059.0, 851.0 ],
+						"rect" : [ 271.0, 51.0, 1059.0, 851.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -10209,7 +10203,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "FullPacket" ],
-									"patching_rect" : [ 912.0, 1061.0, 129.0, 22.0 ],
+									"patching_rect" : [ 912.0, 1061.0, 129.0, 20.0 ],
 									"text" : "o.route /all/birth /all/kill"
 								}
 
@@ -10223,7 +10217,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "FullPacket" ],
-									"patching_rect" : [ 814.0, 1146.0, 71.0, 22.0 ],
+									"patching_rect" : [ 814.0, 1146.0, 71.0, 20.0 ],
 									"text" : "o.select /all"
 								}
 
@@ -10238,7 +10232,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 694.0, 643.0, 150.0, 208.0 ],
+									"patching_rect" : [ 694.0, 643.0, 150.0, 213.0 ],
 									"text" : "\nif( bound(/active/ip) && bound(/active/id),\n  progn(\n    /all/state[[ /active/id - 1 ]] = 1,\n    /all/ips[[ /active/id - 1 ]] = /active/ip\n  ),\n  if( bound(/active/ip) && length(/all/ips) > 0,\n    /markAlive( /active/ip, /all/ips )\n  )\n),\n"
 								}
 
@@ -10253,7 +10247,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 6,
 									"outlettype" : [ "", "", "", "", "", "FullPacket" ],
-									"patching_rect" : [ 705.0, 965.0, 274.0, 35.0 ],
+									"patching_rect" : [ 705.0, 965.0, 274.0, 34.0 ],
 									"text" : "o.route /active /closed /checkConnections /report /~"
 								}
 
@@ -10267,7 +10261,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 814.0, 1053.0, 29.5, 22.0 ],
+									"patching_rect" : [ 814.0, 1053.0, 29.5, 20.0 ],
 									"text" : "t l l"
 								}
 
@@ -10281,7 +10275,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 69.0, 66.0, 50.0, 22.0 ],
+									"patching_rect" : [ 69.0, 66.0, 50.0, 20.0 ],
 									"text" : "o.union"
 								}
 
@@ -10301,13 +10295,13 @@
 								"box" : 								{
 									"fontsize" : 12.0,
 									"id" : "obj-17",
-									"linecount" : 94,
+									"linecount" : 91,
 									"maxclass" : "o.expr.codebox",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "FullPacket", "FullPacket" ],
-									"patching_rect" : [ 69.0, 98.0, 583.0, 1296.0 ],
-									"text" : "if( bound(/count),\n  progn(/n = /count, delete(/count))\n),\n/n ??= 0,\n/all/states ??= nfill(/n, 0),\n/prev/states ??= nfill(/n, 0),\n/all/ports ??= nfill(/n, 0),\n/all/ips ??= nfill(/n, \"x\"),\n\n/~/append = \" lambda( [a,b], \n    if( length(a) > 0, [a, b], b )\n)\",\n\n/~/trueIdx = \" lambda( bool,\n  prog2(\n    /_idx = [],\n    progn(\n      map(\n        lambda([t,i],\n          if( t == true, /_idx = /~/append(/_idx, i))\n        ), bool, aseq(0,length(bool)-1)\n      ),\n      if( length(/_idx) == 0, -1, /_idx) \n    ),\n    delete(/_idx)\n  )\n)\",\n\n/~/falseIdx = \" lambda( bool,\n  prog2(\n    /_idx = [],\n    progn(\n      map(\n        lambda([t,i],\n          if( t == false, /_idx = /~/append(/_idx, i))\n        ), bool, aseq(0,length(bool)-1)\n      ),\n      if( length(/_idx) == 0, -1, /_idx) \n    ),\n    delete(/_idx)\n  )\n)\",\n\n/~/disconnectCheck = \" lambda(n,\n  /state/delta = /all/states - /prev/states,\n  /_kill = /~/trueIdx( /state/delta == -1 ),\n  if( /_kill >= 0,\n    progn(\n      /all/ips[[ /_kill ]] = quote(x),\n      /all/ports[[ /_kill ]] = 0,\n      /all/kill = /_kill\n    )\n  ),\n  /prev/states = /all/states,\n  /all/states = nfill(n, 0),\n  delete(/state/delta), delete(/_kill)\n)\",\n\n/~/assignId = \" lambda([ip, list],\n  prog2(\n    /_ipIdx = /~/trueIdx( ip == list ),\n    if( /_ipIdx == -1,\n      /~/trueIdx( list == quote(x) )[[ 0 ]],\n      /_ipIdx\n    )\n  )\n)\",\n\n/~/logActive = \" lambda([ip, port],\n  /_ipIdx = /~/assignId( ip, /all/ips ),\n  if( /_ipIdx != -1,\n    progn(\n      if( sum(int32(ip == /all/ips)) == 0,\n        /all/birth = /_ipIdx\n      ),\n      /all/states[[ /_ipIdx ]] = 1,\n      /all/ips[[ /_ipIdx ]] = ip,\n      /all/ports[[ /_ipIdx ]] = port\n    )\n  ),\n  delete(/_ipIdx)\n)\",\n\nif( bound( /checkConnections ),\n  /~/disconnectCheck( /n )\n),\n\nif( bound(/active/ip) && bound(/active/port),\n  /~/logActive( /active/ip, /active/port )\n),\n\nif( bound(/closed/id),\n    /all/ips[[ /closed/id - 1 ]] = 0\n)",
+									"patching_rect" : [ 69.0, 98.0, 583.0, 1256.0 ],
+									"text" : "if( bound(/count),\n  progn(/n = /count, delete(/count))\n),\n/n ??= 0,\n/all/states ??= nfill(/n, 0),\n/prev/states ??= nfill(/n, 0),\n/all/ips ??= nfill(/n, \"x\"),\n\n/~/append = \" lambda( [a,b], \n    if( length(a) > 0, [a, b], b )\n)\",\n\n/~/trueIdx = \" lambda( bool,\n  prog2(\n    /_idx = [],\n    progn(\n      map(\n        lambda([t,i],\n          if( t == true, /_idx = /~/append(/_idx, i))\n        ), bool, aseq(0,length(bool)-1)\n      ),\n      if( length(/_idx) == 0, -1, /_idx) \n    ),\n    delete(/_idx)\n  )\n)\",\n\n/~/falseIdx = \" lambda( bool,\n  prog2(\n    /_idx = [],\n    progn(\n      map(\n        lambda([t,i],\n          if( t == false, /_idx = /~/append(/_idx, i))\n        ), bool, aseq(0,length(bool)-1)\n      ),\n      if( length(/_idx) == 0, -1, /_idx) \n    ),\n    delete(/_idx)\n  )\n)\",\n\n/~/disconnectCheck = \" lambda(n,\n  /state/delta = /all/states - /prev/states,\n  /_kill = /~/trueIdx( /state/delta == -1 ),\n  if( /_kill >= 0,\n    progn(\n      /all/ips[[ /_kill ]] = quote(x)\n      /all/kill = /_kill\n    )\n  ),\n  /prev/states = /all/states,\n  /all/states = nfill(n, 0),\n  delete(/state/delta), delete(/_kill)\n)\",\n\n/~/assignId = \" lambda([ip, list],\n  prog2(\n    /_ipIdx = /~/trueIdx( ip == list ),\n    if( /_ipIdx == -1,\n      /~/trueIdx( list == quote(x) )[[ 0 ]],\n      /_ipIdx\n    )\n  )\n)\",\n\n/~/logActive = \" lambda([ip],\n  /_ipIdx = /~/assignId( ip, /all/ips ),\n  if( /_ipIdx != -1,\n    progn(\n      if( sum(int32(ip == /all/ips)) == 0,\n        /all/birth = /_ipIdx\n      ),\n      /all/states[[ /_ipIdx ]] = 1,\n      /all/ips[[ /_ipIdx ]] = ip\n    )\n  ),\n  delete(/_ipIdx)\n)\",\n\nif( bound( /checkConnections ),\n  /~/disconnectCheck( /n )\n),\n\nif( bound(/active/ip),\n  /~/logActive( /active/ip )\n),\n\nif( bound(/closed/id),\n    /all/ips[[ /closed/id - 1 ]] = 0\n)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
