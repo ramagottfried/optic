@@ -2,14 +2,13 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 0,
-			"revision" : 5,
-			"architecture" : "x64",
-			"modernui" : 1
+			"major" : 6,
+			"minor" : 1,
+			"revision" : 9,
+			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 189.0, 95.0, 825.0, 767.0 ],
+		"rect" : [ 227.0, 125.0, 1637.0, 742.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -18,25 +17,28 @@
 		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
+		"imprint" : 0,
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
 		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 103.0, 369.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -45,8 +47,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "FullPacket" ],
-					"patching_rect" : [ 502.0, 103.0, 126.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 502.0, 103.0, 126.0, 20.0 ],
 					"text" : "o.route /server /kinect"
 				}
 
@@ -59,8 +60,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 555.5, 133.0, 140.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 555.5, 133.0, 140.0, 20.0 ],
 					"text" : "udpsend 127.0.0.1 6666"
 				}
 
@@ -72,8 +72,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 846.0, 256.0, 20.0, 20.0 ],
-					"style" : ""
+					"patching_rect" : [ 846.0, 256.0, 20.0, 20.0 ]
 				}
 
 			}
@@ -86,8 +85,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 708.0, 461.0, 50.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 708.0, 486.5, 50.0, 20.0 ],
 					"text" : "o.union"
 				}
 
@@ -101,8 +99,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 708.0, 492.0, 51.5, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 708.0, 517.5, 51.5, 20.0 ],
 					"text" : "t l l"
 				}
 
@@ -117,8 +114,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_matrix", "", "" ],
-					"patching_rect" : [ 103.0, 280.0, 87.0, 49.0 ],
-					"style" : "",
+					"patching_rect" : [ 103.0, 280.0, 87.0, 48.0 ],
 					"text" : "jit.net.recv @ip 127.0.0.1 @port 8888"
 				}
 
@@ -127,13 +123,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-23",
 					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 690.5, 652.0, 219.0, 100.0 ],
-					"style" : "",
+					"patching_rect" : [ 690.5, 652.0, 219.0, 103.0 ],
 					"text" : "server OSC receive port: 3333\nclient OSC receive port: 4444\nclient jitter receive port: 5555\n\nserver kinect OSC receive port: 6666\nserver internal OSC receive port: 7777\nserver internal jitter receive port: 8888"
 				}
 
@@ -147,8 +143,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "FullPacket" ],
-					"patching_rect" : [ 278.0, 231.0, 103.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 278.0, 231.0, 103.0, 20.0 ],
 					"text" : "o.route /send /api"
 				}
 
@@ -162,8 +157,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 278.0, 192.0, 135.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 278.0, 192.0, 135.0, 20.0 ],
 					"text" : "udpreceive 7777 cnmat"
 				}
 
@@ -177,8 +171,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 708.0, 256.0, 138.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 708.0, 256.0, 138.0, 20.0 ],
 					"text" : "o.pack /sendto/server/ip"
 				}
 
@@ -192,8 +185,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 708.0, 225.0, 94.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 708.0, 225.0, 94.0, 18.0 ],
 					"text" : "128.32.122.127"
 				}
 
@@ -207,15 +199,15 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 953.5, 147.0, 34.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 953.5, 147.0, 34.0, 18.0 ],
 					"text" : "eth1"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"allowdrag" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-13",
 					"items" : [ "lo", ",", "eth0", ",", "eth1", ",", "net0", ",", "net1", ",", "eth2", ",", "wlan0", ",", "wlan1", ",", "net2", ",", "eth3", ",", "net3", ",", "net4", ",", "eth4", ",", "eth5", ",", "eth6", ",", "eth7", ",", "eth8", ",", "eth9", ",", "wlan2", ",", "wlan3", ",", "wlan4", ",", "wlan5", ",", "wlan6", ",", "wlan7", ",", "wlan8", ",", "wlan9", ",", "wlan10" ],
 					"maxclass" : "umenu",
@@ -223,14 +215,14 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1039.0, 205.0, 100.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 1039.0, 205.0, 100.0, 20.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"allowdrag" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-11",
 					"items" : [ "128.32.122.127", ",", "fe80:0:0:0:2d48:2668:40d4:6816%eth1" ],
 					"maxclass" : "umenu",
@@ -238,8 +230,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 953.5, 256.0, 164.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 953.5, 256.0, 164.0, 20.0 ]
 				}
 
 			}
@@ -250,8 +241,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 892.5, 94.0, 20.0, 20.0 ],
-					"style" : ""
+					"patching_rect" : [ 892.5, 94.0, 20.0, 20.0 ]
 				}
 
 			}
@@ -264,8 +254,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 953.5, 176.0, 77.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 953.5, 176.0, 77.0, 20.0 ],
 					"text" : "mxj net.local"
 				}
 
@@ -279,8 +268,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 708.0, 46.0, 72.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 708.0, 46.0, 72.0, 20.0 ],
 					"text" : "loadmess 1"
 				}
 
@@ -294,8 +282,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 183.0, 23.0, 72.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 183.0, 23.0, 72.0, 20.0 ],
 					"text" : "loadmess 0"
 				}
 
@@ -312,11 +299,10 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 0,
-							"revision" : 5,
-							"architecture" : "x64",
-							"modernui" : 1
+							"major" : 6,
+							"minor" : 1,
+							"revision" : 9,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 25.0, 70.0, 640.0, 480.0 ],
@@ -328,24 +314,16 @@
 						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
 						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
 						"boxanimatetime" : 200,
+						"imprint" : 0,
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
 						"devicewidth" : 0.0,
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -356,7 +334,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
 									"patching_rect" : [ 124.0, 173.0, 100.0, 22.0 ],
-									"style" : "",
 									"text" : "/ 1000."
 								}
 
@@ -371,7 +348,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
 									"patching_rect" : [ 50.0, 218.0, 93.0, 22.0 ],
-									"style" : "",
 									"text" : "o.pack /foo /bar"
 								}
 
@@ -386,7 +362,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"patching_rect" : [ 50.0, 143.0, 81.0, 22.0 ],
-									"style" : "",
 									"text" : "random 1001"
 								}
 
@@ -401,7 +376,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 50.0, 100.0, 58.0, 22.0 ],
-									"style" : "",
 									"text" : "metro 20"
 								}
 
@@ -414,8 +388,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -426,8 +399,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 300.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 50.0, 300.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -489,16 +461,20 @@
  ]
 					}
 ,
-					"patching_rect" : [ 183.0, 83.0, 87.0, 22.0 ],
+					"patching_rect" : [ 183.0, 83.0, 87.0, 20.0 ],
 					"saved_object_attributes" : 					{
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"default_fontsize" : 12.0,
 						"description" : "",
 						"digest" : "",
+						"fontface" : 0,
+						"fontname" : "Arial",
+						"fontsize" : 12.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p dummy data"
 				}
 
@@ -511,8 +487,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 183.0, 53.0, 24.0, 24.0 ],
-					"style" : ""
+					"patching_rect" : [ 183.0, 53.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -525,8 +500,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 278.0, 280.0, 94.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 278.0, 280.0, 94.0, 20.0 ],
 					"text" : "o.pack /all/send"
 				}
 
@@ -543,11 +517,10 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 0,
-							"revision" : 5,
-							"architecture" : "x64",
-							"modernui" : 1
+							"major" : 6,
+							"minor" : 1,
+							"revision" : 9,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -559,28 +532,19 @@
 						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
 						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
 						"boxanimatetime" : 200,
+						"imprint" : 0,
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
 						"devicewidth" : 0.0,
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
 									"error_color" : [ 0.76, 0.23, 0.239, 1.0 ],
-									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-33",
 									"linecount" : 2,
@@ -599,7 +563,6 @@
 , 							{
 								"box" : 								{
 									"error_color" : [ 0.76, 0.23, 0.239, 1.0 ],
-									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-47",
 									"linecount" : 2,
@@ -622,8 +585,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 46.5, 258.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 46.5, 258.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -649,16 +611,20 @@
  ]
 					}
 ,
-					"patching_rect" : [ 606.0, 307.0, 40.0, 22.0 ],
+					"patching_rect" : [ 606.0, 307.0, 40.0, 20.0 ],
 					"saved_object_attributes" : 					{
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"default_fontsize" : 12.0,
 						"description" : "",
 						"digest" : "",
+						"fontface" : 0,
+						"fontname" : "Arial",
+						"fontsize" : 12.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p test"
 				}
 
@@ -672,8 +638,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 502.0, 63.0, 135.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 502.0, 63.0, 135.0, 20.0 ],
 					"text" : "udpreceive 3333 cnmat"
 				}
 
@@ -682,12 +647,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-14",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 751.5, 309.0, 263.0, 20.0 ],
-					"style" : "",
 					"text" : "(update this with the server's actual IP address)"
 				}
 
@@ -700,8 +665,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 708.0, 593.0, 180.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 708.0, 593.0, 180.0, 20.0 ],
 					"text" : "udpsend 255.255.255.255 4444"
 				}
 
@@ -709,18 +673,17 @@
 , 			{
 				"box" : 				{
 					"error_color" : [ 0.76, 0.23, 0.239, 1.0 ],
-					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-2",
-					"linecount" : 8,
+					"linecount" : 10,
 					"maxclass" : "o.compose",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 739.0, 326.0, 469.0, 119.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 32, 115, 101, 116, 111, 110, 32, 108, 111, 97, 100, 0, 0, 0, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 13, 5, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 107, 105, 110, 101, 99, 116, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 26, 10, 0, 0, 0, -96, 47, 100, 111, 99, 0, 0, 0, 0, 44, 115, 0, 0, 116, 111, 32, 97, 99, 116, 105, 118, 97, 116, 101, 32, 100, 97, 116, 97, 32, 115, 117, 98, 115, 99, 114, 105, 112, 116, 105, 111, 110, 44, 32, 115, 101, 110, 100, 32, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 32, 97, 110, 100, 32, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 32, 118, 97, 108, 117, 101, 115, 32, 111, 110, 99, 101, 32, 101, 118, 101, 114, 121, 32, 53, 32, 115, 101, 99, 111, 110, 100, 115, 44, 32, 105, 110, 32, 116, 104, 101, 32, 102, 117, 116, 117, 114, 101, 32, 116, 104, 101, 114, 101, 32, 119, 105, 108, 108, 32, 98, 101, 32, 111, 116, 104, 101, 114, 32, 112, 97, 114, 97, 109, 101, 116, 101, 114, 115, 32, 97, 115, 32, 97, 119, 101, 108, 108, 0, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 121, 111, 117, 114, 32, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 0, 0, 0, 0, 36, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 0, 44, 115, 0, 0, 112, 111, 114, 116, 32, 110, 117, 109, 98, 101, 114, 0 ],
-					"saved_bundle_length" : 380,
-					"text" : "/sendto/server/ip : \"ip address seton load\",\n/sendto/server/port : 3333,\n/sendto/kinect/port : 6666,\n/doc : \"to activate data subscription, send /active/ip and /active/port values once every 5 seconds, in the future there will be other parameters as awell\",\n/server/active/ip : \"your ip address\",\n/server/active/port : \"port number\"",
+					"patching_rect" : [ 739.0, 326.0, 469.0, 146.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 32, 115, 101, 116, 111, 110, 32, 108, 111, 97, 100, 0, 0, 0, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 13, 5, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 107, 105, 110, 101, 99, 116, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 26, 10, 0, 0, 0, -96, 47, 100, 111, 99, 0, 0, 0, 0, 44, 115, 0, 0, 116, 111, 32, 97, 99, 116, 105, 118, 97, 116, 101, 32, 100, 97, 116, 97, 32, 115, 117, 98, 115, 99, 114, 105, 112, 116, 105, 111, 110, 44, 32, 115, 101, 110, 100, 32, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 32, 97, 110, 100, 32, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 32, 118, 97, 108, 117, 101, 115, 32, 111, 110, 99, 101, 32, 101, 118, 101, 114, 121, 32, 53, 32, 115, 101, 99, 111, 110, 100, 115, 44, 32, 105, 110, 32, 116, 104, 101, 32, 102, 117, 116, 117, 114, 101, 32, 116, 104, 101, 114, 101, 32, 119, 105, 108, 108, 32, 98, 101, 32, 111, 116, 104, 101, 114, 32, 112, 97, 114, 97, 109, 101, 116, 101, 114, 115, 32, 97, 115, 32, 97, 119, 101, 108, 108, 0, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 121, 111, 117, 114, 32, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 0, 0, 0, 0, 36, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 0, 44, 115, 0, 0, 112, 111, 114, 116, 32, 110, 117, 109, 98, 101, 114, 0, 0, 0, 0, 32, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 44, 115, 0, 0, 48, 47, 49, 0, 0, 0, 0, 32, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 106, 105, 116, 116, 101, 114, 0, 0, 0, 44, 115, 0, 0, 48, 47, 49, 0 ],
+					"saved_bundle_length" : 452,
+					"text" : "/sendto/server/ip : \"ip address seton load\",\n/sendto/server/port : 3333,\n/sendto/kinect/port : 6666,\n/doc : \"to activate data subscription, send /active/ip and /active/port values once every 5 seconds, in the future there will be other parameters as awell\",\n/server/active/ip : \"your ip address\",\n/server/active/port : \"port number\",\n/server/active/skeleton : \"0/1\",\n/server/active/jitter : \"0/1\"",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -734,8 +697,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 708.0, 528.0, 87.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 708.0, 553.5, 87.0, 20.0 ],
 					"text" : "o.prepend /api"
 				}
 
@@ -752,11 +714,10 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 0,
-							"revision" : 5,
-							"architecture" : "x64",
-							"modernui" : 1
+							"major" : 6,
+							"minor" : 1,
+							"revision" : 9,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 59.0, 104.0, 567.0, 758.0 ],
@@ -768,24 +729,16 @@
 						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
 						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
 						"boxanimatetime" : 200,
+						"imprint" : 0,
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
 						"devicewidth" : 0.0,
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -798,11 +751,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -814,24 +766,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -841,8 +785,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -856,7 +799,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -871,7 +813,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -887,7 +828,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -902,7 +842,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -917,7 +856,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -932,14 +870,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -963,7 +899,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -978,7 +913,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -995,11 +929,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -1011,24 +944,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -1039,7 +964,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -1051,8 +975,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -1066,7 +989,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -1081,7 +1003,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -1096,7 +1017,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -1109,8 +1029,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -1121,8 +1040,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -1204,14 +1122,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -1226,7 +1148,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -1240,7 +1161,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -1255,7 +1175,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -1272,11 +1191,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -1288,24 +1206,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -1316,14 +1226,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -1345,8 +1253,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -1357,8 +1264,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -1404,14 +1310,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -1426,7 +1336,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -1439,8 +1348,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1451,8 +1359,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1466,7 +1373,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -1714,16 +1620,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 437.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 437.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -1740,11 +1650,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -1756,24 +1665,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -1783,8 +1684,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -1798,7 +1698,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -1813,7 +1712,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -1829,7 +1727,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -1844,7 +1741,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -1859,7 +1755,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -1874,14 +1769,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -1905,7 +1798,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -1920,7 +1812,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -1937,11 +1828,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -1953,24 +1843,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -1981,7 +1863,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -1993,8 +1874,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -2008,7 +1888,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -2023,7 +1902,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -2038,7 +1916,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -2051,8 +1928,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -2063,8 +1939,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -2146,14 +2021,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -2168,7 +2047,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -2182,7 +2060,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -2197,7 +2074,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -2214,11 +2090,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -2230,24 +2105,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -2258,14 +2125,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -2287,8 +2152,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -2299,8 +2163,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -2346,14 +2209,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -2368,7 +2235,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -2381,8 +2247,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2393,8 +2258,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2408,7 +2272,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -2656,16 +2519,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 399.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 399.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -2682,11 +2549,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -2698,24 +2564,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -2725,8 +2583,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -2740,7 +2597,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -2755,7 +2611,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -2771,7 +2626,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -2786,7 +2640,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -2801,7 +2654,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -2816,14 +2668,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -2847,7 +2697,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -2862,7 +2711,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -2879,11 +2727,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -2895,24 +2742,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -2923,7 +2762,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -2935,8 +2773,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -2950,7 +2787,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -2965,7 +2801,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -2980,7 +2815,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -2993,8 +2827,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -3005,8 +2838,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -3088,14 +2920,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -3110,7 +2946,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -3124,7 +2959,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -3139,7 +2973,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -3156,11 +2989,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -3172,24 +3004,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -3200,14 +3024,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -3229,8 +3051,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -3241,8 +3062,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -3288,14 +3108,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -3310,7 +3134,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -3323,8 +3146,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -3335,8 +3157,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -3350,7 +3171,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -3598,16 +3418,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 361.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 361.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -3624,11 +3448,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -3640,24 +3463,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -3667,8 +3482,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -3682,7 +3496,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -3697,7 +3510,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -3713,7 +3525,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -3728,7 +3539,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -3743,7 +3553,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -3758,14 +3567,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -3789,7 +3596,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -3804,7 +3610,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -3821,11 +3626,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -3837,24 +3641,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -3865,7 +3661,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -3877,8 +3672,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -3892,7 +3686,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -3907,7 +3700,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -3922,7 +3714,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -3935,8 +3726,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -3947,8 +3737,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -4030,14 +3819,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -4052,7 +3845,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -4066,7 +3858,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -4081,7 +3872,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -4098,11 +3888,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -4114,24 +3903,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -4142,14 +3923,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -4171,8 +3950,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -4183,8 +3961,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -4230,14 +4007,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -4252,7 +4033,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -4265,8 +4045,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -4277,8 +4056,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -4292,7 +4070,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -4540,16 +4317,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 323.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 323.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -4566,11 +4347,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -4582,24 +4362,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -4609,8 +4381,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -4624,7 +4395,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -4639,7 +4409,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -4655,7 +4424,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -4670,7 +4438,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -4685,7 +4452,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -4700,14 +4466,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -4731,7 +4495,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -4746,7 +4509,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -4763,11 +4525,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -4779,24 +4540,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -4807,7 +4560,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -4819,8 +4571,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -4834,7 +4585,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -4849,7 +4599,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -4864,7 +4613,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -4877,8 +4625,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -4889,8 +4636,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -4972,14 +4718,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -4994,7 +4744,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -5008,7 +4757,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -5023,7 +4771,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -5040,11 +4787,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -5056,24 +4802,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -5084,14 +4822,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -5113,8 +4849,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -5125,8 +4860,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -5172,14 +4906,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -5194,7 +4932,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -5207,8 +4944,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -5219,8 +4955,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -5234,7 +4969,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -5482,16 +5216,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 285.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 285.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -5508,11 +5246,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -5524,24 +5261,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -5551,8 +5280,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -5566,7 +5294,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -5581,7 +5308,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -5597,7 +5323,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -5612,7 +5337,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -5627,7 +5351,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -5642,14 +5365,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -5673,7 +5394,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -5688,7 +5408,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -5705,11 +5424,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -5721,24 +5439,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -5749,7 +5459,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -5761,8 +5470,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -5776,7 +5484,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -5791,7 +5498,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -5806,7 +5512,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -5819,8 +5524,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -5831,8 +5535,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -5914,14 +5617,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -5936,7 +5643,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -5950,7 +5656,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -5965,7 +5670,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -5982,11 +5686,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -5998,24 +5701,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -6026,14 +5721,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -6055,8 +5748,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -6067,8 +5759,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -6114,14 +5805,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -6136,7 +5831,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -6149,8 +5843,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -6161,8 +5854,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -6176,7 +5868,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -6424,16 +6115,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 252.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 252.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -6450,11 +6145,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -6466,24 +6160,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -6493,8 +6179,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -6508,7 +6193,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -6523,7 +6207,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -6539,7 +6222,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -6554,7 +6236,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -6569,7 +6250,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -6584,14 +6264,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -6615,7 +6293,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -6630,7 +6307,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -6647,11 +6323,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -6663,24 +6338,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -6691,7 +6358,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -6703,8 +6369,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -6718,7 +6383,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -6733,7 +6397,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -6748,7 +6411,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -6761,8 +6423,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -6773,8 +6434,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -6856,14 +6516,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -6878,7 +6542,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -6892,7 +6555,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -6907,7 +6569,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -6924,11 +6585,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -6940,24 +6600,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -6968,14 +6620,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -6997,8 +6647,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -7009,8 +6658,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -7056,14 +6704,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -7078,7 +6730,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -7091,8 +6742,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -7103,8 +6753,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -7118,7 +6767,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -7366,16 +7014,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 214.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 214.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -7392,11 +7044,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -7408,24 +7059,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -7435,8 +7078,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -7450,7 +7092,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -7465,7 +7106,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -7481,7 +7121,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -7496,7 +7135,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -7511,7 +7149,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -7526,14 +7163,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -7557,7 +7192,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -7572,7 +7206,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -7589,11 +7222,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -7605,24 +7237,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -7633,7 +7257,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -7645,8 +7268,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -7660,7 +7282,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -7675,7 +7296,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -7690,7 +7310,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -7703,8 +7322,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -7715,8 +7333,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -7798,14 +7415,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -7820,7 +7441,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -7834,7 +7454,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -7849,7 +7468,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -7866,11 +7484,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -7882,24 +7499,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -7910,14 +7519,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -7939,8 +7546,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -7951,8 +7557,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -7998,14 +7603,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -8020,7 +7629,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -8033,8 +7641,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -8045,8 +7652,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -8060,7 +7666,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -8308,16 +7913,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 176.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 176.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -8334,11 +7943,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 255.0, 51.0, 1035.0, 856.0 ],
@@ -8350,24 +7958,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -8377,8 +7977,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ],
-													"style" : ""
+													"patching_rect" : [ 586.0, 779.0, 50.0, 18.0 ]
 												}
 
 											}
@@ -8392,7 +7991,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -8407,7 +8005,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -8423,7 +8020,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -8438,7 +8034,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -8453,7 +8048,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -8468,14 +8062,12 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
 													"linecount" : 22,
@@ -8499,7 +8091,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -8514,7 +8105,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -8531,11 +8121,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -8547,24 +8136,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -8575,7 +8156,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -8587,8 +8167,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -8602,7 +8181,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -8617,7 +8195,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -8632,7 +8209,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -8645,8 +8221,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -8657,8 +8232,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -8740,14 +8314,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -8762,7 +8340,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -8776,7 +8353,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -8791,7 +8367,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -8808,11 +8383,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -8824,24 +8398,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -8852,14 +8418,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -8881,8 +8445,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -8893,8 +8456,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -8940,14 +8502,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -8962,7 +8528,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -8975,8 +8540,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -8987,8 +8551,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -9002,7 +8565,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -9250,16 +8812,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 138.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 138.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -9276,11 +8842,10 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 0,
-											"revision" : 5,
-											"architecture" : "x64",
-											"modernui" : 1
+											"major" : 6,
+											"minor" : 1,
+											"revision" : 9,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 268.0, 85.0, 1035.0, 856.0 ],
@@ -9292,24 +8857,16 @@
 										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
 										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
 										"statusbarvisible" : 2,
 										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
 										"boxanimatetime" : 200,
+										"imprint" : 0,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
 										"devicewidth" : 0.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-16",
@@ -9317,8 +8874,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 813.0, 718.0, 20.0, 20.0 ],
-													"style" : ""
+													"patching_rect" : [ 698.0, 740.0, 20.0, 20.0 ]
 												}
 
 											}
@@ -9327,13 +8883,11 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-13",
-													"linecount" : 4,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 586.0, 779.0, 50.0, 60.0 ],
-													"style" : "",
+													"patching_rect" : [ 502.0, 760.0, 107.0, 18.0 ],
 													"text" : "ip 128.32.122.223"
 												}
 
@@ -9348,7 +8902,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -9363,7 +8916,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
-													"style" : "",
 													"text" : "t l l"
 												}
 
@@ -9378,8 +8930,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 746.0, 88.0, 48.0 ],
-													"style" : "",
+													"patching_rect" : [ 664.0, 798.0, 88.0, 48.0 ],
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
 
@@ -9394,7 +8945,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
-													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
 
@@ -9409,7 +8959,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
-													"style" : "",
 													"text" : "o.prepend /data"
 												}
 
@@ -9424,23 +8973,21 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 529.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /report"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"fontface" : 0,
 													"fontsize" : 12.0,
 													"id" : "obj-14",
-													"linecount" : 22,
+													"linecount" : 19,
 													"maxclass" : "o.expr.codebox",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
-													"patching_rect" : [ 276.0, 206.5, 626.0, 318.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/port ??= 4444,\nif( bound(/all/birth) && (sum(int32(/all/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /this/port = /all/ports[[ /this/id ]],\n    /set/gate = 1,\n    assign(quote(/report/) + /this/id + quote(/gate), /set/gate),\n    /set/ip = /this/ip,\n    /set/port = /this/port,\n    /set/report/notice = \"connected\"\n  )\n),\nif( bound(/all/kill) && (sum(int32(/all/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate = 0,\n    assign(quote(/report/) + /this/id + quote(/gate), /set/gate),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"patching_rect" : [ 276.0, 206.5, 626.0, 277.0 ],
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\nif( bound(/all/birth) && (sum(int32(/all/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate = 1,\n    assign(quote(/report/) + /this/id + quote(/gate), /set/gate),\n    /set/ip = /this/ip,\n    /set/report/notice = \"connected\"\n  )\n),\nif( bound(/all/kill) && (sum(int32(/all/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate = 0,\n    assign(quote(/report/) + /this/id + quote(/gate), /set/gate),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -9455,7 +9002,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
-													"style" : "",
 													"text" : "gate"
 												}
 
@@ -9470,7 +9016,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 646.5, 78.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /gate"
 												}
 
@@ -9487,11 +9032,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 813.0, 208.0, 640.0, 480.0 ],
@@ -9503,24 +9047,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -9531,7 +9067,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 280.0, 215.0, 37.0, 18.0 ],
-																	"style" : "",
 																	"text" : "ip $1"
 																}
 
@@ -9543,8 +9078,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 280.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -9558,7 +9092,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "port $1"
 																}
 
@@ -9573,7 +9106,6 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 189.0, 50.0, 18.0 ],
-																	"style" : "",
 																	"text" : "host $1"
 																}
 
@@ -9588,7 +9120,6 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 151.0, 199.0, 20.0 ],
-																	"style" : "",
 																	"text" : "o.route /ip /port /report"
 																}
 
@@ -9601,8 +9132,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "FullPacket" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -9613,8 +9143,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 170.0, 270.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -9696,14 +9225,18 @@
 ,
 													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set ip/port"
 												}
 
@@ -9718,7 +9251,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 605.0, 71.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /set"
 												}
 
@@ -9732,7 +9264,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
-													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
 
@@ -9747,7 +9278,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
 													"patching_rect" : [ 372.0, 574.0, 107.0, 20.0 ],
-													"style" : "",
 													"text" : "o.route /send"
 												}
 
@@ -9764,11 +9294,10 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 7,
-															"minor" : 0,
-															"revision" : 5,
-															"architecture" : "x64",
-															"modernui" : 1
+															"major" : 6,
+															"minor" : 1,
+															"revision" : 9,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
@@ -9780,24 +9309,16 @@
 														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
 														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
 														"statusbarvisible" : 2,
 														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
 														"boxanimatetime" : 200,
+														"imprint" : 0,
 														"enablehscroll" : 1,
 														"enablevscroll" : 1,
 														"devicewidth" : 0.0,
 														"description" : "",
 														"digest" : "",
 														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -9808,14 +9329,12 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "FullPacket" ],
 																	"patching_rect" : [ 50.0, 100.0, 88.0, 22.0 ],
-																	"style" : "",
 																	"text" : "o.select /count"
 																}
 
 															}
 , 															{
 																"box" : 																{
-																	"fontface" : 0,
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
 																	"linecount" : 2,
@@ -9837,8 +9356,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -9849,8 +9367,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ],
-																	"style" : ""
+																	"patching_rect" : [ 44.0, 250.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -9896,14 +9413,18 @@
 ,
 													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
 													"saved_object_attributes" : 													{
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"default_fontsize" : 12.0,
 														"description" : "",
 														"digest" : "",
+														"fontface" : 0,
+														"fontname" : "Arial",
+														"fontsize" : 12.0,
 														"globalpatchername" : "",
-														"style" : "",
 														"tags" : ""
 													}
 ,
-													"style" : "",
 													"text" : "p set-count-id"
 												}
 
@@ -9918,7 +9439,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
 													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
-													"style" : "",
 													"text" : "o.union"
 												}
 
@@ -9931,8 +9451,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 72.0, 2.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -9943,8 +9462,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ],
-													"style" : ""
+													"patching_rect" : [ 412.0, 171.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -9958,7 +9476,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
-													"style" : "",
 													"text" : "o.select /this /all"
 												}
 
@@ -10214,6 +9731,16 @@
 											}
 , 											{
 												"patchline" : 												{
+													"color" : [ 0.278431, 0.921569, 0.639216, 1.0 ],
+													"destination" : [ "obj-6", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-8", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-2", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
@@ -10224,16 +9751,20 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 100.0, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 100.0, 41.0, 20.0 ],
 									"saved_object_attributes" : 									{
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"default_fontsize" : 12.0,
 										"description" : "",
 										"digest" : "",
+										"fontface" : 0,
+										"fontname" : "Arial",
+										"fontsize" : 12.0,
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p udp"
 								}
 
@@ -10246,8 +9777,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -10258,8 +9788,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 695.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 50.0, 695.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -10366,16 +9895,20 @@
  ]
 					}
 ,
-					"patching_rect" : [ 278.0, 381.0, 47.0, 22.0 ],
+					"patching_rect" : [ 278.0, 381.0, 47.0, 20.0 ],
 					"saved_object_attributes" : 					{
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"default_fontsize" : 12.0,
 						"description" : "",
 						"digest" : "",
+						"fontface" : 0,
+						"fontname" : "Arial",
+						"fontsize" : 12.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p udps"
 				}
 
@@ -10389,8 +9922,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 329.666656, 311.0, 60.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 329.666656, 311.0, 60.0, 20.0 ],
 					"text" : "loadbang"
 				}
 
@@ -10407,11 +9939,10 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 0,
-							"revision" : 5,
-							"architecture" : "x64",
-							"modernui" : 1
+							"major" : 6,
+							"minor" : 1,
+							"revision" : 9,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 25.0, 70.0, 640.0, 480.0 ],
@@ -10423,24 +9954,16 @@
 						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
 						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
 						"boxanimatetime" : 200,
+						"imprint" : 0,
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
 						"devicewidth" : 0.0,
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -10451,7 +9974,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 50.0, 135.5, 50.0, 22.0 ],
-									"style" : "",
 									"text" : "t l l"
 								}
 
@@ -10466,7 +9988,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
 									"patching_rect" : [ 50.0, 102.5, 50.0, 22.0 ],
-									"style" : "",
 									"text" : "o.union"
 								}
 
@@ -10479,8 +10000,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -10491,8 +10011,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 220.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 50.0, 220.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -10536,23 +10055,26 @@
  ]
 					}
 ,
-					"patching_rect" : [ 329.666656, 468.5, 50.0, 22.0 ],
+					"patching_rect" : [ 329.666656, 468.5, 50.0, 20.0 ],
 					"saved_object_attributes" : 					{
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"default_fontsize" : 12.0,
 						"description" : "",
 						"digest" : "",
+						"fontface" : 0,
+						"fontname" : "Arial",
+						"fontsize" : 12.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-52",
 					"maxclass" : "o.display",
@@ -10560,6 +10082,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 329.666656, 510.0, 150.0, 34.0 ],
+					"text" : "/report/0/gate : 1",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -10572,8 +10095,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 708.0, 141.0, 24.0, 24.0 ],
-					"style" : ""
+					"patching_rect" : [ 708.0, 141.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -10586,8 +10108,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 708.0, 173.0, 78.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 708.0, 173.0, 78.0, 20.0 ],
 					"text" : "metro 6000"
 				}
 
@@ -10595,7 +10116,6 @@
 , 			{
 				"box" : 				{
 					"error_color" : [ 0.76, 0.23, 0.239, 1.0 ],
-					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-42",
 					"linecount" : 2,
@@ -10604,9 +10124,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.0, 553.5, 588.0, 38.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 115, 116, 97, 116, 101, 115, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 105, 112, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0 ],
-					"saved_bundle_length" : 152,
-					"text" : "/all/states : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ips : [\"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\"]",
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 115, 116, 97, 116, 101, 115, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 47, 97, 108, 108, 47, 105, 112, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 49, 50, 56, 46, 51, 50, 46, 49, 50, 50, 46, 50, 50, 51, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0 ],
+					"saved_bundle_length" : 164,
+					"text" : "/all/states : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ips : [\"128.32.122.223\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\"]",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -10620,8 +10140,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "FullPacket" ],
-					"patching_rect" : [ 278.0, 421.0, 174.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 278.0, 421.0, 174.0, 20.0 ],
 					"text" : "o.select /count /report /all/send"
 				}
 
@@ -10629,7 +10148,6 @@
 , 			{
 				"box" : 				{
 					"error_color" : [ 0.76, 0.23, 0.239, 1.0 ],
-					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-34",
 					"linecount" : 2,
@@ -10654,8 +10172,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 564.5, 307.0, 37.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 564.5, 307.0, 37.0, 18.0 ],
 					"text" : "clear"
 				}
 
@@ -10672,11 +10189,10 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 0,
-							"revision" : 5,
-							"architecture" : "x64",
-							"modernui" : 1
+							"major" : 6,
+							"minor" : 1,
+							"revision" : 9,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 271.0, 79.0, 743.0, 783.0 ],
@@ -10688,24 +10204,16 @@
 						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
 						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
 						"boxanimatetime" : 200,
+						"imprint" : 0,
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
 						"devicewidth" : 0.0,
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -10716,7 +10224,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "FullPacket" ],
 									"patching_rect" : [ 912.0, 1061.0, 129.0, 22.0 ],
-									"style" : "",
 									"text" : "o.route /all/birth /all/kill"
 								}
 
@@ -10731,7 +10238,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "FullPacket" ],
 									"patching_rect" : [ 814.0, 1146.0, 71.0, 22.0 ],
-									"style" : "",
 									"text" : "o.select /all"
 								}
 
@@ -10740,13 +10246,13 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
+									"frgb" : 0.0,
 									"id" : "obj-5",
 									"linecount" : 15,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 694.0, 643.0, 150.0, 208.0 ],
-									"style" : "",
 									"text" : "\nif( bound(/active/ip) && bound(/active/id),\n  progn(\n    /all/state[[ /active/id - 1 ]] = 1,\n    /all/ips[[ /active/id - 1 ]] = /active/ip\n  ),\n  if( bound(/active/ip) && length(/all/ips) > 0,\n    /markAlive( /active/ip, /all/ips )\n  )\n),\n"
 								}
 
@@ -10762,7 +10268,6 @@
 									"numoutlets" : 6,
 									"outlettype" : [ "", "", "", "", "", "FullPacket" ],
 									"patching_rect" : [ 705.0, 965.0, 274.0, 35.0 ],
-									"style" : "",
 									"text" : "o.route /active /closed /checkConnections /report /~"
 								}
 
@@ -10777,7 +10282,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 814.0, 1053.0, 29.5, 22.0 ],
-									"style" : "",
 									"text" : "t l l"
 								}
 
@@ -10792,7 +10296,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
 									"patching_rect" : [ 69.0, 66.0, 50.0, 22.0 ],
-									"style" : "",
 									"text" : "o.union"
 								}
 
@@ -10804,14 +10307,12 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 814.0, 1248.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 814.0, 1248.0, 30.0, 30.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-17",
 									"linecount" : 91,
@@ -10833,8 +10334,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 69.0, 22.0, 30.0, 30.0 ],
-									"style" : ""
+									"patching_rect" : [ 69.0, 22.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -10915,16 +10415,20 @@
  ]
 					}
 ,
-					"patching_rect" : [ 502.0, 381.0, 66.0, 22.0 ],
+					"patching_rect" : [ 502.0, 381.0, 66.0, 20.0 ],
 					"saved_object_attributes" : 					{
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"default_fontsize" : 12.0,
 						"description" : "",
 						"digest" : "",
+						"fontface" : 0,
+						"fontname" : "Arial",
+						"fontsize" : 12.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p codebox"
 				}
 
@@ -10932,7 +10436,6 @@
 , 			{
 				"box" : 				{
 					"error_color" : [ 0.76, 0.23, 0.239, 1.0 ],
-					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-10",
 					"maxclass" : "o.compose",
@@ -11063,6 +10566,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-24", 0 ]
 				}
 
 			}
@@ -11329,43 +10841,38 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "o.compose.mxo",
-				"type" : "iLaX"
+				"name" : "o.compose.mxe",
+				"type" : "iLaF"
 			}
 , 			{
-				"name" : "o.expr.codebox.mxo",
-				"type" : "iLaX"
+				"name" : "o.expr.codebox.mxe",
+				"type" : "iLaF"
 			}
 , 			{
-				"name" : "o.union.mxo",
-				"type" : "iLaX"
+				"name" : "o.union.mxe",
+				"type" : "iLaF"
 			}
 , 			{
-				"name" : "o.route.mxo",
-				"type" : "iLaX"
+				"name" : "o.route.mxe",
+				"type" : "iLaF"
 			}
 , 			{
-				"name" : "o.select.mxo",
-				"type" : "iLaX"
+				"name" : "o.select.mxe",
+				"type" : "iLaF"
 			}
 , 			{
-				"name" : "o.display.mxo",
-				"type" : "iLaX"
+				"name" : "o.display.mxe",
+				"type" : "iLaF"
 			}
 , 			{
-				"name" : "o.prepend.mxo",
-				"type" : "iLaX"
+				"name" : "o.prepend.mxe",
+				"type" : "iLaF"
 			}
 , 			{
-				"name" : "o.pack.mxo",
-				"type" : "iLaX"
+				"name" : "o.pack.mxe",
+				"type" : "iLaF"
 			}
-, 			{
-				"name" : "mxj.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"embedsnapshot" : 0
+ ]
 	}
 
 }
