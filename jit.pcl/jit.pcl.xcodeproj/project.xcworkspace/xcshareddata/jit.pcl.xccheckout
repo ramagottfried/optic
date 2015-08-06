@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4C548731-5634-4FDF-BD9E-3A5419B704ED</string>
+	<key>IDESourceControlProjectName</key>
+	<string>jit.pcl</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</key>
+		<string>https://github.com/ramagottfried/optic.git</string>
+		<key>43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC</key>
+		<string>https://github.com/Cycling74/max6-sdk.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>jit.pcl/jit.pcl.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</key>
+		<string>../../..</string>
+		<key>43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC</key>
+		<string>../../../../../max6-sdk</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ramagottfried/optic.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>max6-sdk</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>optic</string>
+		</dict>
+	</array>
+</dict>
+</plist>
