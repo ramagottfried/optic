@@ -1,46 +1,58 @@
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
-#include <pcl/kdtree/kdtree.h>
-//#include <pcl/features/normal_3d.h>
-#include <pcl/features/impl/normal_3d_omp.hpp>
+#include <pcl/kdtree/kdtree_flann.h>
+#include <pcl/features/normal_3d.h>
+#include <pcl/surface/gp3.h>
+#include <pcl/conversions.h>
 
+
+#include "libfreenect.h"
+#include "libfreenect_sync.h"
+
+#if defined(__APPLE__)
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
 
 #include "jit.common.h"
 
+
+
 // Our Jitter object instance data
-typedef struct _jit_pcl {
+typedef struct _jit_freenect_pcl {
 	t_object	ob;
 	double		gain;	// our attribute (multiplied against each cell in the matrix)
-} t_jit_pcl;
+} t_jit_freenect_pcl;
 
 
 // prototypes
 BEGIN_USING_C_LINKAGE
-t_jit_err		jit_pcl_init				(void); 
-t_jit_pcl       *jit_pcl_new				(void);
-void			jit_pcl_free				(t_jit_pcl *x);
-t_jit_err		jit_pcl_matrix_calc		(t_jit_pcl *x, void *inputs, void *outputs);
-void			jit_pcl_calculate_ndim	(t_jit_pcl *x, long dim, long *dimsize, long planecount, t_jit_matrix_info *in_minfo,char *bip, t_jit_matrix_info *out_minfo, char *bop);
+t_jit_err           jit_freenect_pcl_init				(void);
+t_jit_freenect_pcl  *jit_freenect_pcl_new				(void);
+void                jit_freenect_pcl_free				(t_jit_freenect_pcl *x);
+t_jit_err           jit_freenect_pcl_matrix_calc		(t_jit_freenect_pcl *x, void *inputs, void *outputs);
+void                jit_freenect_pcl_calculate_ndim	(t_jit_freenect_pcl *x, long dim, long *dimsize, long planecount, t_jit_matrix_info *in_minfo,char *bip, t_jit_matrix_info *out_minfo, char *bop);
 END_USING_C_LINKAGE
 
-pcl::PointCloud<pcl::Normal>::Ptr jit_pcl_normals( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud );
-pcl::PointCloud<pcl::PointXYZ>::Ptr jit_pcl_genTriangles( pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals );
+pcl::PointCloud<pcl::PointNormal>::Ptr jit_freenect_pcl_normals( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud );
+pcl::PointCloud<pcl::PointXYZ>::Ptr jit_freenect_pcl_genTriangles( pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals );
 
 
 // globals
-static void *s_jit_pcl_class = NULL;
+static void *s_jit_freenect_pcl_class = NULL;
 
 
 /************************************************************************************/
 
-t_jit_err jit_pcl_init(void) 
+t_jit_err jit_freenect_pcl_init(void) 
 {
 	long			attrflags = JIT_ATTR_GET_DEFER_LOW | JIT_ATTR_SET_USURP_LOW;
 	t_jit_object	*attr;
 	t_jit_object	*mop;
     t_atom a[1];
 
-	s_jit_pcl_class = jit_class_new("jit_pcl", (method)jit_pcl_new, (method)jit_pcl_free, sizeof(t_jit_pcl), 0);
+	s_jit_freenect_pcl_class = jit_class_new("jit_freenect_pcl", (method)jit_freenect_pcl_new, (method)jit_freenect_pcl_free, sizeof(t_jit_freenect_pcl), 0);
 
 	// add matrix operator (mop)
     // args are  num inputs and num outputs
@@ -59,12 +71,12 @@ t_jit_err jit_pcl_init(void)
     attr = (t_jit_object *)jit_object_method(mop, _jit_sym_getoutput, 1);
     jit_attr_setlong(attr, _jit_sym_dimlink,0);
     
-	jit_class_addadornment(s_jit_pcl_class, mop);
+	jit_class_addadornment(s_jit_freenect_pcl_class, mop);
     
     
     
 	// add method(s)
-	jit_class_addmethod(s_jit_pcl_class, (method)jit_pcl_matrix_calc, "matrix_calc", A_CANT, 0);
+	jit_class_addmethod(s_jit_freenect_pcl_class, (method)jit_freenect_pcl_matrix_calc, "matrix_calc", A_CANT, 0);
 
 	// add attribute(s)
 	attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
@@ -72,23 +84,23 @@ t_jit_err jit_pcl_init(void)
 										 _jit_sym_float64, 
 										 attrflags, 
 										 (method)NULL, (method)NULL, 
-										 calcoffset(t_jit_pcl, gain));
+										 calcoffset(t_jit_freenect_pcl, gain));
     
-	jit_class_addattr(s_jit_pcl_class, attr);
+	jit_class_addattr(s_jit_freenect_pcl_class, attr);
 
 	// finalize class
-	jit_class_register(s_jit_pcl_class);
+	jit_class_register(s_jit_freenect_pcl_class);
 	return JIT_ERR_NONE;
 }
 
 /************************************************************************************/
 // Object Life Cycle
 
-t_jit_pcl *jit_pcl_new(void)
+t_jit_freenect_pcl *jit_freenect_pcl_new(void)
 {
-	t_jit_pcl	*x = NULL;
+	t_jit_freenect_pcl	*x = NULL;
 	
-	x = (t_jit_pcl*)jit_object_alloc(s_jit_pcl_class);
+	x = (t_jit_freenect_pcl*)jit_object_alloc(s_jit_freenect_pcl_class);
 	if (x) {
 		x->gain = 0.0;
 	} 
@@ -96,31 +108,14 @@ t_jit_pcl *jit_pcl_new(void)
 }
 
 
-void jit_pcl_free(t_jit_pcl *x)
+void jit_freenect_pcl_free(t_jit_freenect_pcl *x)
 {
 	;	// nothing to free for our simple object
 }
 
 
 // PCL
-pcl::PointCloud<pcl::Normal>::Ptr jit_pcl_normals( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud )
-{
-    // Normal estimation*
-    pcl::NormalEstimationOMP<pcl::PointXYZ, pcl::Normal> n(8) ;
-    pcl::PointCloud<pcl::Normal>::Ptr normals (new pcl::PointCloud<pcl::Normal>);
-    pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>);
-    tree->setInputCloud ( cloud );
-    n.setInputCloud (cloud);
-    n.setSearchMethod (tree);
-    n.setRadiusSearch (0.03);
-    n.compute (*normals);
-    //* normals should not contain the point normals + surface curvatures
-    
-    return normals;
-}
-
-
-pcl::PointCloud<pcl::PointNormal>::Ptr jit_pcl_normals2( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud )
+pcl::PointCloud<pcl::PointNormal>::Ptr jit_freenect_pcl_normals( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud )
 {
     // Normal estimation*
     pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> n;
@@ -140,149 +135,68 @@ pcl::PointCloud<pcl::PointNormal>::Ptr jit_pcl_normals2( pcl::PointCloud<pcl::Po
     return cloud_with_normals;
 }
 
-// conversions
 
-t_jit_err jit_pointnormals2jit(t_jit_pcl *x, pcl::PointCloud<pcl::PointNormal>::Ptr normals, t_jit_matrix_info *out_minfo, void **out_matrix)
+pcl::PointCloud<pcl::PointXYZ>::Ptr jit_freenect_pcl_genTriangles( pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals )
 {
-    char *out_bp = NULL;
-    float *fop;
-
-    //*****
-    // send back to jitter
-    jit_object_method(*out_matrix, _jit_sym_getinfo, out_minfo);
+    // Create search tree*
+    pcl::search::KdTree<pcl::PointNormal>::Ptr tree2 (new pcl::search::KdTree<pcl::PointNormal>);
+    tree2->setInputCloud (cloud_with_normals);
     
-    out_minfo->dim[0] = normals->width;
-    out_minfo->dim[1] = normals->height;
-    out_minfo->type = _jit_sym_float32;
-    out_minfo->planecount = 6;
-    jit_object_method(*out_matrix, _jit_sym_setinfo, out_minfo);
-    jit_object_method(*out_matrix, _jit_sym_getinfo, out_minfo);
+    // Initialize objects
+    pcl::GreedyProjectionTriangulation<pcl::PointNormal> gp3;
+    pcl::PolygonMesh triangles;
     
-    jit_object_method(*out_matrix, _jit_sym_getdata, &out_bp);
-    if (!out_bp) {
-        object_error((t_object *)x, "no output data" );
-        return JIT_ERR_INVALID_OUTPUT;
-    }
+    // Set the maximum distance between connected points (maximum edge length)
+    gp3.setSearchRadius (0.025);
     
-    long rowstride = out_minfo->dimstride[1];
-    long count = 0;
-    for (int j = 0; j < out_minfo->dim[0]; j++)
+    // Set typical values for the parameters
+    gp3.setMu (2.5);
+    gp3.setMaximumNearestNeighbors (100);
+    gp3.setMaximumSurfaceAngle(M_PI/4); // 45 degrees
+    gp3.setMinimumAngle(M_PI/18); // 10 degrees
+    gp3.setMaximumAngle(2*M_PI/3); // 120 degrees
+    gp3.setNormalConsistency(false);
+    
+    // Get result
+    gp3.setInputCloud (cloud_with_normals);
+    gp3.setSearchMethod (tree2);
+    gp3.reconstruct (triangles);
+    
+    //NOTE: use this later!
+    // for each point, the ID of the containing connected component and its “state” (i.e. gp3.FREE, gp3.BOUNDARY or gp3.COMPLETED) can be retrieved.
+    
+    // Additional vertex information
+    std::vector<int> parts = gp3.getPartIDs();
+    std::vector<int> states = gp3.getPointStates();
+    
+    
+    // Iterater for points in mesh:
+    // this would be what we would pass to jitter if we wanted a mesh?
+    pcl::PointCloud<pcl::PointXYZ>::Ptr tri_cloud (new pcl::PointCloud<pcl::PointXYZ>);
+    pcl::fromPCLPointCloud2(triangles.cloud, *tri_cloud);
+    
+    pcl::PointCloud<pcl::PointXYZ>::Ptr vertexarr (new pcl::PointCloud<pcl::PointXYZ>);
+    vertexarr->width = (uint32_t)triangles.polygons.size() * 3;
+    vertexarr->height = 1;
+    vertexarr->resize(vertexarr->width);
+    
+    size_t count = 0;
+    for (std::vector<pcl::Vertices>::iterator it = triangles.polygons.begin(); it != triangles.polygons.end(); ++it)
     {
-        fop =  (float *)(out_bp + j * out_minfo->dimstride[0]);
-        
-        for( int i = 0; i < out_minfo->dim[1]; i++)
+        for( size_t i = 0; i < it->vertices.size(); i++)
         {
-            if( count < normals->points.size() )
-            {
-                fop[0] = normals->points[count].x;
-                fop[1] = normals->points[count].y;
-                fop[2] = normals->points[count].z;
-                fop[3] = normals->points[count].normal_x;
-                fop[4] = normals->points[count].normal_y;
-                fop[5] = normals->points[count].normal_z;
-                
-            }
-            count++;
-            fop += rowstride;
+             vertexarr->points[count++] = tri_cloud->points[it->vertices[i]];
         }
     }
-    return JIT_ERR_NONE;
-
-}
-
-t_jit_err jit_cloud2jit(t_jit_pcl *x, pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
-{
-    char *out_bp = NULL;
-    float *fop;
-    
-    //*****
-    // send back to jitter
-    jit_object_method(*out_matrix, _jit_sym_getinfo, out_minfo);
-    
-    out_minfo->dim[0] = cloud->width;
-    out_minfo->dim[1] = cloud->height;
-    out_minfo->type = _jit_sym_float32;
-    out_minfo->planecount = 6;
-    jit_object_method(*out_matrix, _jit_sym_setinfo, out_minfo);
-    jit_object_method(*out_matrix, _jit_sym_getinfo, out_minfo);
-    
-    jit_object_method(*out_matrix, _jit_sym_getdata, &out_bp);
-    if (!out_bp) {
-        object_error((t_object *)x, "no output data" );
-        return JIT_ERR_INVALID_OUTPUT;
-    }
-    
-    long rowstride = out_minfo->dimstride[1];
-    long count = 0;
-    for (int j = 0; j < out_minfo->dim[0]; j++)
-    {
-        fop =  (float *)(out_bp + j * out_minfo->dimstride[0]);
-        
-        for( int i = 0; i < out_minfo->dim[1]; i++)
-        {
-            if( count < cloud->points.size() )
-            {
-                fop[0] = cloud->points[count].x;
-                fop[1] = cloud->points[count].y;
-                fop[2] = cloud->points[count].z;
-                
-            }
-            count++;
-            fop += rowstride;
-        }
-    }
-    return JIT_ERR_NONE;
+    return vertexarr;
     
 }
 
-t_jit_err jit_normal2jit(t_jit_pcl *x, pcl::PointCloud<pcl::Normal>::Ptr norm, t_jit_matrix_info *out_minfo, void **out_matrix)
-{
-    char *out_bp = NULL;
-    float *fop;
-    
-    //*****
-    // send back to jitter
-    jit_object_method(*out_matrix, _jit_sym_getinfo, out_minfo);
-    
-    out_minfo->dim[0] = norm->width;
-    out_minfo->dim[1] = norm->height;
-    out_minfo->type = _jit_sym_float32;
-    out_minfo->planecount = 3;
-    jit_object_method(*out_matrix, _jit_sym_setinfo, out_minfo);
-    jit_object_method(*out_matrix, _jit_sym_getinfo, out_minfo);
-    
-    jit_object_method(*out_matrix, _jit_sym_getdata, &out_bp);
-    if (!out_bp) {
-        object_error((t_object *)x, "no output data" );
-        return JIT_ERR_INVALID_OUTPUT;
-    }
-    
-    long rowstride = out_minfo->dimstride[1];
-    long count = 0;
-    for (int j = 0; j < out_minfo->dim[0]; j++)
-    {
-        fop =  (float *)(out_bp + j * out_minfo->dimstride[0]);
-        
-        for( int i = 0; i < out_minfo->dim[1]; i++)
-        {
-            if( count < norm->points.size() )
-            {
-                fop[0] = norm->points[count].normal_z;
-                fop[1] = norm->points[count].normal_y;
-                fop[2] = norm->points[count].normal_z;
-                
-            }
-            count++;
-            fop += rowstride;
-        }
-    }
-    return JIT_ERR_NONE;
-    
-}
+
 
 /************************************************************************************/
 // Methods bound to input/inlets
-t_jit_err jit_pcl_matrix_calc(t_jit_pcl *x, void *inputs, void *outputs)
+t_jit_err jit_freenect_pcl_matrix_calc(t_jit_freenect_pcl *x, void *inputs, void *outputs)
 {
 	t_jit_err			err = JIT_ERR_NONE;
 	long				in_savelock;
@@ -370,13 +284,8 @@ t_jit_err jit_pcl_matrix_calc(t_jit_pcl *x, void *inputs, void *outputs)
         }
         
         
-        pcl::PointCloud<pcl::Normal>::Ptr normals = jit_pcl_normals( cloud );
-        
-        err = jit_normal2jit(x, normals, &out_minfo, &out_matrix );
-        if( err != JIT_ERR_NONE )
-            goto out;
-        
-       // pcl::PointCloud<pcl::PointXYZ>::Ptr triMesh = jit_pcl_genTriangles( cloud_w_normals );
+        pcl::PointCloud<pcl::PointNormal>::Ptr cloud_w_normals = jit_freenect_pcl_normals( cloud );
+        pcl::PointCloud<pcl::PointXYZ>::Ptr triMesh = jit_freenect_pcl_genTriangles( cloud_w_normals );
       //  post( "res %d %d %d", triMesh->points.size(), triMesh->width, triMesh->height);
 
         
@@ -384,7 +293,6 @@ t_jit_err jit_pcl_matrix_calc(t_jit_pcl *x, void *inputs, void *outputs)
         
         //*****
         // send back to jitter
-/*
         jit_object_method(out_matrix, _jit_sym_getinfo, &out_minfo);
         
         out_minfo.dim[0] = triMesh->width;
@@ -424,10 +332,10 @@ t_jit_err jit_pcl_matrix_calc(t_jit_pcl *x, void *inputs, void *outputs)
             }
         }
         
-*/
+
 		
         // unable to make use of jitter's parallel methods since we need all the data together
-		//jit_parallel_ndim_simplecalc2((method)jit_pcl_calculate_ndim,
+		//jit_parallel_ndim_simplecalc2((method)jit_freenect_pcl_calculate_ndim,
 		//	x, dimcount, dim, planecount, &in_minfo, in_bp, &out_minfo, out_bp,
 		//	0 /* flags1 */, 0 /* flags2 */);
         
@@ -445,7 +353,7 @@ out:
 // We are using a C++ template to process a vector of the matrix for any of the given types.
 // Thus, we don't need to duplicate the code for each datatype.
 template<typename T>
-void jit_pcl_vector(t_jit_pcl *x, long n, t_jit_op_info *in, t_jit_op_info *out)
+void jit_freenect_pcl_vector(t_jit_freenect_pcl *x, long n, t_jit_op_info *in, t_jit_op_info *out)
 {
 	double	gain = x->gain;
 	T		*ip;
@@ -479,11 +387,11 @@ void jit_pcl_vector(t_jit_pcl *x, long n, t_jit_op_info *in, t_jit_op_info *out)
 }
 
 
-// We also use a C+ template for the loop that wraps the call to jit_pcl_vector(),
-// further reducing code duplication in jit_pcl_calculate_ndim().
+// We also use a C+ template for the loop that wraps the call to jit_freenect_pcl_vector(),
+// further reducing code duplication in jit_freenect_pcl_calculate_ndim().
 // The calls into these templates should be inlined by the compiler, eliminating concern about any added function call overhead.
 template<typename T>
-void jit_pcl_loop(t_jit_pcl *x, long n, t_jit_op_info *in_opinfo, t_jit_op_info *out_opinfo, t_jit_matrix_info *in_minfo, t_jit_matrix_info *out_minfo, char *bip, char *bop, long *dim, long planecount, long datasize)
+void jit_freenect_pcl_loop(t_jit_freenect_pcl *x, long n, t_jit_op_info *in_opinfo, t_jit_op_info *out_opinfo, t_jit_matrix_info *in_minfo, t_jit_matrix_info *out_minfo, char *bip, char *bop, long *dim, long planecount, long datasize)
 {
 	long	i;
 	long	j;
@@ -492,13 +400,13 @@ void jit_pcl_loop(t_jit_pcl *x, long n, t_jit_op_info *in_opinfo, t_jit_op_info 
 		for (j=0; j<planecount; j++) {
 			in_opinfo->p  = bip + i * in_minfo->dimstride[1]  + (j % in_minfo->planecount) * datasize;
 			out_opinfo->p = bop + i * out_minfo->dimstride[1] + (j % out_minfo->planecount) * datasize;
-			jit_pcl_vector<T>(x, n, in_opinfo, out_opinfo);
+			jit_freenect_pcl_vector<T>(x, n, in_opinfo, out_opinfo);
 		}
 	}
 }
 
 
-void jit_pcl_calculate_ndim(t_jit_pcl *x, long dimcount, long *dim, long planecount, t_jit_matrix_info *in_minfo, char *bip, t_jit_matrix_info *out_minfo, char *bop)
+void jit_freenect_pcl_calculate_ndim(t_jit_freenect_pcl *x, long dimcount, long *dim, long planecount, t_jit_matrix_info *in_minfo, char *bip, t_jit_matrix_info *out_minfo, char *bop)
 {
 	long			i;
 	long			n;
@@ -529,19 +437,19 @@ void jit_pcl_calculate_ndim(t_jit_pcl *x, long dimcount, long *dim, long planeco
 			}
 			
 			if (in_minfo->type == _jit_sym_char)
-				jit_pcl_loop<uchar>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 1);
+				jit_freenect_pcl_loop<uchar>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 1);
 			else if (in_minfo->type == _jit_sym_long)
-				jit_pcl_loop<long>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 4);
+				jit_freenect_pcl_loop<long>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 4);
 			else if (in_minfo->type == _jit_sym_float32)
-				jit_pcl_loop<float>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 4);
+				jit_freenect_pcl_loop<float>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 4);
 			else if (in_minfo->type == _jit_sym_float64)
-				jit_pcl_loop<double>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 8);
+				jit_freenect_pcl_loop<double>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 8);
 			break;
 		default:
 			for	(i=0; i<dim[dimcount-1]; i++) {
 				ip = bip + i * in_minfo->dimstride[dimcount-1];
 				op = bop + i * out_minfo->dimstride[dimcount-1];
-				jit_pcl_calculate_ndim(x, dimcount-1, dim, planecount, in_minfo, ip, out_minfo, op);
+				jit_freenect_pcl_calculate_ndim(x, dimcount-1, dim, planecount, in_minfo, ip, out_minfo, op);
 			}
 	}
 }
