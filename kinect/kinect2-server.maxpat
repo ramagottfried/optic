@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 77.0, 1641.0, 935.0 ],
+		"rect" : [ 100.0, 77.0, 1281.0, 935.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,31 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 854.0, 390.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "clear"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 776.5, 284.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "button",
@@ -141,7 +166,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ],
 									"style" : ""
 								}
@@ -223,10 +248,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 91.0, 119.0, 174.0, 24.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 107, 105, 110, 101, 99, 116, 47, 105, 110, 105, 116, 0, 0, 0, 0, 44, 115, 0, 0, 98, 97, 110, 103, 0, 0, 0, 0 ],
+					"patching_rect" : [ 91.0, 119.0, 181.0, 24.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 107, 105, 110, 101, 99, 116, 50, 47, 105, 110, 105, 116, 0, 0, 0, 44, 115, 0, 0, 98, 97, 110, 103, 0, 0, 0, 0 ],
 					"saved_bundle_length" : 48,
-					"text" : "/kinect/init : \"bang\"",
+					"text" : "/kinect2/init : \"bang\"",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -855,9 +880,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1211.5, 275.5, 362.0, 146.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 32, 115, 101, 116, 32, 111, 110, 32, 108, 111, 97, 100, 0, 0, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 13, 5, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 107, 105, 110, 101, 99, 116, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 26, 10, 0, 0, 0, 108, 47, 100, 111, 99, 0, 0, 0, 0, 44, 115, 0, 0, 116, 111, 32, 97, 99, 116, 105, 118, 97, 116, 101, 32, 100, 97, 116, 97, 32, 115, 117, 98, 115, 99, 114, 105, 112, 116, 105, 111, 110, 44, 32, 115, 101, 110, 100, 32, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 32, 118, 97, 108, 117, 101, 32, 111, 110, 99, 101, 32, 101, 118, 101, 114, 121, 32, 53, 32, 115, 101, 99, 111, 110, 100, 115, 44, 32, 119, 105, 116, 104, 32, 115, 116, 114, 101, 97, 109, 32, 114, 101, 113, 117, 101, 115, 116, 115, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 121, 111, 117, 114, 32, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 0, 0, 0, 0, 36, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 0, 44, 115, 0, 0, 112, 111, 114, 116, 32, 110, 117, 109, 98, 101, 114, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 44, 115, 0, 0, 116, 114, 117, 101, 47, 102, 97, 108, 115, 101, 0, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 106, 105, 116, 116, 101, 114, 0, 0, 0, 44, 115, 0, 0, 116, 114, 117, 101, 47, 102, 97, 108, 115, 101, 0, 0 ],
-					"saved_bundle_length" : 416,
-					"text" : "/sendto/server/ip : \"ip address set on load\",\n/sendto/server/port : 3333,\n/sendto/kinect/port : 6666,\n/doc : \"to activate data subscription, send /active/ip value once every 5 seconds, with stream requests\",\n/server/active/ip : \"your ip address\",\n/server/active/port : \"port number\",\n/server/active/skeleton : \"true/false\",\n/server/active/jitter : \"true/false\"",
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 32, 115, 101, 116, 32, 111, 110, 32, 108, 111, 97, 100, 0, 0, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 13, 5, 0, 0, 0, 32, 47, 115, 101, 110, 100, 116, 111, 47, 107, 105, 110, 101, 99, 116, 50, 47, 112, 111, 114, 116, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 26, 10, 0, 0, 0, 108, 47, 100, 111, 99, 0, 0, 0, 0, 44, 115, 0, 0, 116, 111, 32, 97, 99, 116, 105, 118, 97, 116, 101, 32, 100, 97, 116, 97, 32, 115, 117, 98, 115, 99, 114, 105, 112, 116, 105, 111, 110, 44, 32, 115, 101, 110, 100, 32, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 32, 118, 97, 108, 117, 101, 32, 111, 110, 99, 101, 32, 101, 118, 101, 114, 121, 32, 53, 32, 115, 101, 99, 111, 110, 100, 115, 44, 32, 119, 105, 116, 104, 32, 115, 116, 114, 101, 97, 109, 32, 114, 101, 113, 117, 101, 115, 116, 115, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 121, 111, 117, 114, 32, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 0, 0, 0, 0, 36, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 0, 44, 115, 0, 0, 112, 111, 114, 116, 32, 110, 117, 109, 98, 101, 114, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 44, 115, 0, 0, 116, 114, 117, 101, 47, 102, 97, 108, 115, 101, 0, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 106, 105, 116, 116, 101, 114, 0, 0, 0, 44, 115, 0, 0, 116, 114, 117, 101, 47, 102, 97, 108, 115, 101, 0, 0 ],
+					"saved_bundle_length" : 420,
+					"text" : "/sendto/server/ip : \"ip address set on load\",\n/sendto/server/port : 3333,\n/sendto/kinect2/port : 6666,\n/doc : \"to activate data subscription, send /active/ip value once every 5 seconds, with stream requests\",\n/server/active/ip : \"your ip address\",\n/server/active/port : \"port number\",\n/server/active/skeleton : \"true/false\",\n/server/active/jitter : \"true/false\"",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -957,7 +982,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 8.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1012,6 +1037,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -1019,9 +1045,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
-													"patching_rect" : [ 460.0, 689.0, 104.0, 20.0 ],
+													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -1046,9 +1072,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 528.0, 753.5, 107.0, 18.0 ],
+													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -1061,7 +1087,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 706.5, 34.0, 20.0 ],
+													"patching_rect" : [ 664.0, 706.5, 34.0, 22.0 ],
 													"style" : "",
 													"text" : "gate"
 												}
@@ -1076,7 +1102,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 412.0, 87.0, 32.5, 20.0 ],
+													"patching_rect" : [ 412.0, 87.0, 32.5, 22.0 ],
 													"style" : "",
 													"text" : "t l l"
 												}
@@ -1092,7 +1118,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 48.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -1107,7 +1133,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 334.5, 32.0, 174.0, 20.0 ],
+													"patching_rect" : [ 334.5, 32.0, 174.0, 22.0 ],
 													"style" : "",
 													"text" : "routepass FullPacket jit_matrix"
 												}
@@ -1122,7 +1148,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
-													"patching_rect" : [ 357.0, 718.0, 100.0, 20.0 ],
+													"patching_rect" : [ 357.0, 718.0, 100.0, 22.0 ],
 													"style" : "",
 													"text" : "o.prepend /data"
 												}
@@ -1137,7 +1163,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
-													"patching_rect" : [ 276.0, 573.5, 115.0, 20.0 ],
+													"patching_rect" : [ 276.0, 573.5, 115.0, 22.0 ],
 													"style" : "",
 													"text" : "o.select /this /report"
 												}
@@ -1154,7 +1180,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -1168,7 +1194,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 357.0, 685.5, 34.0, 20.0 ],
+													"patching_rect" : [ 357.0, 685.5, 34.0, 22.0 ],
 													"style" : "",
 													"text" : "gate"
 												}
@@ -1183,7 +1209,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 460.0, 659.5, 78.0, 20.0 ],
+													"patching_rect" : [ 460.0, 659.5, 78.0, 22.0 ],
 													"style" : "",
 													"text" : "o.route /gate"
 												}
@@ -1408,7 +1434,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 519.0, 718.0, 73.0, 20.0 ],
+													"patching_rect" : [ 519.0, 718.0, 73.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
@@ -1431,7 +1457,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 460.0, 633.0, 71.0, 20.0 ],
+													"patching_rect" : [ 460.0, 633.0, 71.0, 22.0 ],
 													"style" : "",
 													"text" : "o.route /set"
 												}
@@ -1445,7 +1471,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 20.0 ],
+													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
 													"style" : "",
 													"text" : "udpsend 127.1.1.1 4444"
 												}
@@ -1460,7 +1486,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "FullPacket" ],
-													"patching_rect" : [ 372.0, 605.0, 107.0, 20.0 ],
+													"patching_rect" : [ 372.0, 605.0, 107.0, 22.0 ],
 													"style" : "",
 													"text" : "o.route /send"
 												}
@@ -1608,7 +1634,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 276.0, 72.0, 83.0, 20.0 ],
+													"patching_rect" : [ 276.0, 72.0, 83.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
@@ -1631,7 +1657,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "FullPacket" ],
-													"patching_rect" : [ 276.0, 176.0, 56.0, 20.0 ],
+													"patching_rect" : [ 276.0, 176.0, 56.0, 22.0 ],
 													"style" : "",
 													"text" : "o.union"
 												}
@@ -1671,7 +1697,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "FullPacket" ],
-													"patching_rect" : [ 276.0, 104.5, 115.0, 20.0 ],
+													"patching_rect" : [ 276.0, 104.5, 115.0, 22.0 ],
 													"style" : "",
 													"text" : "o.select /this /all"
 												}
@@ -2009,7 +2035,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2064,6 +2090,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -2073,7 +2100,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -2100,7 +2127,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -2144,7 +2171,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 49.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -2206,7 +2233,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -3061,7 +3088,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3116,6 +3143,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -3125,7 +3153,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -3152,7 +3180,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -3196,7 +3224,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 49.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -3258,7 +3286,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -4113,7 +4141,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -4168,6 +4196,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -4177,7 +4206,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -4204,7 +4233,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -4248,7 +4277,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 49.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -4310,7 +4339,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -5165,7 +5194,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -5220,6 +5249,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -5229,7 +5259,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -5256,7 +5286,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -5300,7 +5330,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 49.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -5362,7 +5392,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -6217,7 +6247,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -6272,6 +6302,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -6281,7 +6312,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -6308,7 +6339,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -6352,7 +6383,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 49.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -6414,7 +6445,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -7269,7 +7300,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -7324,6 +7355,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -7333,7 +7365,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -7360,7 +7392,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -7404,7 +7436,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 49.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -7466,7 +7498,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -8321,7 +8353,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -8376,6 +8408,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -8385,7 +8418,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -8412,7 +8445,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -8456,7 +8489,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 49.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -8518,7 +8551,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -9373,7 +9406,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 76.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -9428,6 +9461,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -9437,7 +9471,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -9464,7 +9498,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 528.0, 753.5, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "ip 127.1.1.2"
+													"text" : "ip 128.32.122.223"
 												}
 
 											}
@@ -9508,7 +9542,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 49.0 ],
+													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
 													"style" : "",
 													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
 												}
@@ -9570,7 +9604,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -10425,7 +10459,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 42.0, 85.0, 1035.0, 817.0 ],
+										"rect" : [ 274.0, 150.0, 1035.0, 817.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -10480,6 +10514,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
@@ -10489,7 +10524,7 @@
 													"outlettype" : [ "", "", "FullPacket" ],
 													"patching_rect" : [ 460.0, 689.0, 104.0, 22.0 ],
 													"style" : "",
-													"text" : "o.route /upd /jitter"
+													"text" : "o.route /udp /jitter"
 												}
 
 											}
@@ -10622,7 +10657,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "FullPacket", "FullPacket" ],
 													"patching_rect" : [ 276.0, 205.5, 711.0, 358.0 ],
-													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = /all/skeleton[[ /this/id ]],\n    /set/gate/jitter = /all/jitter[[ /this/id ]],\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
+													"text" : "/this/id ??= -1,\n/this/ip ??= \"x\",\n/this/jitter ??= false,\n/this/skeleton ??= false,\nif( bound(/all/id/birth) && (sum(int32(/all/id/birth == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /this/ip = /all/ips[[ /this/id ]],\n    /set/gate/udp = int32(/all/skeleton[[ /this/id ]]),\n    /set/gate/jitter = int32(/all/jitter[[ /this/id ]]),\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/ip = /this/ip,\n    /set/report/notice = \"udp connected: \"+/set/gate/udp+\" jitter connected: \"+/set/gate/jitter\n  )\n),\nif( bound(/all/id/kill) && (sum(int32(/all/id/kill == /this/id)) == 1) && /this/id > -1,\n  progn(\n    /set/gate/udp = 0,\n    /set/gate/jitter = 0,\n    assign(quote(/report/) + /this/id + quote(/gate/udp), /set/gate/udp),\n    assign(quote(/report/) + /this/id + quote(/gate/jitter), /set/gate/jitter),\n    /set/report/notice = \"disconnected\"\n  )\n),\nif( /this/ip != \"x\" && bound(/all/send), /send = /all/send)",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
@@ -11775,7 +11810,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 285.666626, 625.5, 236.0, 48.0 ],
-					"text" : "/report/0/gate/udp : true,\n/report/0/gate/jitter : true",
+					"text" : "/report/0/gate/udp : 0,\n/report/0/gate/jitter : 0",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -11820,9 +11855,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 9.666626, 701.5, 642.0, 65.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 115, 116, 97, 116, 101, 115, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 76, 47, 97, 108, 108, 47, 105, 112, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 49, 50, 56, 46, 51, 50, 46, 49, 50, 50, 46, 50, 50, 51, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 0, 0, 0, 24, 47, 97, 108, 108, 47, 106, 105, 116, 116, 101, 114, 0, 44, 84, 70, 70, 70, 70, 70, 70, 70, 70, 70, 0, 0, 0, 0, 28, 47, 97, 108, 108, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 0, 0, 44, 84, 70, 70, 70, 70, 70, 70, 70, 70, 70, 0 ],
-					"saved_bundle_length" : 224,
-					"text" : "/all/states : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ips : [\"128.32.122.223\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\"],\n/all/jitter : [true, false, false, false, false, false, false, false, false, false],\n/all/skeleton : [true, false, false, false, false, false, false, false, false, false]",
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 115, 116, 97, 116, 101, 115, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 105, 112, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 0, 0, 0, 24, 47, 97, 108, 108, 47, 106, 105, 116, 116, 101, 114, 0, 44, 84, 70, 70, 70, 70, 70, 70, 70, 70, 70, 0, 0, 0, 0, 28, 47, 97, 108, 108, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 0, 0, 44, 84, 70, 70, 70, 70, 70, 70, 70, 70, 70, 0 ],
+					"saved_bundle_length" : 212,
+					"text" : "/all/states : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ips : [\"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\"],\n/all/jitter : [true, false, false, false, false, false, false, false, false, false],\n/all/skeleton : [true, false, false, false, false, false, false, false, false, false]",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -12247,6 +12282,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-73",
@@ -12254,9 +12290,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 263.583374, 289.362061, 122.0, 22.0 ],
+									"patching_rect" : [ 263.583374, 289.362061, 129.0, 22.0 ],
 									"style" : "",
-									"text" : "o.prepend /api/kinect"
+									"text" : "o.prepend /api/kinect2"
 								}
 
 							}
@@ -12380,13 +12416,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 73.833374, 665.5, 24.0, 24.0 ],
+									"patching_rect" : [ 73.833374, 683.5, 24.0, 24.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-8",
@@ -12394,9 +12431,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 73.833374, 618.5, 97.0, 22.0 ],
+									"patching_rect" : [ 73.833374, 636.5, 139.0, 22.0 ],
 									"style" : "",
-									"text" : "o.prepend /send"
+									"text" : "o.prepend /send/kinect2"
 								}
 
 							}
@@ -12607,7 +12644,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 778.166626, 1000.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "3721 1"
+									"text" : "3686 1"
 								}
 
 							}
@@ -12745,7 +12782,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 989.666626, 693.5, 54.0, 22.0 ],
 									"style" : "",
-									"text" : "18608 1"
+									"text" : "46077 1"
 								}
 
 							}
@@ -13547,9 +13584,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "FullPacket" ],
-					"patching_rect" : [ 66.5, 161.0, 126.0, 22.0 ],
+					"patching_rect" : [ 66.5, 161.0, 133.0, 22.0 ],
 					"style" : "",
-					"text" : "o.route /server /kinect"
+					"text" : "o.route /server /kinect2"
 				}
 
 			}
@@ -13593,6 +13630,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-51", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-51", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -13606,6 +13661,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-51", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-18", 0 ]
 				}
 
 			}
