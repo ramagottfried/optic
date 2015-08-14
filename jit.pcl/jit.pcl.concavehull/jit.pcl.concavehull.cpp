@@ -1,48 +1,52 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
+#include <pcl/filters/voxel_grid.h>
 #include <pcl/filters/statistical_outlier_removal.h>
-#include <pcl/surface/convex_hull.h>
+#include <pcl/surface/concave_hull.h>
+#include <pcl/surface/concave_hull.h>
 #include <pcl/console/parse.h>
 
 
 #include "jit.common.h"
 
 // Our Jitter object instance data
-typedef struct _jit_pcl_convexhull {
+typedef struct _jit_pcl_concavehull {
     t_object	ob;
-    double		leafsize;	// our attribute (multiplied against each cell in the matrix)
+    double		leafsize;
     long        npoints;
-    long        segment;
-} t_jit_pcl_convexhull;
+    double      stdthresh;
+    double		alpha;
+
+} t_jit_pcl_concavehull;
 
 
 // prototypes
 BEGIN_USING_C_LINKAGE
-t_jit_err		jit_pcl_convexhull_init				(void);
-t_jit_pcl_convexhull       *jit_pcl_convexhull_new				(void);
-void			jit_pcl_convexhull_free				(t_jit_pcl_convexhull *x);
-t_jit_err		jit_pcl_convexhull_matrix_calc		(t_jit_pcl_convexhull *x, void *inputs, void *outputs);
-void			jit_pcl_convexhull_calculate_ndim	(t_jit_pcl_convexhull *x, long dim, long *dimsize, long planecount, t_jit_matrix_info *in_minfo,char *bip, t_jit_matrix_info *out_minfo, char *bop);
+t_jit_err                   jit_pcl_concavehull_init				(void);
+t_jit_pcl_concavehull       *jit_pcl_concavehull_new				(void);
+void                        jit_pcl_concavehull_free				(t_jit_pcl_concavehull *x);
+t_jit_err                   jit_pcl_concavehull_matrix_calc		(t_jit_pcl_concavehull *x, void *inputs, void *outputs);
+void                        jit_pcl_concavehull_calculate_ndim	(t_jit_pcl_concavehull *x, long dim, long *dimsize, long planecount, t_jit_matrix_info *in_minfo,char *bip, t_jit_matrix_info *out_minfo, char *bop);
 END_USING_C_LINKAGE
 
-pcl::PointCloud<pcl::Normal>::Ptr jit_pcl_convexhull_normals( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud );
-pcl::PointCloud<pcl::PointXYZ>::Ptr jit_pcl_convexhull_genTriangles( pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals );
+pcl::PointCloud<pcl::Normal>::Ptr jit_pcl_concavehull_normals( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud );
+pcl::PointCloud<pcl::PointXYZ>::Ptr jit_pcl_concavehull_genTriangles( pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals );
 
 
 // globals
-static void *s_jit_pcl_convexhull_class = NULL;
+static void *s_jit_pcl_concavehull_class = NULL;
 
 
 /************************************************************************************/
 
-t_jit_err jit_pcl_convexhull_init(void)
+t_jit_err jit_pcl_concavehull_init(void)
 {
     long			attrflags = JIT_ATTR_GET_DEFER_LOW | JIT_ATTR_SET_USURP_LOW;
     t_jit_object	*attr;
     t_jit_object	*mop;
     t_atom a[1];
     
-    s_jit_pcl_convexhull_class = jit_class_new("jit_pcl_convexhull", (method)jit_pcl_convexhull_new, (method)jit_pcl_convexhull_free, sizeof(t_jit_pcl_convexhull), 0);
+    s_jit_pcl_concavehull_class = jit_class_new("jit_pcl_concavehull", (method)jit_pcl_concavehull_new, (method)jit_pcl_concavehull_free, sizeof(t_jit_pcl_concavehull), 0);
     
     // add matrix operator (mop)
     // args are  num inputs and num outputs
@@ -61,12 +65,12 @@ t_jit_err jit_pcl_convexhull_init(void)
     attr = (t_jit_object *)jit_object_method(mop, _jit_sym_getoutput, 1);
     jit_attr_setlong(attr, _jit_sym_dimlink,0);
     
-    jit_class_addadornment(s_jit_pcl_convexhull_class, mop);
+    jit_class_addadornment(s_jit_pcl_concavehull_class, mop);
     
     
     
     // add method(s)
-    jit_class_addmethod(s_jit_pcl_convexhull_class, (method)jit_pcl_convexhull_matrix_calc, "matrix_calc", A_CANT, 0);
+    jit_class_addmethod(s_jit_pcl_concavehull_class, (method)jit_pcl_concavehull_matrix_calc, "matrix_calc", A_CANT, 0);
     
     // add attribute(s)
     attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
@@ -74,52 +78,61 @@ t_jit_err jit_pcl_convexhull_init(void)
                                           _jit_sym_float64,
                                           attrflags,
                                           (method)NULL, (method)NULL,
-                                          calcoffset(t_jit_pcl_convexhull, leafsize));
+                                          calcoffset(t_jit_pcl_concavehull, leafsize));
     
-    jit_class_addattr(s_jit_pcl_convexhull_class, attr);
+    jit_class_addattr(s_jit_pcl_concavehull_class, attr);
     
     attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
                                           "npoints",
                                           _jit_sym_long,
                                           attrflags,
                                           (method)NULL, (method)NULL,
-                                          calcoffset(t_jit_pcl_convexhull, npoints));
+                                          calcoffset(t_jit_pcl_concavehull, npoints));
     jit_attr_addfilterget_clip(attr, 1, 10000, true, false);
-    jit_class_addattr(s_jit_pcl_convexhull_class, attr);
-   
+    jit_class_addattr(s_jit_pcl_concavehull_class, attr);
+
     attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "segment",
-                                          _jit_sym_long,
+                                          "stdthresh",
+                                          _jit_sym_float64,
                                           attrflags,
                                           (method)NULL, (method)NULL,
-                                          calcoffset(t_jit_pcl_convexhull, segment));
-    jit_attr_addfilterget_clip(attr, 1, 10000, true, false);
-    jit_class_addattr(s_jit_pcl_convexhull_class, attr);
-
+                                          calcoffset(t_jit_pcl_concavehull, stdthresh));
+    
+    jit_class_addattr(s_jit_pcl_concavehull_class, attr);
+    
+    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
+                                          "alpha",
+                                          _jit_sym_float64,
+                                          attrflags,
+                                          (method)NULL, (method)NULL,
+                                          calcoffset(t_jit_pcl_concavehull, alpha));
+    
+    jit_class_addattr(s_jit_pcl_concavehull_class, attr);
     
     // finalize class
-    jit_class_register(s_jit_pcl_convexhull_class);
+    jit_class_register(s_jit_pcl_concavehull_class);
     return JIT_ERR_NONE;
 }
 
 /************************************************************************************/
 // Object Life Cycle
 
-t_jit_pcl_convexhull *jit_pcl_convexhull_new(void)
+t_jit_pcl_concavehull *jit_pcl_concavehull_new(void)
 {
-    t_jit_pcl_convexhull	*x = NULL;
+    t_jit_pcl_concavehull	*x = NULL;
     
-    x = (t_jit_pcl_convexhull*)jit_object_alloc(s_jit_pcl_convexhull_class);
+    x = (t_jit_pcl_concavehull*)jit_object_alloc(s_jit_pcl_concavehull_class);
     if (x) {
         x->leafsize = 1.;
         x->npoints = 10;
-        x->segment = 1;
+        x->alpha = 1.;
+        
     }
     return x;
 }
 
 
-void jit_pcl_convexhull_free(t_jit_pcl_convexhull *x)
+void jit_pcl_concavehull_free(t_jit_pcl_concavehull *x)
 {
     ;	// nothing to free for our simple object
 }
@@ -129,7 +142,7 @@ void jit_pcl_convexhull_free(t_jit_pcl_convexhull *x)
 
 // conversions
 
-t_jit_err jit_pointnormals2jit(t_jit_pcl_convexhull *x, pcl::PointCloud<pcl::PointNormal>::Ptr normals, t_jit_matrix_info *out_minfo, void **out_matrix)
+t_jit_err jit_pointnormals2jit(t_jit_pcl_concavehull *x, pcl::PointCloud<pcl::PointNormal>::Ptr normals, t_jit_matrix_info *out_minfo, void **out_matrix)
 {
     char *out_bp = NULL;
     float *fop;
@@ -177,7 +190,7 @@ t_jit_err jit_pointnormals2jit(t_jit_pcl_convexhull *x, pcl::PointCloud<pcl::Poi
     
 }
 
-t_jit_err jit_cloud2jit(t_jit_pcl_convexhull *x, pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
+t_jit_err jit_cloud2jit(t_jit_pcl_concavehull *x, pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
 {
     char *out_bp = NULL;
     float *fop;
@@ -222,7 +235,7 @@ t_jit_err jit_cloud2jit(t_jit_pcl_convexhull *x, pcl::PointCloud<pcl::PointXYZ>:
     
 }
 
-t_jit_err jit_normal2jit(t_jit_pcl_convexhull *x, pcl::PointCloud<pcl::Normal>::Ptr norm, t_jit_matrix_info *out_minfo, void **out_matrix)
+t_jit_err jit_normal2jit(t_jit_pcl_concavehull *x, pcl::PointCloud<pcl::Normal>::Ptr norm, t_jit_matrix_info *out_minfo, void **out_matrix)
 {
     char *out_bp = NULL;
     float *fop;
@@ -269,7 +282,7 @@ t_jit_err jit_normal2jit(t_jit_pcl_convexhull *x, pcl::PointCloud<pcl::Normal>::
 
 /************************************************************************************/
 // Methods bound to input/inlets
-t_jit_err jit_pcl_convexhull_matrix_calc(t_jit_pcl_convexhull *x, void *inputs, void *outputs)
+t_jit_err jit_pcl_concavehull_matrix_calc(t_jit_pcl_concavehull *x, void *inputs, void *outputs)
 {
     t_jit_err			err = JIT_ERR_NONE;
     long				in_savelock;
@@ -360,19 +373,32 @@ t_jit_err jit_pcl_convexhull_matrix_calc(t_jit_pcl_convexhull *x, void *inputs, 
         {
             
             // Data
+            pcl::VoxelGrid<pcl::PointXYZ> grid;
             pcl::StatisticalOutlierRemoval<pcl::PointXYZ> sor;
+            // Data
 
             pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_pass_ (new pcl::PointCloud<pcl::PointXYZ>);
             pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_hull_ (new pcl::PointCloud<pcl::PointXYZ>);
             std::vector<pcl::Vertices> vertices_;
 
+//            grid.setFilterFieldName ("z");
+//            grid.setFilterLimits (0.0, 1.0);
+            grid.setLeafSize (x->leafsize, x->leafsize, x->leafsize);
+
+           
+            // Computation goes here
+            grid.setInputCloud (cloud);
+            grid.filter (*cloud_pass_);
+
             sor.setInputCloud(cloud);
             sor.setMeanK((int)x->npoints);
-            sor.setStddevMulThresh(x->leafsize);
+            sor.setStddevMulThresh(x->stdthresh);
             sor.filter(*cloud_pass_);
 
-            pcl::ConvexHull<pcl::PointXYZ> hr;
-            hr.setDimension(3);
+            // Estimate 3D concave hull
+            pcl::ConcaveHull<pcl::PointXYZ> hr;
+//            hr.setDimension(3);
+            hr.setAlpha (x->alpha);
             hr.setInputCloud (cloud_pass_);
 //            cloud_hull_.reset (new Cloud); << save on reallocating memory later?
             hr.reconstruct (*cloud_hull_, vertices_);
@@ -389,7 +415,7 @@ t_jit_err jit_pcl_convexhull_matrix_calc(t_jit_pcl_convexhull *x, void *inputs, 
       
         
                        // unable to make use of jitter's parallel methods since we need all the data together
-        //jit_parallel_ndim_simplecalc2((method)jit_pcl_convexhull_calculate_ndim,
+        //jit_parallel_ndim_simplecalc2((method)jit_pcl_concavehull_calculate_ndim,
         //	x, dimcount, dim, planecount, &in_minfo, in_bp, &out_minfo, out_bp,
         //	0 /* flags1 */, 0 /* flags2 */);
         
@@ -407,7 +433,7 @@ out:
 // We are using a C++ template to process a vector of the matrix for any of the given types.
 // Thus, we don't need to duplicate the code for each datatype.
 template<typename T>
-void jit_pcl_convexhull_vector(t_jit_pcl_convexhull *x, long n, t_jit_op_info *in, t_jit_op_info *out)
+void jit_pcl_concavehull_vector(t_jit_pcl_concavehull *x, long n, t_jit_op_info *in, t_jit_op_info *out)
 {
     double	gain = x->leafsize;
     T		*ip;
@@ -441,11 +467,11 @@ void jit_pcl_convexhull_vector(t_jit_pcl_convexhull *x, long n, t_jit_op_info *i
 }
 
 
-// We also use a C+ template for the loop that wraps the call to jit_pcl_convexhull_vector(),
-// further reducing code duplication in jit_pcl_convexhull_calculate_ndim().
+// We also use a C+ template for the loop that wraps the call to jit_pcl_concavehull_vector(),
+// further reducing code duplication in jit_pcl_concavehull_calculate_ndim().
 // The calls into these templates should be inlined by the compiler, eliminating concern about any added function call overhead.
 template<typename T>
-void jit_pcl_convexhull_loop(t_jit_pcl_convexhull *x, long n, t_jit_op_info *in_opinfo, t_jit_op_info *out_opinfo, t_jit_matrix_info *in_minfo, t_jit_matrix_info *out_minfo, char *bip, char *bop, long *dim, long planecount, long datasize)
+void jit_pcl_concavehull_loop(t_jit_pcl_concavehull *x, long n, t_jit_op_info *in_opinfo, t_jit_op_info *out_opinfo, t_jit_matrix_info *in_minfo, t_jit_matrix_info *out_minfo, char *bip, char *bop, long *dim, long planecount, long datasize)
 {
     long	i;
     long	j;
@@ -454,13 +480,13 @@ void jit_pcl_convexhull_loop(t_jit_pcl_convexhull *x, long n, t_jit_op_info *in_
         for (j=0; j<planecount; j++) {
             in_opinfo->p  = bip + i * in_minfo->dimstride[1]  + (j % in_minfo->planecount) * datasize;
             out_opinfo->p = bop + i * out_minfo->dimstride[1] + (j % out_minfo->planecount) * datasize;
-            jit_pcl_convexhull_vector<T>(x, n, in_opinfo, out_opinfo);
+            jit_pcl_concavehull_vector<T>(x, n, in_opinfo, out_opinfo);
         }
     }
 }
 
 
-void jit_pcl_convexhull_calculate_ndim(t_jit_pcl_convexhull *x, long dimcount, long *dim, long planecount, t_jit_matrix_info *in_minfo, char *bip, t_jit_matrix_info *out_minfo, char *bop)
+void jit_pcl_concavehull_calculate_ndim(t_jit_pcl_concavehull *x, long dimcount, long *dim, long planecount, t_jit_matrix_info *in_minfo, char *bip, t_jit_matrix_info *out_minfo, char *bop)
 {
     long			i;
     long			n;
@@ -491,19 +517,19 @@ void jit_pcl_convexhull_calculate_ndim(t_jit_pcl_convexhull *x, long dimcount, l
             }
             
             if (in_minfo->type == _jit_sym_char)
-                jit_pcl_convexhull_loop<uchar>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 1);
+                jit_pcl_concavehull_loop<uchar>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 1);
             else if (in_minfo->type == _jit_sym_long)
-                jit_pcl_convexhull_loop<long>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 4);
+                jit_pcl_concavehull_loop<long>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 4);
             else if (in_minfo->type == _jit_sym_float32)
-                jit_pcl_convexhull_loop<float>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 4);
+                jit_pcl_concavehull_loop<float>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 4);
             else if (in_minfo->type == _jit_sym_float64)
-                jit_pcl_convexhull_loop<double>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 8);
+                jit_pcl_concavehull_loop<double>(x, n, &in_opinfo, &out_opinfo, in_minfo, out_minfo, bip, bop, dim, planecount, 8);
             break;
         default:
             for	(i=0; i<dim[dimcount-1]; i++) {
                 ip = bip + i * in_minfo->dimstride[dimcount-1];
                 op = bop + i * out_minfo->dimstride[dimcount-1];
-                jit_pcl_convexhull_calculate_ndim(x, dimcount-1, dim, planecount, in_minfo, ip, out_minfo, op);
+                jit_pcl_concavehull_calculate_ndim(x, dimcount-1, dim, planecount, in_minfo, ip, out_minfo, op);
             }
     }
 }
@@ -539,7 +565,7 @@ public:
         grid.setInputCloud (cloud);
         grid.filter (*cloud_pass_);
         
-        // Estimate 3D convex hull
+        // Estimate 3D concave hull
         pcl::ConcaveHull<PointType> hr;
         hr.setAlpha (0.1);
         hr.setInputCloud (cloud_pass_);

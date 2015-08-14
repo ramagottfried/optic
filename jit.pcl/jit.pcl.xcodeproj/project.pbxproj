@@ -37,6 +37,62 @@
 		117C03DE1B7C6D500016FD07 /* libpcl_ml.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CB1B731BA800EE37CE /* libpcl_ml.1.8.0.dylib */; };
 		117C03DF1B7C6D500016FD07 /* libpcl_io_ply.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C71B731BA800EE37CE /* libpcl_io_ply.1.8.0.dylib */; };
 		117C03E81B7C6DF20016FD07 /* max.jit.pcl.convexhull.c in Sources */ = {isa = PBXBuildFile; fileRef = 117C03E71B7C6DF20016FD07 /* max.jit.pcl.convexhull.c */; };
+		117C03EE1B7D56E00016FD07 /* libpcl_octree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CC1B731BA800EE37CE /* libpcl_octree.1.8.0.dylib */; };
+		117C03EF1B7D56E00016FD07 /* libpcl_segmentation.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D31B731BA800EE37CE /* libpcl_segmentation.1.8.0.dylib */; };
+		117C03F01B7D56E00016FD07 /* libpcl_features.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C51B731BA800EE37CE /* libpcl_features.1.8.0.dylib */; };
+		117C03F11B7D56E00016FD07 /* JitterAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C11B73168C00EE37CE /* JitterAPI.framework */; };
+		117C03F21B7D56E00016FD07 /* libpcl_keypoints.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CA1B731BA800EE37CE /* libpcl_keypoints.1.8.0.dylib */; };
+		117C03F31B7D56E00016FD07 /* libpcl_search.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D21B731BA800EE37CE /* libpcl_search.1.8.0.dylib */; };
+		117C03F41B7D56E00016FD07 /* libpcl_visualization.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D71B731BA800EE37CE /* libpcl_visualization.1.8.0.dylib */; };
+		117C03F51B7D56E00016FD07 /* libpcl_outofcore.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CD1B731BA800EE37CE /* libpcl_outofcore.1.8.0.dylib */; };
+		117C03F61B7D56E00016FD07 /* libpcl_recognition.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CF1B731BA800EE37CE /* libpcl_recognition.1.8.0.dylib */; };
+		117C03F71B7D56E00016FD07 /* libpcl_kdtree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C91B731BA800EE37CE /* libpcl_kdtree.1.8.0.dylib */; };
+		117C03F81B7D56E00016FD07 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D11B731BA800EE37CE /* libpcl_sample_consensus.1.8.0.dylib */; };
+		117C03F91B7D56E00016FD07 /* libpcl_2d.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C31B731BA800EE37CE /* libpcl_2d.1.8.0.dylib */; };
+		117C03FA1B7D56E00016FD07 /* libpcl_io.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C81B731BA800EE37CE /* libpcl_io.1.8.0.dylib */; };
+		117C03FB1B7D56E00016FD07 /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0ED1B731BE000EE37CE /* libboost_system-mt.dylib */; };
+		117C03FC1B7D56E00016FD07 /* libpcl_registration.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D01B731BA800EE37CE /* libpcl_registration.1.8.0.dylib */; };
+		117C03FD1B7D56E00016FD07 /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 117C03BE1B7C6D3E0016FD07 /* libboost_thread-mt.dylib */; };
+		117C03FE1B7D56E00016FD07 /* libpcl_people.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CE1B731BA800EE37CE /* libpcl_people.1.8.0.dylib */; };
+		117C03FF1B7D56E00016FD07 /* libpcl_common.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C41B731BA800EE37CE /* libpcl_common.1.8.0.dylib */; };
+		117C04001B7D56E00016FD07 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0EE1B731BE000EE37CE /* libboost_system.dylib */; };
+		117C04011B7D56E00016FD07 /* libiomp5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 114B80DF1B7AD27700E347E8 /* libiomp5.dylib */; };
+		117C04021B7D56E00016FD07 /* libpcl_stereo.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D41B731BA800EE37CE /* libpcl_stereo.1.8.0.dylib */; };
+		117C04031B7D56E00016FD07 /* libpcl_filters.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C61B731BA800EE37CE /* libpcl_filters.1.8.0.dylib */; };
+		117C04041B7D56E00016FD07 /* libpcl_tracking.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D61B731BA800EE37CE /* libpcl_tracking.1.8.0.dylib */; };
+		117C04051B7D56E00016FD07 /* libpcl_surface.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D51B731BA800EE37CE /* libpcl_surface.1.8.0.dylib */; };
+		117C04061B7D56E00016FD07 /* libpcl_ml.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CB1B731BA800EE37CE /* libpcl_ml.1.8.0.dylib */; };
+		117C04071B7D56E00016FD07 /* libpcl_io_ply.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C71B731BA800EE37CE /* libpcl_io_ply.1.8.0.dylib */; };
+		117C04121B7D578D0016FD07 /* jit.pcl.concavehull.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 117C040F1B7D578D0016FD07 /* jit.pcl.concavehull.cpp */; };
+		117C04131B7D578D0016FD07 /* max.jit.pcl.concavehull.c in Sources */ = {isa = PBXBuildFile; fileRef = 117C04101B7D578D0016FD07 /* max.jit.pcl.concavehull.c */; };
+		117C043D1B7D60CC0016FD07 /* libpcl_octree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CC1B731BA800EE37CE /* libpcl_octree.1.8.0.dylib */; };
+		117C043E1B7D60CC0016FD07 /* libpcl_segmentation.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D31B731BA800EE37CE /* libpcl_segmentation.1.8.0.dylib */; };
+		117C043F1B7D60CC0016FD07 /* libpcl_features.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C51B731BA800EE37CE /* libpcl_features.1.8.0.dylib */; };
+		117C04401B7D60CC0016FD07 /* JitterAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C11B73168C00EE37CE /* JitterAPI.framework */; };
+		117C04411B7D60CC0016FD07 /* libpcl_keypoints.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CA1B731BA800EE37CE /* libpcl_keypoints.1.8.0.dylib */; };
+		117C04421B7D60CC0016FD07 /* libpcl_search.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D21B731BA800EE37CE /* libpcl_search.1.8.0.dylib */; };
+		117C04431B7D60CC0016FD07 /* libpcl_visualization.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D71B731BA800EE37CE /* libpcl_visualization.1.8.0.dylib */; };
+		117C04441B7D60CC0016FD07 /* libpcl_outofcore.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CD1B731BA800EE37CE /* libpcl_outofcore.1.8.0.dylib */; };
+		117C04451B7D60CC0016FD07 /* libpcl_recognition.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CF1B731BA800EE37CE /* libpcl_recognition.1.8.0.dylib */; };
+		117C04461B7D60CC0016FD07 /* libpcl_kdtree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C91B731BA800EE37CE /* libpcl_kdtree.1.8.0.dylib */; };
+		117C04471B7D60CC0016FD07 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D11B731BA800EE37CE /* libpcl_sample_consensus.1.8.0.dylib */; };
+		117C04481B7D60CC0016FD07 /* libpcl_2d.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C31B731BA800EE37CE /* libpcl_2d.1.8.0.dylib */; };
+		117C04491B7D60CC0016FD07 /* libpcl_io.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C81B731BA800EE37CE /* libpcl_io.1.8.0.dylib */; };
+		117C044A1B7D60CC0016FD07 /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0ED1B731BE000EE37CE /* libboost_system-mt.dylib */; };
+		117C044B1B7D60CC0016FD07 /* libpcl_registration.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D01B731BA800EE37CE /* libpcl_registration.1.8.0.dylib */; };
+		117C044C1B7D60CC0016FD07 /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 117C03BE1B7C6D3E0016FD07 /* libboost_thread-mt.dylib */; };
+		117C044D1B7D60CC0016FD07 /* libpcl_people.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CE1B731BA800EE37CE /* libpcl_people.1.8.0.dylib */; };
+		117C044E1B7D60CC0016FD07 /* libpcl_common.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C41B731BA800EE37CE /* libpcl_common.1.8.0.dylib */; };
+		117C044F1B7D60CC0016FD07 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0EE1B731BE000EE37CE /* libboost_system.dylib */; };
+		117C04501B7D60CC0016FD07 /* libiomp5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 114B80DF1B7AD27700E347E8 /* libiomp5.dylib */; };
+		117C04511B7D60CC0016FD07 /* libpcl_stereo.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D41B731BA800EE37CE /* libpcl_stereo.1.8.0.dylib */; };
+		117C04521B7D60CC0016FD07 /* libpcl_filters.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C61B731BA800EE37CE /* libpcl_filters.1.8.0.dylib */; };
+		117C04531B7D60CC0016FD07 /* libpcl_tracking.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D61B731BA800EE37CE /* libpcl_tracking.1.8.0.dylib */; };
+		117C04541B7D60CC0016FD07 /* libpcl_surface.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D51B731BA800EE37CE /* libpcl_surface.1.8.0.dylib */; };
+		117C04551B7D60CC0016FD07 /* libpcl_ml.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CB1B731BA800EE37CE /* libpcl_ml.1.8.0.dylib */; };
+		117C04561B7D60CC0016FD07 /* libpcl_io_ply.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C71B731BA800EE37CE /* libpcl_io_ply.1.8.0.dylib */; };
+		117C04611B7D61540016FD07 /* jit.pcl.segment.color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 117C045E1B7D61540016FD07 /* jit.pcl.segment.color.cpp */; };
+		117C04621B7D61540016FD07 /* max.jit.pcl.segment.color.c in Sources */ = {isa = PBXBuildFile; fileRef = 117C045F1B7D61540016FD07 /* max.jit.pcl.segment.color.c */; };
 		11A3F0BF1B7315B400EE37CE /* jit.pcl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11A3F0BD1B7315B400EE37CE /* jit.pcl.cpp */; };
 		11A3F0C01B7315B400EE37CE /* max.jit.pcl.c in Sources */ = {isa = PBXBuildFile; fileRef = 11A3F0BE1B7315B400EE37CE /* max.jit.pcl.c */; };
 		11A3F0C21B73168C00EE37CE /* JitterAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C11B73168C00EE37CE /* JitterAPI.framework */; };
@@ -63,7 +119,6 @@
 		11A3F0EC1B731BA800EE37CE /* libpcl_visualization.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D71B731BA800EE37CE /* libpcl_visualization.1.8.0.dylib */; };
 		11A3F0EF1B731BE000EE37CE /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0ED1B731BE000EE37CE /* libboost_system-mt.dylib */; };
 		11A3F0F01B731BE000EE37CE /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0EE1B731BE000EE37CE /* libboost_system.dylib */; };
-		11B481F31B7A6F350006EFE5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11B481F21B7A6F350006EFE5 /* Info.plist */; };
 		11D23F9D1B770F3200CF463D /* libpcl_octree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CC1B731BA800EE37CE /* libpcl_octree.1.8.0.dylib */; };
 		11D23F9E1B770F3200CF463D /* libpcl_segmentation.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D31B731BA800EE37CE /* libpcl_segmentation.1.8.0.dylib */; };
 		11D23F9F1B770F3200CF463D /* libpcl_features.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C51B731BA800EE37CE /* libpcl_features.1.8.0.dylib */; };
@@ -97,10 +152,14 @@
 		117C03BC1B7C626E0016FD07 /* jit.pcl.convexhull.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jit.pcl.convexhull.cpp; path = jit.pcl.convexhull/jit.pcl.convexhull.cpp; sourceTree = SOURCE_ROOT; };
 		117C03BE1B7C6D3E0016FD07 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "/usr/local/Cellar/boost/1.58.0/lib/libboost_thread-mt.dylib"; sourceTree = "<absolute>"; };
 		117C03E41B7C6D500016FD07 /* jit.pcl.convexhull.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.pcl.convexhull.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		117C03E51B7C6D510016FD07 /* jit.pcl copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "jit.pcl copy-Info.plist"; path = "/Users/r/Documents/dev-lib/__r-repo/optic/jit.pcl/jit.pcl copy-Info.plist"; sourceTree = "<absolute>"; };
 		117C03E71B7C6DF20016FD07 /* max.jit.pcl.convexhull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = max.jit.pcl.convexhull.c; path = jit.pcl.convexhull/max.jit.pcl.convexhull.c; sourceTree = "<group>"; };
+		117C040C1B7D56E00016FD07 /* jit.pcl.concavehull.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.pcl.concavehull.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		117C040F1B7D578D0016FD07 /* jit.pcl.concavehull.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jit.pcl.concavehull.cpp; path = jit.pcl.concavehull/jit.pcl.concavehull.cpp; sourceTree = SOURCE_ROOT; };
+		117C04101B7D578D0016FD07 /* max.jit.pcl.concavehull.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = max.jit.pcl.concavehull.c; path = jit.pcl.concavehull/max.jit.pcl.concavehull.c; sourceTree = SOURCE_ROOT; };
+		117C045C1B7D60CC0016FD07 /* jit.pcl.segment.color.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.pcl.segment.color.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		117C045E1B7D61540016FD07 /* jit.pcl.segment.color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jit.pcl.segment.color.cpp; path = jit.pcl.segment.color/jit.pcl.segment.color.cpp; sourceTree = "<group>"; };
+		117C045F1B7D61540016FD07 /* max.jit.pcl.segment.color.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = max.jit.pcl.segment.color.c; path = jit.pcl.segment.color/max.jit.pcl.segment.color.c; sourceTree = "<group>"; };
 		11A3F0B31B7314BB00EE37CE /* jit.pcl.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.pcl.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		11A3F0B71B7314BB00EE37CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11A3F0BD1B7315B400EE37CE /* jit.pcl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jit.pcl.cpp; sourceTree = "<group>"; };
 		11A3F0BE1B7315B400EE37CE /* max.jit.pcl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = max.jit.pcl.c; sourceTree = "<group>"; };
 		11A3F0C11B73168C00EE37CE /* JitterAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JitterAPI.framework; path = "../../../max6-sdk/c74support/jit-includes/JitterAPI.framework"; sourceTree = "<group>"; };
@@ -127,7 +186,6 @@
 		11A3F0D71B731BA800EE37CE /* libpcl_visualization.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_visualization.1.8.0.dylib; path = /usr/local/lib/libpcl_visualization.1.8.0.dylib; sourceTree = "<absolute>"; };
 		11A3F0ED1B731BE000EE37CE /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "/usr/local/Cellar/boost/1.58.0/lib/libboost_system-mt.dylib"; sourceTree = "<absolute>"; };
 		11A3F0EE1B731BE000EE37CE /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = /usr/local/Cellar/boost/1.58.0/lib/libboost_system.dylib; sourceTree = "<absolute>"; };
-		11B481F21B7A6F350006EFE5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = jit.freenect.pcl/Info.plist; sourceTree = "<group>"; };
 		11D23FB91B770F3200CF463D /* jit.freenect.pcl.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.freenect.pcl.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D23FBD1B770F8E00CF463D /* jit.freenect.pcl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jit.freenect.pcl.cpp; path = jit.freenect.pcl/jit.freenect.pcl.cpp; sourceTree = "<group>"; };
 		11D23FBE1B770F8E00CF463D /* max.jit.freenect.pcl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = max.jit.freenect.pcl.c; path = jit.freenect.pcl/max.jit.freenect.pcl.c; sourceTree = "<group>"; };
@@ -164,6 +222,72 @@
 				117C03DD1B7C6D500016FD07 /* libpcl_surface.1.8.0.dylib in Frameworks */,
 				117C03DE1B7C6D500016FD07 /* libpcl_ml.1.8.0.dylib in Frameworks */,
 				117C03DF1B7C6D500016FD07 /* libpcl_io_ply.1.8.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		117C03ED1B7D56E00016FD07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				117C03EE1B7D56E00016FD07 /* libpcl_octree.1.8.0.dylib in Frameworks */,
+				117C03EF1B7D56E00016FD07 /* libpcl_segmentation.1.8.0.dylib in Frameworks */,
+				117C03F01B7D56E00016FD07 /* libpcl_features.1.8.0.dylib in Frameworks */,
+				117C03F11B7D56E00016FD07 /* JitterAPI.framework in Frameworks */,
+				117C03F21B7D56E00016FD07 /* libpcl_keypoints.1.8.0.dylib in Frameworks */,
+				117C03F31B7D56E00016FD07 /* libpcl_search.1.8.0.dylib in Frameworks */,
+				117C03F41B7D56E00016FD07 /* libpcl_visualization.1.8.0.dylib in Frameworks */,
+				117C03F51B7D56E00016FD07 /* libpcl_outofcore.1.8.0.dylib in Frameworks */,
+				117C03F61B7D56E00016FD07 /* libpcl_recognition.1.8.0.dylib in Frameworks */,
+				117C03F71B7D56E00016FD07 /* libpcl_kdtree.1.8.0.dylib in Frameworks */,
+				117C03F81B7D56E00016FD07 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */,
+				117C03F91B7D56E00016FD07 /* libpcl_2d.1.8.0.dylib in Frameworks */,
+				117C03FA1B7D56E00016FD07 /* libpcl_io.1.8.0.dylib in Frameworks */,
+				117C03FB1B7D56E00016FD07 /* libboost_system-mt.dylib in Frameworks */,
+				117C03FC1B7D56E00016FD07 /* libpcl_registration.1.8.0.dylib in Frameworks */,
+				117C03FD1B7D56E00016FD07 /* libboost_thread-mt.dylib in Frameworks */,
+				117C03FE1B7D56E00016FD07 /* libpcl_people.1.8.0.dylib in Frameworks */,
+				117C03FF1B7D56E00016FD07 /* libpcl_common.1.8.0.dylib in Frameworks */,
+				117C04001B7D56E00016FD07 /* libboost_system.dylib in Frameworks */,
+				117C04011B7D56E00016FD07 /* libiomp5.dylib in Frameworks */,
+				117C04021B7D56E00016FD07 /* libpcl_stereo.1.8.0.dylib in Frameworks */,
+				117C04031B7D56E00016FD07 /* libpcl_filters.1.8.0.dylib in Frameworks */,
+				117C04041B7D56E00016FD07 /* libpcl_tracking.1.8.0.dylib in Frameworks */,
+				117C04051B7D56E00016FD07 /* libpcl_surface.1.8.0.dylib in Frameworks */,
+				117C04061B7D56E00016FD07 /* libpcl_ml.1.8.0.dylib in Frameworks */,
+				117C04071B7D56E00016FD07 /* libpcl_io_ply.1.8.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		117C043C1B7D60CC0016FD07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				117C043D1B7D60CC0016FD07 /* libpcl_octree.1.8.0.dylib in Frameworks */,
+				117C043E1B7D60CC0016FD07 /* libpcl_segmentation.1.8.0.dylib in Frameworks */,
+				117C043F1B7D60CC0016FD07 /* libpcl_features.1.8.0.dylib in Frameworks */,
+				117C04401B7D60CC0016FD07 /* JitterAPI.framework in Frameworks */,
+				117C04411B7D60CC0016FD07 /* libpcl_keypoints.1.8.0.dylib in Frameworks */,
+				117C04421B7D60CC0016FD07 /* libpcl_search.1.8.0.dylib in Frameworks */,
+				117C04431B7D60CC0016FD07 /* libpcl_visualization.1.8.0.dylib in Frameworks */,
+				117C04441B7D60CC0016FD07 /* libpcl_outofcore.1.8.0.dylib in Frameworks */,
+				117C04451B7D60CC0016FD07 /* libpcl_recognition.1.8.0.dylib in Frameworks */,
+				117C04461B7D60CC0016FD07 /* libpcl_kdtree.1.8.0.dylib in Frameworks */,
+				117C04471B7D60CC0016FD07 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */,
+				117C04481B7D60CC0016FD07 /* libpcl_2d.1.8.0.dylib in Frameworks */,
+				117C04491B7D60CC0016FD07 /* libpcl_io.1.8.0.dylib in Frameworks */,
+				117C044A1B7D60CC0016FD07 /* libboost_system-mt.dylib in Frameworks */,
+				117C044B1B7D60CC0016FD07 /* libpcl_registration.1.8.0.dylib in Frameworks */,
+				117C044C1B7D60CC0016FD07 /* libboost_thread-mt.dylib in Frameworks */,
+				117C044D1B7D60CC0016FD07 /* libpcl_people.1.8.0.dylib in Frameworks */,
+				117C044E1B7D60CC0016FD07 /* libpcl_common.1.8.0.dylib in Frameworks */,
+				117C044F1B7D60CC0016FD07 /* libboost_system.dylib in Frameworks */,
+				117C04501B7D60CC0016FD07 /* libiomp5.dylib in Frameworks */,
+				117C04511B7D60CC0016FD07 /* libpcl_stereo.1.8.0.dylib in Frameworks */,
+				117C04521B7D60CC0016FD07 /* libpcl_filters.1.8.0.dylib in Frameworks */,
+				117C04531B7D60CC0016FD07 /* libpcl_tracking.1.8.0.dylib in Frameworks */,
+				117C04541B7D60CC0016FD07 /* libpcl_surface.1.8.0.dylib in Frameworks */,
+				117C04551B7D60CC0016FD07 /* libpcl_ml.1.8.0.dylib in Frameworks */,
+				117C04561B7D60CC0016FD07 /* libpcl_io_ply.1.8.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,15 +367,35 @@
 			name = jit.pcl.convexhull;
 			sourceTree = "<group>";
 		};
+		117C040D1B7D576F0016FD07 /* jit.pcl.concavehull */ = {
+			isa = PBXGroup;
+			children = (
+				117C040F1B7D578D0016FD07 /* jit.pcl.concavehull.cpp */,
+				117C04101B7D578D0016FD07 /* max.jit.pcl.concavehull.c */,
+			);
+			name = jit.pcl.concavehull;
+			path = jit.pcl;
+			sourceTree = "<group>";
+		};
+		117C04631B7D61590016FD07 /* jit.pcl.segment.color */ = {
+			isa = PBXGroup;
+			children = (
+				117C045E1B7D61540016FD07 /* jit.pcl.segment.color.cpp */,
+				117C045F1B7D61540016FD07 /* max.jit.pcl.segment.color.c */,
+			);
+			name = jit.pcl.segment.color;
+			sourceTree = "<group>";
+		};
 		11A3F0AA1B7314BB00EE37CE = {
 			isa = PBXGroup;
 			children = (
 				11A3F0F11B731BEA00EE37CE /* lib */,
+				117C040D1B7D576F0016FD07 /* jit.pcl.concavehull */,
 				117C03E61B7C6DE00016FD07 /* jit.pcl.convexhull */,
+				117C04631B7D61590016FD07 /* jit.pcl.segment.color */,
 				11B481F11B7A6EB40006EFE5 /* jit.freenect.pcl */,
 				11A3F0B51B7314BB00EE37CE /* jit.pcl */,
 				11A3F0B41B7314BB00EE37CE /* Products */,
-				117C03E51B7C6D510016FD07 /* jit.pcl copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,6 +405,8 @@
 				11A3F0B31B7314BB00EE37CE /* jit.pcl.mxo */,
 				11D23FB91B770F3200CF463D /* jit.freenect.pcl.mxo */,
 				117C03E41B7C6D500016FD07 /* jit.pcl.convexhull.mxo */,
+				117C040C1B7D56E00016FD07 /* jit.pcl.concavehull.mxo */,
+				117C045C1B7D60CC0016FD07 /* jit.pcl.segment.color.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,7 +416,6 @@
 			children = (
 				11A3F0BD1B7315B400EE37CE /* jit.pcl.cpp */,
 				11A3F0BE1B7315B400EE37CE /* max.jit.pcl.c */,
-				11A3F0B71B7314BB00EE37CE /* Info.plist */,
 			);
 			path = jit.pcl;
 			sourceTree = "<group>";
@@ -311,7 +456,6 @@
 		11B481F11B7A6EB40006EFE5 /* jit.freenect.pcl */ = {
 			isa = PBXGroup;
 			children = (
-				11B481F21B7A6F350006EFE5 /* Info.plist */,
 				11D23FBD1B770F8E00CF463D /* jit.freenect.pcl.cpp */,
 				11D23FBE1B770F8E00CF463D /* max.jit.freenect.pcl.c */,
 			);
@@ -336,6 +480,40 @@
 			name = jit.pcl.convexhull;
 			productName = jit.pcl;
 			productReference = 117C03E41B7C6D500016FD07 /* jit.pcl.convexhull.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		117C03E91B7D56E00016FD07 /* jit.pcl.concavehull */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 117C04091B7D56E00016FD07 /* Build configuration list for PBXNativeTarget "jit.pcl.concavehull" */;
+			buildPhases = (
+				117C03EA1B7D56E00016FD07 /* Sources */,
+				117C03ED1B7D56E00016FD07 /* Frameworks */,
+				117C04081B7D56E00016FD07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jit.pcl.concavehull;
+			productName = jit.pcl;
+			productReference = 117C040C1B7D56E00016FD07 /* jit.pcl.concavehull.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		117C04381B7D60CC0016FD07 /* jit.pcl.segment.color */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 117C04591B7D60CC0016FD07 /* Build configuration list for PBXNativeTarget "jit.pcl.segment.color" */;
+			buildPhases = (
+				117C04391B7D60CC0016FD07 /* Sources */,
+				117C043C1B7D60CC0016FD07 /* Frameworks */,
+				117C04571B7D60CC0016FD07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jit.pcl.segment.color;
+			productName = jit.pcl;
+			productReference = 117C045C1B7D60CC0016FD07 /* jit.pcl.segment.color.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
 		11A3F0B21B7314BB00EE37CE /* jit.pcl */ = {
@@ -401,12 +579,28 @@
 				11A3F0B21B7314BB00EE37CE /* jit.pcl */,
 				11D23F981B770F3200CF463D /* jit.freenect.pcl */,
 				117C03C01B7C6D500016FD07 /* jit.pcl.convexhull */,
+				117C03E91B7D56E00016FD07 /* jit.pcl.concavehull */,
+				117C04381B7D60CC0016FD07 /* jit.pcl.segment.color */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		117C03E01B7C6D500016FD07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		117C04081B7D56E00016FD07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		117C04571B7D60CC0016FD07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,7 +618,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11B481F31B7A6F350006EFE5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +630,24 @@
 			files = (
 				117C03C31B7C6D500016FD07 /* jit.pcl.convexhull.cpp in Sources */,
 				117C03E81B7C6DF20016FD07 /* max.jit.pcl.convexhull.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		117C03EA1B7D56E00016FD07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				117C04131B7D578D0016FD07 /* max.jit.pcl.concavehull.c in Sources */,
+				117C04121B7D578D0016FD07 /* jit.pcl.concavehull.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		117C04391B7D60CC0016FD07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				117C04611B7D61540016FD07 /* jit.pcl.segment.color.cpp in Sources */,
+				117C04621B7D61540016FD07 /* max.jit.pcl.segment.color.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +763,210 @@
 					"-fopenmp",
 				);
 				PRODUCT_NAME = jit.pcl.convexhull;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Release;
+		};
+		117C040A1B7D56E00016FD07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
+					/Library/Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../../max6-sdk/c74support/jit-includes",
+					"../../../max6-sdk/c74support/max-includes",
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+				);
+				INFOPLIST_FILE = "$(inherited)";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DNO_TRANSLATION_SUPPORT",
+					"-fopenmp",
+				);
+				PRODUCT_NAME = jit.pcl.concavehull;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Debug;
+		};
+		117C040B1B7D56E00016FD07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
+					/Library/Frameworks,
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../../max6-sdk/c74support/jit-includes",
+					"../../../max6-sdk/c74support/max-includes",
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+				);
+				INFOPLIST_FILE = "$(inherited)";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DNO_TRANSLATION_SUPPORT",
+					"-fopenmp",
+				);
+				PRODUCT_NAME = jit.pcl.concavehull;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Release;
+		};
+		117C045A1B7D60CC0016FD07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
+					/Library/Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../../max6-sdk/c74support/jit-includes",
+					"../../../max6-sdk/c74support/max-includes",
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+				);
+				INFOPLIST_FILE = "$(inherited)";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DNO_TRANSLATION_SUPPORT",
+					"-fopenmp",
+				);
+				PRODUCT_NAME = jit.pcl.segment.color;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Debug;
+		};
+		117C045B1B7D60CC0016FD07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
+					/Library/Frameworks,
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../../max6-sdk/c74support/jit-includes",
+					"../../../max6-sdk/c74support/max-includes",
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+				);
+				INFOPLIST_FILE = "$(inherited)";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DNO_TRANSLATION_SUPPORT",
+					"-fopenmp",
+				);
+				PRODUCT_NAME = jit.pcl.segment.color;
 				SDKROOT = macosx10.9;
 				SKIP_INSTALL = YES;
 				WARNING_CFLAGS = (
@@ -896,6 +1311,24 @@
 			buildConfigurations = (
 				117C03E21B7C6D500016FD07 /* Debug */,
 				117C03E31B7C6D500016FD07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		117C04091B7D56E00016FD07 /* Build configuration list for PBXNativeTarget "jit.pcl.concavehull" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				117C040A1B7D56E00016FD07 /* Debug */,
+				117C040B1B7D56E00016FD07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		117C04591B7D60CC0016FD07 /* Build configuration list for PBXNativeTarget "jit.pcl.segment.color" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				117C045A1B7D60CC0016FD07 /* Debug */,
+				117C045B1B7D60CC0016FD07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
