@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 77.0, 1281.0, 935.0 ],
+		"rect" : [ 0.0, 43.0, 1385.0, 997.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -248,10 +248,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 91.0, 119.0, 181.0, 24.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 107, 105, 110, 101, 99, 116, 50, 47, 105, 110, 105, 116, 0, 0, 0, 44, 115, 0, 0, 98, 97, 110, 103, 0, 0, 0, 0 ],
+					"patching_rect" : [ 90.0, 118.0, 188.0, 24.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 115, 101, 116, 116, 105, 110, 103, 115, 47, 105, 110, 105, 116, 0, 0, 44, 115, 0, 0, 98, 97, 110, 103, 0, 0, 0, 0 ],
 					"saved_bundle_length" : 48,
-					"text" : "/kinect2/init : \"bang\"",
+					"text" : "/settings/init : \"bang\"",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -354,7 +354,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 806.5, 696.5, 219.0, 48.0 ],
 					"style" : "",
-					"text" : "server OSC receive port: 3333\nclient OSC receive port: 4444\nclient jitter receive port: 5555"
+					"text" : "server OSC receive port: 3002\nclient OSC receive port: 4000\nclient jitter receive port: 4002 (kinect 2)"
 				}
 
 			}
@@ -412,7 +412,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 984.5, 213.5, 34.0, 22.0 ],
+					"patching_rect" : [ 984.5, 161.0, 34.0, 22.0 ],
 					"style" : "",
 					"text" : "eth1"
 				}
@@ -856,6 +856,7 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-4",
@@ -864,7 +865,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 826.0, 637.5, 180.0, 22.0 ],
 					"style" : "",
-					"text" : "udpsend 255.255.255.255 4444"
+					"text" : "udpsend 255.255.255.255 4000"
 				}
 
 			}
@@ -874,21 +875,22 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-2",
-					"linecount" : 10,
+					"linecount" : 9,
 					"maxclass" : "o.compose",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1211.5, 275.5, 362.0, 146.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 32, 115, 101, 116, 32, 111, 110, 32, 108, 111, 97, 100, 0, 0, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 13, 5, 0, 0, 0, 32, 47, 115, 101, 110, 100, 116, 111, 47, 107, 105, 110, 101, 99, 116, 50, 47, 112, 111, 114, 116, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 26, 10, 0, 0, 0, 108, 47, 100, 111, 99, 0, 0, 0, 0, 44, 115, 0, 0, 116, 111, 32, 97, 99, 116, 105, 118, 97, 116, 101, 32, 100, 97, 116, 97, 32, 115, 117, 98, 115, 99, 114, 105, 112, 116, 105, 111, 110, 44, 32, 115, 101, 110, 100, 32, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 32, 118, 97, 108, 117, 101, 32, 111, 110, 99, 101, 32, 101, 118, 101, 114, 121, 32, 53, 32, 115, 101, 99, 111, 110, 100, 115, 44, 32, 119, 105, 116, 104, 32, 115, 116, 114, 101, 97, 109, 32, 114, 101, 113, 117, 101, 115, 116, 115, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 121, 111, 117, 114, 32, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 0, 0, 0, 0, 36, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 0, 44, 115, 0, 0, 112, 111, 114, 116, 32, 110, 117, 109, 98, 101, 114, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 44, 115, 0, 0, 116, 114, 117, 101, 47, 102, 97, 108, 115, 101, 0, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 106, 105, 116, 116, 101, 114, 0, 0, 0, 44, 115, 0, 0, 116, 114, 117, 101, 47, 102, 97, 108, 115, 101, 0, 0 ],
-					"saved_bundle_length" : 420,
-					"text" : "/sendto/server/ip : \"ip address set on load\",\n/sendto/server/port : 3333,\n/sendto/kinect2/port : 6666,\n/doc : \"to activate data subscription, send /active/ip value once every 5 seconds, with stream requests\",\n/server/active/ip : \"your ip address\",\n/server/active/port : \"port number\",\n/server/active/skeleton : \"true/false\",\n/server/active/jitter : \"true/false\"",
+					"patching_rect" : [ 1211.5, 275.5, 362.0, 133.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 32, 115, 101, 116, 32, 111, 110, 32, 108, 111, 97, 100, 0, 0, 0, 0, 0, 28, 47, 115, 101, 110, 100, 116, 111, 47, 115, 101, 114, 118, 101, 114, 47, 112, 111, 114, 116, 0, 44, 105, 0, 0, 0, 0, 11, -70, 0, 0, 0, 108, 47, 100, 111, 99, 0, 0, 0, 0, 44, 115, 0, 0, 116, 111, 32, 97, 99, 116, 105, 118, 97, 116, 101, 32, 100, 97, 116, 97, 32, 115, 117, 98, 115, 99, 114, 105, 112, 116, 105, 111, 110, 44, 32, 115, 101, 110, 100, 32, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 32, 118, 97, 108, 117, 101, 32, 111, 110, 99, 101, 32, 101, 118, 101, 114, 121, 32, 53, 32, 115, 101, 99, 111, 110, 100, 115, 44, 32, 119, 105, 116, 104, 32, 115, 116, 114, 101, 97, 109, 32, 114, 101, 113, 117, 101, 115, 116, 115, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 105, 112, 0, 0, 0, 44, 115, 0, 0, 121, 111, 117, 114, 32, 105, 112, 32, 97, 100, 100, 114, 101, 115, 115, 0, 0, 0, 0, 36, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 112, 111, 114, 116, 0, 44, 115, 0, 0, 112, 111, 114, 116, 32, 110, 117, 109, 98, 101, 114, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 44, 115, 0, 0, 116, 114, 117, 101, 47, 102, 97, 108, 115, 101, 0, 0, 0, 0, 0, 40, 47, 115, 101, 114, 118, 101, 114, 47, 97, 99, 116, 105, 118, 101, 47, 106, 105, 116, 116, 101, 114, 0, 0, 0, 44, 115, 0, 0, 116, 114, 117, 101, 47, 102, 97, 108, 115, 101, 0, 0 ],
+					"saved_bundle_length" : 384,
+					"text" : "/sendto/server/ip : \"ip address set on load\",\n/sendto/server/port : 3002,\n/doc : \"to activate data subscription, send /active/ip value once every 5 seconds, with stream requests\",\n/server/active/ip : \"your ip address\",\n/server/active/port : \"port number\",\n/server/active/skeleton : \"true/false\",\n/server/active/jitter : \"true/false\"",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-1",
@@ -896,9 +898,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 826.0, 598.0, 87.0, 22.0 ],
+					"patching_rect" : [ 826.0, 598.0, 129.0, 22.0 ],
 					"style" : "",
-					"text" : "o.prepend /api"
+					"text" : "o.prepend /api/kinect2"
 				}
 
 			}
@@ -1110,6 +1112,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -1118,9 +1121,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -1465,15 +1468,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -2163,6 +2167,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -2171,9 +2176,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -2518,15 +2523,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -3216,6 +3222,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -3224,9 +3231,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -3571,15 +3578,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -4269,6 +4277,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -4277,9 +4286,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -4624,15 +4633,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -5322,6 +5332,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -5330,9 +5341,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -5677,15 +5688,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -6375,6 +6387,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -6383,9 +6396,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -6730,15 +6743,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -7428,6 +7442,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -7436,9 +7451,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -7783,15 +7798,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -8481,6 +8497,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -8489,9 +8506,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -8836,15 +8853,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -9534,6 +9552,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -9542,9 +9561,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -9889,15 +9908,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -10587,6 +10607,7 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
@@ -10595,9 +10616,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 664.0, 740.0, 88.0, 50.0 ],
+													"patching_rect" : [ 664.0, 740.0, 89.0, 50.0 ],
 													"style" : "",
-													"text" : "jit.net.send @ip 127.0.0.1 @port 5555"
+													"text" : "jit.net.send @ip 127.0.0.1 @port 4002"
 												}
 
 											}
@@ -10942,15 +10963,16 @@
 											}
 , 											{
 												"box" : 												{
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-72",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 357.0, 760.0, 140.0, 22.0 ],
+													"patching_rect" : [ 357.0, 761.0, 140.0, 22.0 ],
 													"style" : "",
-													"text" : "udpsend 127.1.1.1 4444"
+													"text" : "udpsend 127.1.1.1 4000"
 												}
 
 											}
@@ -11849,15 +11871,15 @@
 					"fontface" : 0,
 					"fontsize" : 12.0,
 					"id" : "obj-42",
-					"linecount" : 4,
+					"linecount" : 5,
 					"maxclass" : "o.compose",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 9.666626, 701.5, 642.0, 65.0 ],
-					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 115, 116, 97, 116, 101, 115, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 105, 112, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 0, 0, 0, 24, 47, 97, 108, 108, 47, 106, 105, 116, 116, 101, 114, 0, 44, 84, 70, 70, 70, 70, 70, 70, 70, 70, 70, 0, 0, 0, 0, 28, 47, 97, 108, 108, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 0, 0, 44, 84, 70, 70, 70, 70, 70, 70, 70, 70, 70, 0 ],
-					"saved_bundle_length" : 212,
-					"text" : "/all/states : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ips : [\"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\"],\n/all/jitter : [true, false, false, false, false, false, false, false, false, false],\n/all/skeleton : [true, false, false, false, false, false, false, false, false, false]",
+					"patching_rect" : [ 9.666626, 701.5, 642.0, 78.0 ],
+					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 115, 116, 97, 116, 101, 115, 0, 44, 105, 105, 105, 105, 105, 105, 105, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 47, 97, 108, 108, 47, 105, 112, 115, 0, 0, 0, 0, 44, 115, 115, 115, 115, 115, 115, 115, 115, 115, 115, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 120, 0, 0, 0, 0, 0, 0, 24, 47, 97, 108, 108, 47, 106, 105, 116, 116, 101, 114, 0, 44, 84, 70, 70, 70, 70, 70, 70, 70, 70, 70, 0, 0, 0, 0, 28, 47, 97, 108, 108, 47, 115, 107, 101, 108, 101, 116, 111, 110, 0, 0, 0, 44, 84, 70, 70, 70, 70, 70, 70, 70, 70, 70, 0, 0, 0, 0, 24, 47, 97, 108, 108, 47, 105, 100, 47, 107, 105, 108, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0 ],
+					"saved_bundle_length" : 240,
+					"text" : "/all/states : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n/all/ips : [\"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\", \"x\"],\n/all/jitter : [true, false, false, false, false, false, false, false, false, false],\n/all/skeleton : [true, false, false, false, false, false, false, false, false, false],\n/all/id/kill : 0",
 					"textcolor" : [ 0.188, 0.188, 0.188, 1.0 ]
 				}
 
@@ -12215,7 +12237,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 67.0, 85.0, 1451.0, 913.0 ],
+						"rect" : [ 647.0, 187.0, 403.0, 599.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -12290,9 +12312,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "FullPacket" ],
-									"patching_rect" : [ 263.583374, 289.362061, 129.0, 22.0 ],
+									"patching_rect" : [ 263.583374, 289.362061, 132.0, 22.0 ],
 									"style" : "",
-									"text" : "o.prepend /api/kinect2"
+									"text" : "o.prepend /api/settings"
 								}
 
 							}
@@ -12644,7 +12666,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 778.166626, 1000.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "3686 1"
+									"text" : "5793 1"
 								}
 
 							}
@@ -12782,7 +12804,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 989.666626, 693.5, 54.0, 22.0 ],
 									"style" : "",
-									"text" : "46077 1"
+									"text" : "62298 1"
 								}
 
 							}
@@ -12952,17 +12974,18 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-1",
-									"linecount" : 12,
+									"linecount" : 14,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 7,
 									"outlettype" : [ "jit_matrix", "jit_matrix", "jit_matrix", "jit_matrix", "jit_matrix", "", "" ],
-									"patching_rect" : [ 50.0, 260.0, 117.166687, 174.0 ],
+									"patching_rect" : [ 50.0, 244.0, 117.166687, 202.0 ],
 									"style" : "",
-									"text" : "dp.kinect2 gldepth @depthmap 0 @depthmapres 0 @type float32 @colormap 1 @colormapres 4 @align 1 @skeletonformat 0 @playermap 1 @skeleton 1 @bodyprop 1 @unique 1"
+									"text" : "dp.kinect2 gldepth @depthmap 1 @depthmapres 0 @type float32 @colormap 1 @colormapres 4 @align 1 @skeletonformat 0 @playermap 1 @skeleton 1 @bodyprop 1 @unique 1 @flooronbang 1 @distmeter 1"
 								}
 
 							}
@@ -13564,6 +13587,7 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-36",
@@ -13573,7 +13597,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 66.5, 77.0, 135.0, 22.0 ],
 					"style" : "",
-					"text" : "udpreceive 3333 cnmat"
+					"text" : "udpreceive 3002 cnmat"
 				}
 
 			}
@@ -13584,9 +13608,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "FullPacket" ],
-					"patching_rect" : [ 66.5, 161.0, 133.0, 22.0 ],
+					"patching_rect" : [ 66.5, 161.0, 136.0, 22.0 ],
 					"style" : "",
-					"text" : "o.route /server /kinect2"
+					"text" : "o.route /server /settings"
 				}
 
 			}
@@ -13620,10 +13644,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 1 ],
+					"destination" : [ "obj-5", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 1120.0, 307.5, 1192.0, 307.5, 1192.0, 195.5, 1009.0, 195.5 ],
+					"midpoints" : [ 1120.0, 307.5, 1192.0, 307.5, 1192.0, 195.5, 994.0, 195.5 ],
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -13955,7 +13979,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
+					"destination" : [ "obj-5", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-7", 0 ]
