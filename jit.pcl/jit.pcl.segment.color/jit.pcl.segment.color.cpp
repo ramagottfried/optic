@@ -138,6 +138,7 @@ t_jit_err jit_xyzrgb2jit(t_jit_pcl_segcolor *x, pcl::PointCloud<pcl::PointXYZRGB
     char *out_bp = NULL;
     float *fop;
     
+    float scalar = 1.0 / 255.;
     //*****
     // send back to jitter
     jit_object_method(*out_matrix, _jit_sym_getinfo, out_minfo);
@@ -168,9 +169,9 @@ t_jit_err jit_xyzrgb2jit(t_jit_pcl_segcolor *x, pcl::PointCloud<pcl::PointXYZRGB
                 fop[0] = cloud->points[count].x;
                 fop[1] = cloud->points[count].y;
                 fop[2] = cloud->points[count].z;
-                fop[3] = cloud->points[count].r;
-                fop[4] = cloud->points[count].g;
-                fop[5] = cloud->points[count].b;
+                fop[3] = (float)cloud->points[count].r * scalar;
+                fop[4] = (float)cloud->points[count].g * scalar;
+                fop[5] = (float)cloud->points[count].b * scalar;
                 
             }
             count++;
@@ -321,9 +322,9 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
                 cloud->points[count].x = ((float *)fip)[0];
                 cloud->points[count].y = ((float *)fip)[1];
                 cloud->points[count].z = ((float *)fip)[2];
-                cloud->points[count].r = ((float *)fip)[3];
-                cloud->points[count].g = ((float *)fip)[4];
-                cloud->points[count].b = ((float *)fip)[5];
+                cloud->points[count].r = (uint8_t)(((float *)fip)[3] * 255.0);
+                cloud->points[count].g = (uint8_t)(((float *)fip)[4] * 255.0);
+                cloud->points[count].b = (uint8_t)(((float *)fip)[5] * 255.0);
                 count++;
                 fip += rowstride;
             }
@@ -376,15 +377,16 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
             // For every cluster...
             
             pcl::PointCloud<pcl::PointXYZRGB>::Ptr cluster(new pcl::PointCloud<pcl::PointXYZRGB>);
-            cluster->width = (uint32_t)cluster->points.size();
+            cluster->points.resize(cloud->size());
+            cluster->width = (uint32_t)cloud->points.size();
             cluster->height = 1;
             cluster->is_dense = true;
 
-            /*
+
             if( clusters.size() > 0 )
             {
-                double color_inc = 1.0 / clusters.size();
-                
+                double color_inc = 255. / clusters.size();
+          
                 int count = 0;
                 int clusterN = 0;
                 for (std::vector<pcl::PointIndices>::const_iterator i = clusters.begin(); i != clusters.end(); ++i)
@@ -392,27 +394,27 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
 
                     for (std::vector<int>::const_iterator p = i->indices.begin(); p != i->indices.end(); p++)
                     {
+
                         cluster->points[count].x = cloud->points[ *p ].x;
                         cluster->points[count].y = cloud->points[ *p ].y;
                         cluster->points[count].z = cloud->points[ *p ].z;
-                        cluster->points[count].r = color_inc * clusterN;
-                        cluster->points[count].g = 1 - (color_inc * clusterN);
-                        cluster->points[count].b = 1.0;
+
+                        cluster->points[count].r = (uint8_t)(color_inc * clusterN);
+                        cluster->points[count].g = 255 - (uint8_t)(color_inc * clusterN);
+                        cluster->points[count].b = 255;
+
                         count++;
                     }
                     clusterN++;
                 }
-
             }
-             */
-            err = jit_xyzrgb2jit(x, cloud, &out_minfo, &out_matrix );
+            err = jit_xyzrgb2jit(x, cluster, &out_minfo, &out_matrix );
             if( err != JIT_ERR_NONE )
                 goto out;
             
         }
       
-        
-                       // unable to make use of jitter's parallel methods since we need all the data together
+        // unable to make use of jitter's parallel methods since we need all the data together
         //jit_parallel_ndim_simplecalc2((method)jit_pcl_segcolor_calculate_ndim,
         //	x, dimcount, dim, planecount, &in_minfo, in_bp, &out_minfo, out_bp,
         //	0 /* flags1 */, 0 /* flags2 */);
