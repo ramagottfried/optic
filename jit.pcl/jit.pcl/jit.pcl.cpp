@@ -62,7 +62,6 @@ t_jit_err jit_pcl_init(void)
 	jit_class_addadornment(s_jit_pcl_class, mop);
     
     
-    
 	// add method(s)
 	jit_class_addmethod(s_jit_pcl_class, (method)jit_pcl_matrix_calc, "matrix_calc", A_CANT, 0);
 
