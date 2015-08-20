@@ -10,6 +10,8 @@
 	<string>o.io.opencv</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</key>
+		<string>https://github.com/ramagottfried/optic.git</string>
 		<key>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</key>
 		<string>https://github.com/CNMAT/o.cv.git</string>
 		<key>73CD3912FF7E5D839C8BDA43B346354BE088DDE8</key>
@@ -19,17 +21,19 @@
 	<string>o.io.opencv/o.io.opencv.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</key>
+		<key>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</key>
 		<string>../../..</string>
+		<key>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</key>
+		<string>../../../../o.cv</string>
 		<key>73CD3912FF7E5D839C8BDA43B346354BE088DDE8</key>
 		<string>../../../../libo</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/CNMAT/o.cv.git</string>
+	<string>https://github.com/ramagottfried/optic.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</string>
+	<string>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -47,6 +51,14 @@
 			<string>6EDA5A7FDA0A31D16357F67E6E23A05520175FA3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>o.cv</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>optic</string>
 		</dict>
 	</array>
 </dict>

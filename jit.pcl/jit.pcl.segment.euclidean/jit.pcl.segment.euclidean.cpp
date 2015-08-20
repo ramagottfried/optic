@@ -5,50 +5,49 @@
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/filters/statistical_outlier_removal.h>
 
-#include <pcl/search/kdtree.h>
-//#include <pcl/octree/octree.h>
-
-#include <pcl/segmentation/region_growing_rgb.h>
+#include <pcl/segmentation/extract_clusters.h>
 
 #include "jit.common.h"
 
 // Our Jitter object instance data
-typedef struct _jit_pcl_segcolor {
+typedef struct _jit_pcl_segeuclidean {
     t_object	ob;
-    long min_cluster_size;
-    float dist_thresh;
-    float pt_color_thresh;
-    float region_color_thresh;
-} t_jit_pcl_segcolor;
+    double		leafsize;
+    long        npoints;
+    double      stdthresh;
+    
+    double      cluster_tol;
+    
+} t_jit_pcl_segeuclidean;
 
 
 // prototypes
 BEGIN_USING_C_LINKAGE
-t_jit_err                   jit_pcl_segcolor_init				(void);
-t_jit_pcl_segcolor       *jit_pcl_segcolor_new				(void);
-void                        jit_pcl_segcolor_free				(t_jit_pcl_segcolor *x);
-t_jit_err                   jit_pcl_segcolor_matrix_calc		(t_jit_pcl_segcolor *x, void *inputs, void *outputs);
-void                        jit_pcl_segcolor_calculate_ndim	(t_jit_pcl_segcolor *x, long dim, long *dimsize, long planecount, t_jit_matrix_info *in_minfo,char *bip, t_jit_matrix_info *out_minfo, char *bop);
+t_jit_err                   jit_pcl_segeuclidean_init				(void);
+t_jit_pcl_segeuclidean       *jit_pcl_segeuclidean_new				(void);
+void                        jit_pcl_segeuclidean_free				(t_jit_pcl_segeuclidean *x);
+t_jit_err                   jit_pcl_segeuclidean_matrix_calc		(t_jit_pcl_segeuclidean *x, void *inputs, void *outputs);
+void                        jit_pcl_segeuclidean_calculate_ndim	(t_jit_pcl_segeuclidean *x, long dim, long *dimsize, long planecount, t_jit_matrix_info *in_minfo,char *bip, t_jit_matrix_info *out_minfo, char *bop);
 END_USING_C_LINKAGE
 
-pcl::PointCloud<pcl::Normal>::Ptr jit_pcl_segcolor_normals( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud );
-pcl::PointCloud<pcl::PointXYZ>::Ptr jit_pcl_segcolor_genTriangles( pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals );
+pcl::PointCloud<pcl::Normal>::Ptr jit_pcl_segeuclidean_normals( pcl::PointCloud<pcl::PointXYZ>::Ptr cloud );
+pcl::PointCloud<pcl::PointXYZ>::Ptr jit_pcl_segeuclidean_genTriangles( pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals );
 
 
 // globals
-static void *s_jit_pcl_segcolor_class = NULL;
+static void *s_jit_pcl_segeuclidean_class = NULL;
 
 
 /************************************************************************************/
 
-t_jit_err jit_pcl_segcolor_init(void)
+t_jit_err jit_pcl_segeuclidean_init(void)
 {
     long			attrflags = JIT_ATTR_GET_DEFER_LOW | JIT_ATTR_SET_USURP_LOW;
     t_jit_object	*attr;
     t_jit_object	*mop;
     t_atom a[1];
     
-    s_jit_pcl_segcolor_class = jit_class_new("jit_pcl_segcolor", (method)jit_pcl_segcolor_new, (method)jit_pcl_segcolor_free, sizeof(t_jit_pcl_segcolor), 0);
+    s_jit_pcl_segeuclidean_class = jit_class_new("jit_pcl_segeuclidean", (method)jit_pcl_segeuclidean_new, (method)jit_pcl_segeuclidean_free, sizeof(t_jit_pcl_segeuclidean), 0);
     
     // add matrix operator (mop)
     // args are  num inputs and num outputs
@@ -67,71 +66,75 @@ t_jit_err jit_pcl_segcolor_init(void)
     attr = (t_jit_object *)jit_object_method(mop, _jit_sym_getoutput, 1);
     jit_attr_setlong(attr, _jit_sym_dimlink,0);
     
-    jit_class_addadornment(s_jit_pcl_segcolor_class, mop);
+    jit_class_addadornment(s_jit_pcl_segeuclidean_class, mop);
     
     
     
     // add method(s)
-    jit_class_addmethod(s_jit_pcl_segcolor_class, (method)jit_pcl_segcolor_matrix_calc, "matrix_calc", A_CANT, 0);
+    jit_class_addmethod(s_jit_pcl_segeuclidean_class, (method)jit_pcl_segeuclidean_matrix_calc, "matrix_calc", A_CANT, 0);
     
     // add attribute(s)
     attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "dist_thresh",
-                                          _jit_sym_float32,
+                                          "leafsize",
+                                          _jit_sym_float64,
                                           attrflags,
                                           (method)NULL, (method)NULL,
-                                          calcoffset(t_jit_pcl_segcolor, dist_thresh));
+                                          calcoffset(t_jit_pcl_segeuclidean, leafsize));
     
-    jit_class_addattr(s_jit_pcl_segcolor_class, attr);
+    jit_class_addattr(s_jit_pcl_segeuclidean_class, attr);
     
     attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "pt_color_thresh",
-                                          _jit_sym_float32,
+                                          "cluster_tol",
+                                          _jit_sym_float64,
                                           attrflags,
                                           (method)NULL, (method)NULL,
-                                          calcoffset(t_jit_pcl_segcolor, pt_color_thresh));
-    jit_class_addattr(s_jit_pcl_segcolor_class, attr);
+                                          calcoffset(t_jit_pcl_segeuclidean, cluster_tol));
+    
+    jit_class_addattr(s_jit_pcl_segeuclidean_class, attr);
     
     attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "region_color_thresh",
-                                          _jit_sym_float32,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_jit_pcl_segcolor, region_color_thresh));
-    jit_class_addattr(s_jit_pcl_segcolor_class, attr);
-
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "min_cluster_size",
+                                          "npoints",
                                           _jit_sym_long,
                                           attrflags,
                                           (method)NULL, (method)NULL,
-                                          calcoffset(t_jit_pcl_segcolor, min_cluster_size));
-    jit_class_addattr(s_jit_pcl_segcolor_class, attr);
+                                          calcoffset(t_jit_pcl_segeuclidean, npoints));
+    jit_attr_addfilterget_clip(attr, 1, 10000, true, false);
+    jit_class_addattr(s_jit_pcl_segeuclidean_class, attr);
+    
+    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
+                                          "stdthresh",
+                                          _jit_sym_float64,
+                                          attrflags,
+                                          (method)NULL, (method)NULL,
+                                          calcoffset(t_jit_pcl_segeuclidean, stdthresh));
+    
+    jit_class_addattr(s_jit_pcl_segeuclidean_class, attr);
+
     
     // finalize class
-    jit_class_register(s_jit_pcl_segcolor_class);
+    jit_class_register(s_jit_pcl_segeuclidean_class);
     return JIT_ERR_NONE;
 }
 
 /************************************************************************************/
 // Object Life Cycle
 
-t_jit_pcl_segcolor *jit_pcl_segcolor_new(void)
+t_jit_pcl_segeuclidean *jit_pcl_segeuclidean_new(void)
 {
-    t_jit_pcl_segcolor	*x = NULL;
+    t_jit_pcl_segeuclidean	*x = NULL;
     
-    x = (t_jit_pcl_segcolor*)jit_object_alloc(s_jit_pcl_segcolor_class);
+    x = (t_jit_pcl_segeuclidean*)jit_object_alloc(s_jit_pcl_segeuclidean_class);
     if (x) {
-        x->dist_thresh = 10.;
-        x->pt_color_thresh = 6.;
-        x->region_color_thresh = 5.;
-        x->min_cluster_size = 10;
+        x->leafsize = 0.02;
+        x->npoints = 50;
+        x->stdthresh = 1.;
+        x->cluster_tol = 0.5;
     }
     return x;
 }
 
 
-void jit_pcl_segcolor_free(t_jit_pcl_segcolor *x)
+void jit_pcl_segeuclidean_free(t_jit_pcl_segeuclidean *x)
 {
     ;	// nothing to free for our simple object
 }
@@ -141,7 +144,7 @@ void jit_pcl_segcolor_free(t_jit_pcl_segcolor *x)
 
 // conversions
 
-t_jit_err jit_xyzrgb2jit(t_jit_pcl_segcolor *x, pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
+t_jit_err jit_xyzrgb2jit(t_jit_pcl_segeuclidean *x, pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
 {
     char *out_bp = NULL;
     float *fop;
@@ -190,7 +193,7 @@ t_jit_err jit_xyzrgb2jit(t_jit_pcl_segcolor *x, pcl::PointCloud<pcl::PointXYZRGB
     
 }
 
-t_jit_err jit_cloud2jit(t_jit_pcl_segcolor *x, pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
+t_jit_err jit_cloud2jit(t_jit_pcl_segeuclidean *x, pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
 {
     char *out_bp = NULL;
     float *fop;
@@ -248,7 +251,7 @@ void pcl_xyzrgb2xyz(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_xyz, pcl::PointClo
 
 /************************************************************************************/
 // Methods bound to input/inlets
-t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void *outputs)
+t_jit_err jit_pcl_segeuclidean_matrix_calc(t_jit_pcl_segeuclidean *x, void *inputs, void *outputs)
 {
     t_jit_err			err = JIT_ERR_NONE;
     long				in_savelock;
@@ -288,9 +291,9 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
         dimcount   = in_minfo.dimcount;
         planecount = in_minfo.planecount;
         
-        if( planecount < 6 )
+        if( planecount < 3 )
         {
-            object_error((t_object *)x, "jit.pcl requires a 6 plane matrix (xyzrgb)");
+            object_error((t_object *)x, "jit.pcl requires a 3 plane matrix (xyz)");
             goto out;
         }
         if( in_minfo.type != _jit_sym_float32)
@@ -312,7 +315,7 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
         //******
         // PCL stuff
         
-        pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZRGB>);
+        pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
         cloud->width    = (uint32_t)dim[0];
         cloud->height   = (uint32_t)dim[1];
         cloud->is_dense = false;
@@ -330,9 +333,9 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
                 cloud->points[count].x = ((float *)fip)[0];
                 cloud->points[count].y = ((float *)fip)[1];
                 cloud->points[count].z = ((float *)fip)[2];
-                cloud->points[count].r = (uint8_t)(((float *)fip)[3] * 255.0);
-                cloud->points[count].g = (uint8_t)(((float *)fip)[4] * 255.0);
-                cloud->points[count].b = (uint8_t)(((float *)fip)[5] * 255.0);
+        //        cloud->points[count].r = (uint8_t)(((float *)fip)[3] * 255.0);
+        //        cloud->points[count].g = (uint8_t)(((float *)fip)[4] * 255.0);
+        //        cloud->points[count].b = (uint8_t)(((float *)fip)[5] * 255.0);
                 count++;
                 fip += rowstride;
             }
@@ -341,52 +344,41 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
       
         {
 
-  /*          //filter
+            /*
+            //filter
             pcl::VoxelGrid<pcl::PointXYZRGB> grid;
             pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_voxel_ (new pcl::PointCloud<pcl::PointXYZRGB>);
-
+            
             grid.setLeafSize (x->leafsize, x->leafsize, x->leafsize);
             grid.setInputCloud (cloud);
             grid.filter (*cloud_voxel_);
-
+            
             
             pcl::StatisticalOutlierRemoval<pcl::PointXYZRGB> sor;
             pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_sor_ (new pcl::PointCloud<pcl::PointXYZRGB>);
-
+            
             sor.setInputCloud(cloud_voxel_);
             sor.setMeanK( (uint32_t)x->npoints );
             sor.setStddevMulThresh(x->stdthresh);
             sor.filter(*cloud_sor_);
-
-            // it might work better (at all) to filter only the XYZ points, and then get the indices and use those to lookup the XYZRGB afterwards
-            //            pcl::IndicesConstPtr indx = sor.getIndices();
+            */
             
-*/
-            pcl::search::KdTree<pcl::PointXYZRGB>::Ptr kdtree(new pcl::search::KdTree<pcl::PointXYZRGB>);
+            pcl::search::KdTree<pcl::PointXYZ>::Ptr kdtree(new pcl::search::KdTree<pcl::PointXYZ>);
             kdtree->setInputCloud(cloud);
             
-            // Color-based region growing clustering object.
-            pcl::RegionGrowingRGB<pcl::PointXYZRGB> clustering;
-            clustering.setInputCloud(cloud);
+            // Euclidean clustering object.
+            pcl::EuclideanClusterExtraction<pcl::PointXYZ> clustering;
+            // Set cluster tolerance to 2cm (small values may cause objects to be divided
+            // in several clusters, whereas big values may join objects in a same cluster).
+            clustering.setClusterTolerance(x->cluster_tol);
+            // Set the minimum and maximum number of points that a cluster can have.
+            clustering.setMinClusterSize(10);
+            clustering.setMaxClusterSize(25000);
             clustering.setSearchMethod(kdtree);
+            clustering.setInputCloud(cloud);
             
-            // Here, the minimum cluster size affects also the postprocessing step:
-            // clusters smaller than this will be merged with their neighbors.
-            clustering.setMinClusterSize((int)x->min_cluster_size);
-            
-            // Set the distance threshold, to know which points will be considered neighbors.
-            clustering.setDistanceThreshold(x->dist_thresh);
-            
-            // Color threshold for comparing the RGB color of two points.
-            clustering.setPointColorThreshold(x->pt_color_thresh);
-            
-            // Region color threshold for the postprocessing step: clusters with colors
-            // within the threshold will be merged in one.
-            clustering.setRegionColorThreshold(x->region_color_thresh);
-            
-            std::vector <pcl::PointIndices> clusters;
+            std::vector<pcl::PointIndices> clusters;
             clustering.extract(clusters);
-
             // For every cluster...
             
             pcl::PointCloud<pcl::PointXYZRGB>::Ptr cluster(new pcl::PointCloud<pcl::PointXYZRGB>);
@@ -398,22 +390,22 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
 
             if( clusters.size() > 0 )
             {
-                double color_inc = 255. / clusters.size();
+                double segment_inc = 255. / clusters.size();
           
                 int count = 0;
                 int clusterN = 0;
                 for (std::vector<pcl::PointIndices>::const_iterator i = clusters.begin(); i != clusters.end(); ++i)
                 {
 
-                    for (std::vector<int>::const_iterator p = i->indices.begin(); p != i->indices.end(); p++)
+                    for (std::vector<int>::const_iterator p = i->indices.begin(); p != i->indices.end(); ++p)
                     {
 
                         cluster->points[count].x = cloud->points[ *p ].x;
                         cluster->points[count].y = cloud->points[ *p ].y;
                         cluster->points[count].z = cloud->points[ *p ].z;
 
-                        cluster->points[count].r = (uint8_t)(color_inc * clusterN);
-                        cluster->points[count].g = (uint8_t)(color_inc * clusterN);
+                        cluster->points[count].r = (uint8_t)(segment_inc * clusterN);
+                        cluster->points[count].g = (uint8_t)(segment_inc * clusterN);
                         cluster->points[count].b = 255;
 
                         count++;
@@ -428,7 +420,7 @@ t_jit_err jit_pcl_segcolor_matrix_calc(t_jit_pcl_segcolor *x, void *inputs, void
         }
       
         // unable to make use of jitter's parallel methods since we need all the data together
-        //jit_parallel_ndim_simplecalc2((method)jit_pcl_segcolor_calculate_ndim,
+        //jit_parallel_ndim_simplecalc2((method)jit_pcl_segeuclidean_calculate_ndim,
         //	x, dimcount, dim, planecount, &in_minfo, in_bp, &out_minfo, out_bp,
         //	0 /* flags1 */, 0 /* flags2 */);
         
