@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11122CF01BB4FF9000E085B0 /* o.io.socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11122CEE1BB4FF9000E085B0 /* o.io.socket.cpp */; };
+		11153BC51BB35A4E0000A816 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11153BC41BB35A4E0000A816 /* main.cpp */; };
+		11153BE91BB35AA00000A816 /* libo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BCB1BB35AA00000A816 /* libo.a */; };
+		11153BEB1BB35AA00000A816 /* libfreenect2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BCD1BB35AA00000A816 /* libfreenect2.a */; };
+		11153BEC1BB35AA00000A816 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BCE1BB35AA00000A816 /* Carbon.framework */; };
+		11153BEE1BB35AA00000A816 /* libpcl_2d.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD01BB35AA00000A816 /* libpcl_2d.1.8.0.dylib */; };
+		11153BEF1BB35AA00000A816 /* libpcl_common.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD11BB35AA00000A816 /* libpcl_common.1.8.0.dylib */; };
+		11153BF01BB35AA00000A816 /* libpcl_features.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD21BB35AA00000A816 /* libpcl_features.1.8.0.dylib */; };
+		11153BF11BB35AA00000A816 /* libpcl_filters.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD31BB35AA00000A816 /* libpcl_filters.1.8.0.dylib */; };
+		11153BF21BB35AA00000A816 /* libpcl_io_ply.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD41BB35AA00000A816 /* libpcl_io_ply.1.8.0.dylib */; };
+		11153BF31BB35AA00000A816 /* libpcl_io.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD51BB35AA00000A816 /* libpcl_io.1.8.0.dylib */; };
+		11153BF41BB35AA00000A816 /* libpcl_kdtree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD61BB35AA00000A816 /* libpcl_kdtree.1.8.0.dylib */; };
+		11153BF51BB35AA00000A816 /* libpcl_keypoints.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD71BB35AA00000A816 /* libpcl_keypoints.1.8.0.dylib */; };
+		11153BF61BB35AA00000A816 /* libpcl_ml.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD81BB35AA00000A816 /* libpcl_ml.1.8.0.dylib */; };
+		11153BF71BB35AA00000A816 /* libpcl_octree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BD91BB35AA00000A816 /* libpcl_octree.1.8.0.dylib */; };
+		11153BF81BB35AA00000A816 /* libpcl_outofcore.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BDA1BB35AA00000A816 /* libpcl_outofcore.1.8.0.dylib */; };
+		11153BF91BB35AA00000A816 /* libpcl_people.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BDB1BB35AA00000A816 /* libpcl_people.1.8.0.dylib */; };
+		11153BFA1BB35AA00000A816 /* libpcl_recognition.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BDC1BB35AA00000A816 /* libpcl_recognition.1.8.0.dylib */; };
+		11153BFB1BB35AA00000A816 /* libpcl_registration.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BDD1BB35AA00000A816 /* libpcl_registration.1.8.0.dylib */; };
+		11153BFC1BB35AA00000A816 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BDE1BB35AA00000A816 /* libpcl_sample_consensus.1.8.0.dylib */; };
+		11153BFD1BB35AA00000A816 /* libpcl_search.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BDF1BB35AA00000A816 /* libpcl_search.1.8.0.dylib */; };
+		11153BFE1BB35AA00000A816 /* libpcl_segmentation.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE01BB35AA00000A816 /* libpcl_segmentation.1.8.0.dylib */; };
+		11153BFF1BB35AA00000A816 /* libpcl_stereo.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE11BB35AA00000A816 /* libpcl_stereo.1.8.0.dylib */; };
+		11153C001BB35AA00000A816 /* libpcl_surface.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE21BB35AA00000A816 /* libpcl_surface.1.8.0.dylib */; };
+		11153C011BB35AA00000A816 /* libpcl_tracking.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE31BB35AA00000A816 /* libpcl_tracking.1.8.0.dylib */; };
+		11153C021BB35AA00000A816 /* libpcl_visualization.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE41BB35AA00000A816 /* libpcl_visualization.1.8.0.dylib */; };
+		11153C031BB35AA00000A816 /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE51BB35AA00000A816 /* libboost_system-mt.dylib */; };
+		11153C041BB35AA00000A816 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE61BB35AA00000A816 /* libboost_system.dylib */; };
+		11153C051BB35AA00000A816 /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE71BB35AA00000A816 /* libboost_thread-mt.dylib */; };
+		11153C061BB35AA00000A816 /* libiomp5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11153BE81BB35AA00000A816 /* libiomp5.dylib */; };
+		11153C1D1BB35D180000A816 /* kinect_device_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11153C121BB35D180000A816 /* kinect_device_wrapper.cpp */; };
+		11153C1E1BB35D180000A816 /* o.max.pcl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11153C151BB35D180000A816 /* o.max.pcl.cpp */; };
+		11153C201BB35D180000A816 /* o.max.pcl.normals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11153C191BB35D180000A816 /* o.max.pcl.normals.cpp */; };
+		11153C211BB35D180000A816 /* o.max.pcl.passthrough.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11153C1B1BB35D180000A816 /* o.max.pcl.passthrough.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		11153BBF1BB35A4E0000A816 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		11122CEE1BB4FF9000E085B0 /* o.io.socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.io.socket.cpp; path = include/o.io.socket.cpp; sourceTree = "<group>"; };
+		11122CEF1BB4FF9000E085B0 /* o.io.socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o.io.socket.h; path = include/o.io.socket.h; sourceTree = "<group>"; };
+		11153BC11BB35A4E0000A816 /* o.io.pcl.kinect2.server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = o.io.pcl.kinect2.server; sourceTree = BUILT_PRODUCTS_DIR; };
+		11153BC41BB35A4E0000A816 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		11153BCB1BB35AA00000A816 /* libo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libo.a; path = ../../../libo/libo.a; sourceTree = "<group>"; };
+		11153BCD1BB35AA00000A816 /* libfreenect2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreenect2.a; path = /usr/local/lib/libfreenect2.a; sourceTree = "<absolute>"; };
+		11153BCE1BB35AA00000A816 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
+		11153BD01BB35AA00000A816 /* libpcl_2d.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_2d.1.8.0.dylib; path = /usr/local/lib/libpcl_2d.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD11BB35AA00000A816 /* libpcl_common.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_common.1.8.0.dylib; path = /usr/local/lib/libpcl_common.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD21BB35AA00000A816 /* libpcl_features.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_features.1.8.0.dylib; path = /usr/local/lib/libpcl_features.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD31BB35AA00000A816 /* libpcl_filters.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_filters.1.8.0.dylib; path = /usr/local/lib/libpcl_filters.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD41BB35AA00000A816 /* libpcl_io_ply.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_io_ply.1.8.0.dylib; path = /usr/local/lib/libpcl_io_ply.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD51BB35AA00000A816 /* libpcl_io.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_io.1.8.0.dylib; path = /usr/local/lib/libpcl_io.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD61BB35AA00000A816 /* libpcl_kdtree.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_kdtree.1.8.0.dylib; path = /usr/local/lib/libpcl_kdtree.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD71BB35AA00000A816 /* libpcl_keypoints.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_keypoints.1.8.0.dylib; path = /usr/local/lib/libpcl_keypoints.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD81BB35AA00000A816 /* libpcl_ml.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_ml.1.8.0.dylib; path = /usr/local/lib/libpcl_ml.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BD91BB35AA00000A816 /* libpcl_octree.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_octree.1.8.0.dylib; path = /usr/local/lib/libpcl_octree.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BDA1BB35AA00000A816 /* libpcl_outofcore.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_outofcore.1.8.0.dylib; path = /usr/local/lib/libpcl_outofcore.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BDB1BB35AA00000A816 /* libpcl_people.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_people.1.8.0.dylib; path = /usr/local/lib/libpcl_people.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BDC1BB35AA00000A816 /* libpcl_recognition.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_recognition.1.8.0.dylib; path = /usr/local/lib/libpcl_recognition.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BDD1BB35AA00000A816 /* libpcl_registration.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_registration.1.8.0.dylib; path = /usr/local/lib/libpcl_registration.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BDE1BB35AA00000A816 /* libpcl_sample_consensus.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_sample_consensus.1.8.0.dylib; path = /usr/local/lib/libpcl_sample_consensus.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BDF1BB35AA00000A816 /* libpcl_search.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_search.1.8.0.dylib; path = /usr/local/lib/libpcl_search.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BE01BB35AA00000A816 /* libpcl_segmentation.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_segmentation.1.8.0.dylib; path = /usr/local/lib/libpcl_segmentation.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BE11BB35AA00000A816 /* libpcl_stereo.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_stereo.1.8.0.dylib; path = /usr/local/lib/libpcl_stereo.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BE21BB35AA00000A816 /* libpcl_surface.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_surface.1.8.0.dylib; path = /usr/local/lib/libpcl_surface.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BE31BB35AA00000A816 /* libpcl_tracking.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_tracking.1.8.0.dylib; path = /usr/local/lib/libpcl_tracking.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BE41BB35AA00000A816 /* libpcl_visualization.1.8.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_visualization.1.8.0.dylib; path = /usr/local/lib/libpcl_visualization.1.8.0.dylib; sourceTree = "<absolute>"; };
+		11153BE51BB35AA00000A816 /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "/usr/local/Cellar/boost/1.58.0/lib/libboost_system-mt.dylib"; sourceTree = "<absolute>"; };
+		11153BE61BB35AA00000A816 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = /usr/local/Cellar/boost/1.58.0/lib/libboost_system.dylib; sourceTree = "<absolute>"; };
+		11153BE71BB35AA00000A816 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "/usr/local/Cellar/boost/1.58.0/lib/libboost_thread-mt.dylib"; sourceTree = "<absolute>"; };
+		11153BE81BB35AA00000A816 /* libiomp5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiomp5.dylib; path = /usr/local/Cellar/libiomp/20150401/lib/libiomp5.dylib; sourceTree = "<absolute>"; };
+		11153C121BB35D180000A816 /* kinect_device_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kinect_device_wrapper.cpp; path = include/kinect_device_wrapper.cpp; sourceTree = "<group>"; };
+		11153C131BB35D180000A816 /* kinect_device_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kinect_device_wrapper.h; path = include/kinect_device_wrapper.h; sourceTree = "<group>"; };
+		11153C151BB35D180000A816 /* o.max.pcl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.max.pcl.cpp; path = include/o.max.pcl.cpp; sourceTree = "<group>"; };
+		11153C181BB35D180000A816 /* o.max.pcl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o.max.pcl.h; path = include/o.max.pcl.h; sourceTree = "<group>"; };
+		11153C191BB35D180000A816 /* o.max.pcl.normals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.max.pcl.normals.cpp; path = include/o.max.pcl.normals.cpp; sourceTree = "<group>"; };
+		11153C1A1BB35D180000A816 /* o.max.pcl.normals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o.max.pcl.normals.h; path = include/o.max.pcl.normals.h; sourceTree = "<group>"; };
+		11153C1B1BB35D180000A816 /* o.max.pcl.passthrough.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.max.pcl.passthrough.cpp; path = include/o.max.pcl.passthrough.cpp; sourceTree = "<group>"; };
+		11153C1C1BB35D180000A816 /* o.max.pcl.passthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o.max.pcl.passthrough.h; path = include/o.max.pcl.passthrough.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11153BBE1BB35A4E0000A816 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11153BEB1BB35AA00000A816 /* libfreenect2.a in Frameworks */,
+				11153BFE1BB35AA00000A816 /* libpcl_segmentation.1.8.0.dylib in Frameworks */,
+				11153BF21BB35AA00000A816 /* libpcl_io_ply.1.8.0.dylib in Frameworks */,
+				11153C061BB35AA00000A816 /* libiomp5.dylib in Frameworks */,
+				11153BF41BB35AA00000A816 /* libpcl_kdtree.1.8.0.dylib in Frameworks */,
+				11153BFC1BB35AA00000A816 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */,
+				11153C041BB35AA00000A816 /* libboost_system.dylib in Frameworks */,
+				11153BFA1BB35AA00000A816 /* libpcl_recognition.1.8.0.dylib in Frameworks */,
+				11153BF91BB35AA00000A816 /* libpcl_people.1.8.0.dylib in Frameworks */,
+				11153BEC1BB35AA00000A816 /* Carbon.framework in Frameworks */,
+				11153BEF1BB35AA00000A816 /* libpcl_common.1.8.0.dylib in Frameworks */,
+				11153C051BB35AA00000A816 /* libboost_thread-mt.dylib in Frameworks */,
+				11153BF11BB35AA00000A816 /* libpcl_filters.1.8.0.dylib in Frameworks */,
+				11153BFD1BB35AA00000A816 /* libpcl_search.1.8.0.dylib in Frameworks */,
+				11153BF71BB35AA00000A816 /* libpcl_octree.1.8.0.dylib in Frameworks */,
+				11153BF01BB35AA00000A816 /* libpcl_features.1.8.0.dylib in Frameworks */,
+				11153BFF1BB35AA00000A816 /* libpcl_stereo.1.8.0.dylib in Frameworks */,
+				11153C011BB35AA00000A816 /* libpcl_tracking.1.8.0.dylib in Frameworks */,
+				11153BF51BB35AA00000A816 /* libpcl_keypoints.1.8.0.dylib in Frameworks */,
+				11153BFB1BB35AA00000A816 /* libpcl_registration.1.8.0.dylib in Frameworks */,
+				11153C031BB35AA00000A816 /* libboost_system-mt.dylib in Frameworks */,
+				11153C021BB35AA00000A816 /* libpcl_visualization.1.8.0.dylib in Frameworks */,
+				11153BF31BB35AA00000A816 /* libpcl_io.1.8.0.dylib in Frameworks */,
+				11153BF81BB35AA00000A816 /* libpcl_outofcore.1.8.0.dylib in Frameworks */,
+				11153BE91BB35AA00000A816 /* libo.a in Frameworks */,
+				11153C001BB35AA00000A816 /* libpcl_surface.1.8.0.dylib in Frameworks */,
+				11153BF61BB35AA00000A816 /* libpcl_ml.1.8.0.dylib in Frameworks */,
+				11153BEE1BB35AA00000A816 /* libpcl_2d.1.8.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11153BB81BB35A4E0000A816 = {
+			isa = PBXGroup;
+			children = (
+				11153C221BB35D1D0000A816 /* lib */,
+				11153C071BB35AA80000A816 /* dependencies */,
+				11153BC31BB35A4E0000A816 /* o.io.pcl.kinect2.server */,
+				11153BC21BB35A4E0000A816 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11153BC21BB35A4E0000A816 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11153BC11BB35A4E0000A816 /* o.io.pcl.kinect2.server */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11153BC31BB35A4E0000A816 /* o.io.pcl.kinect2.server */ = {
+			isa = PBXGroup;
+			children = (
+				11153BC41BB35A4E0000A816 /* main.cpp */,
+			);
+			path = o.io.pcl.kinect2.server;
+			sourceTree = "<group>";
+		};
+		11153C071BB35AA80000A816 /* dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				11153BCB1BB35AA00000A816 /* libo.a */,
+				11153BCD1BB35AA00000A816 /* libfreenect2.a */,
+				11153BCE1BB35AA00000A816 /* Carbon.framework */,
+				11153BD01BB35AA00000A816 /* libpcl_2d.1.8.0.dylib */,
+				11153BD11BB35AA00000A816 /* libpcl_common.1.8.0.dylib */,
+				11153BD21BB35AA00000A816 /* libpcl_features.1.8.0.dylib */,
+				11153BD31BB35AA00000A816 /* libpcl_filters.1.8.0.dylib */,
+				11153BD41BB35AA00000A816 /* libpcl_io_ply.1.8.0.dylib */,
+				11153BD51BB35AA00000A816 /* libpcl_io.1.8.0.dylib */,
+				11153BD61BB35AA00000A816 /* libpcl_kdtree.1.8.0.dylib */,
+				11153BD71BB35AA00000A816 /* libpcl_keypoints.1.8.0.dylib */,
+				11153BD81BB35AA00000A816 /* libpcl_ml.1.8.0.dylib */,
+				11153BD91BB35AA00000A816 /* libpcl_octree.1.8.0.dylib */,
+				11153BDA1BB35AA00000A816 /* libpcl_outofcore.1.8.0.dylib */,
+				11153BDB1BB35AA00000A816 /* libpcl_people.1.8.0.dylib */,
+				11153BDC1BB35AA00000A816 /* libpcl_recognition.1.8.0.dylib */,
+				11153BDD1BB35AA00000A816 /* libpcl_registration.1.8.0.dylib */,
+				11153BDE1BB35AA00000A816 /* libpcl_sample_consensus.1.8.0.dylib */,
+				11153BDF1BB35AA00000A816 /* libpcl_search.1.8.0.dylib */,
+				11153BE01BB35AA00000A816 /* libpcl_segmentation.1.8.0.dylib */,
+				11153BE11BB35AA00000A816 /* libpcl_stereo.1.8.0.dylib */,
+				11153BE21BB35AA00000A816 /* libpcl_surface.1.8.0.dylib */,
+				11153BE31BB35AA00000A816 /* libpcl_tracking.1.8.0.dylib */,
+				11153BE41BB35AA00000A816 /* libpcl_visualization.1.8.0.dylib */,
+				11153BE51BB35AA00000A816 /* libboost_system-mt.dylib */,
+				11153BE61BB35AA00000A816 /* libboost_system.dylib */,
+				11153BE71BB35AA00000A816 /* libboost_thread-mt.dylib */,
+				11153BE81BB35AA00000A816 /* libiomp5.dylib */,
+			);
+			name = dependencies;
+			sourceTree = "<group>";
+		};
+		11153C221BB35D1D0000A816 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				11153C121BB35D180000A816 /* kinect_device_wrapper.cpp */,
+				11153C131BB35D180000A816 /* kinect_device_wrapper.h */,
+				11122CEE1BB4FF9000E085B0 /* o.io.socket.cpp */,
+				11122CEF1BB4FF9000E085B0 /* o.io.socket.h */,
+				11153C151BB35D180000A816 /* o.max.pcl.cpp */,
+				11153C181BB35D180000A816 /* o.max.pcl.h */,
+				11153C191BB35D180000A816 /* o.max.pcl.normals.cpp */,
+				11153C1A1BB35D180000A816 /* o.max.pcl.normals.h */,
+				11153C1B1BB35D180000A816 /* o.max.pcl.passthrough.cpp */,
+				11153C1C1BB35D180000A816 /* o.max.pcl.passthrough.h */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11153BC01BB35A4E0000A816 /* o.io.pcl.kinect2.server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11153BC81BB35A4E0000A816 /* Build configuration list for PBXNativeTarget "o.io.pcl.kinect2.server" */;
+			buildPhases = (
+				11153BBD1BB35A4E0000A816 /* Sources */,
+				11153BBE1BB35A4E0000A816 /* Frameworks */,
+				11153BBF1BB35A4E0000A816 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = o.io.pcl.kinect2.server;
+			productName = o.io.pcl.kinect2.server;
+			productReference = 11153BC11BB35A4E0000A816 /* o.io.pcl.kinect2.server */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11153BB91BB35A4E0000A816 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = cnmat;
+				TargetAttributes = {
+					11153BC01BB35A4E0000A816 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 11153BBC1BB35A4E0000A816 /* Build configuration list for PBXProject "o.io.pcl.kinect2.server" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 11153BB81BB35A4E0000A816;
+			productRefGroup = 11153BC21BB35A4E0000A816 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11153BC01BB35A4E0000A816 /* o.io.pcl.kinect2.server */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11153BBD1BB35A4E0000A816 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11122CF01BB4FF9000E085B0 /* o.io.socket.cpp in Sources */,
+				11153C211BB35D180000A816 /* o.max.pcl.passthrough.cpp in Sources */,
+				11153C201BB35D180000A816 /* o.max.pcl.normals.cpp in Sources */,
+				11153BC51BB35A4E0000A816 /* main.cpp in Sources */,
+				11153C1D1BB35D180000A816 /* kinect_device_wrapper.cpp in Sources */,
+				11153C1E1BB35D180000A816 /* o.max.pcl.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		11153BC61BB35A4E0000A816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+					../../../libo,
+					include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+					../../../libomax,
+					../../../libo,
+					"/Users/r/Documents/dev-lib/libo",
+					/usr/local/lib/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		11153BC71BB35A4E0000A816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+					../../../libo,
+					include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+					../../../libomax,
+					../../../libo,
+					"/Users/r/Documents/dev-lib/libo",
+					/usr/local/lib/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		11153BC91BB35A4E0000A816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/libo",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+				);
+				PRELINK_LIBS = ../../../libo/libo.a;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11153BCA1BB35A4E0000A816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/libo",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+				);
+				PRELINK_LIBS = ../../../libo/libo.a;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11153BBC1BB35A4E0000A816 /* Build configuration list for PBXProject "o.io.pcl.kinect2.server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11153BC61BB35A4E0000A816 /* Debug */,
+				11153BC71BB35A4E0000A816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11153BC81BB35A4E0000A816 /* Build configuration list for PBXNativeTarget "o.io.pcl.kinect2.server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11153BC91BB35A4E0000A816 /* Debug */,
+				11153BCA1BB35A4E0000A816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11153BB91BB35A4E0000A816 /* Project object */;
+}

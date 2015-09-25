@@ -173,7 +173,7 @@ t_jit_err jit_indices2jit(t_jit_pcl_voxel *x, pcl::IndicesConstPtr idx, t_jit_ma
 t_jit_err jit_xyzrgb2jit(t_jit_pcl_voxel *x, pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
 {
     char *out_bp = NULL;
-    float *fop;
+    char *fop;
     
     float scalar = 1.0 / 255.;
     //*****
@@ -193,26 +193,25 @@ t_jit_err jit_xyzrgb2jit(t_jit_pcl_voxel *x, pcl::PointCloud<pcl::PointXYZRGB>::
         return JIT_ERR_INVALID_OUTPUT;
     }
     
-    long rowstride = out_minfo->dimstride[1];
     long count = 0;
     for (int j = 0; j < out_minfo->dim[0]; j++)
     {
-        fop =  (float *)(out_bp + j * out_minfo->dimstride[0]);
+        fop =  out_bp + j * out_minfo->dimstride[0];
         
         for( int i = 0; i < out_minfo->dim[1]; i++)
         {
             if( count < cloud->points.size() )
             {
-                fop[0] = cloud->points[count].x;
-                fop[1] = cloud->points[count].y;
-                fop[2] = cloud->points[count].z;
-                fop[3] = (float)cloud->points[count].r * scalar;
-                fop[4] = (float)cloud->points[count].g * scalar;
-                fop[5] = (float)cloud->points[count].b * scalar;
+                ((float *)fop)[0] = cloud->points[count].x;
+                ((float *)fop)[1] = cloud->points[count].y;
+                ((float *)fop)[2] = cloud->points[count].z;
+                ((float *)fop)[3] = (float)cloud->points[count].r * scalar;
+                ((float *)fop)[4] = (float)cloud->points[count].g * scalar;
+                ((float *)fop)[5] = (float)cloud->points[count].b * scalar;
                 
             }
             count++;
-            fop += rowstride;
+            fop += out_minfo->dimstride[1];
         }
     }
     return JIT_ERR_NONE;
@@ -222,7 +221,7 @@ t_jit_err jit_xyzrgb2jit(t_jit_pcl_voxel *x, pcl::PointCloud<pcl::PointXYZRGB>::
 t_jit_err jit_cloud2jit(t_jit_pcl_voxel *x, pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix)
 {
     char *out_bp = NULL;
-    float *fop;
+    char *fop;
     
     //*****
     // send back to jitter
@@ -241,23 +240,21 @@ t_jit_err jit_cloud2jit(t_jit_pcl_voxel *x, pcl::PointCloud<pcl::PointXYZ>::Ptr 
         return JIT_ERR_INVALID_OUTPUT;
     }
     
-    long rowstride = out_minfo->dimstride[1];
     long count = 0;
     for (int j = 0; j < out_minfo->dim[0]; j++)
     {
-        fop =  (float *)(out_bp + j * out_minfo->dimstride[0]);
+        fop =  out_bp + j * out_minfo->dimstride[0];
         
         for( int i = 0; i < out_minfo->dim[1]; i++)
         {
             if( count < cloud->points.size() )
             {
-                fop[0] = cloud->points[count].x;
-                fop[1] = cloud->points[count].y;
-                fop[2] = cloud->points[count].z;
-                
+                ((float *)fop)[0] = cloud->points[count].x;
+                ((float *)fop)[1] = cloud->points[count].y;
+                ((float *)fop)[2] = cloud->points[count].z;
             }
             count++;
-            fop += rowstride;
+            fop += out_minfo->dimstride[1];
         }
     }
     return JIT_ERR_NONE;
@@ -294,7 +291,8 @@ t_jit_err jit_pcl_voxel_matrix_calc(t_jit_pcl_voxel *x, void *inputs, void *outp
     void				*out_matrix;
     
     long rowstride;
-    float *fip, *fop;
+    char *fip;
+    float *fop;
     
     
     in_matrix 	= jit_object_method(inputs,_jit_sym_getindex,0);
@@ -345,7 +343,6 @@ t_jit_err jit_pcl_voxel_matrix_calc(t_jit_pcl_voxel *x, void *inputs, void *outp
             pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
             cloud->width    = (uint32_t)dim[0];
             cloud->height   = (uint32_t)dim[1];
-            cloud->is_dense = false;
             cloud->points.resize (cloud->width * cloud->height);
             
             rowstride = in_minfo.dimstride[1];// >> 2L;
@@ -353,7 +350,7 @@ t_jit_err jit_pcl_voxel_matrix_calc(t_jit_pcl_voxel *x, void *inputs, void *outp
             
             for (j = 0; j < dim[0]; j++)
             {
-                fip =  (float *)(in_bp + j * in_minfo.dimstride[0]);
+                fip =  in_bp + j * in_minfo.dimstride[0];
                 
                 for( i = 0; i < dim[1]; i++)
                 {
@@ -383,15 +380,16 @@ t_jit_err jit_pcl_voxel_matrix_calc(t_jit_pcl_voxel *x, void *inputs, void *outp
             pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZRGB>);
             cloud->width    = (uint32_t)dim[0];
             cloud->height   = (uint32_t)dim[1];
-            cloud->is_dense = false;
             cloud->points.resize (cloud->width * cloud->height);
+            
+            post("input size %d %d", cloud->width, cloud->height);
             
             rowstride = in_minfo.dimstride[1];// >> 2L;
             size_t count = 0;
             
             for (j = 0; j < dim[0]; j++)
             {
-                fip =  (float *)(in_bp + j * in_minfo.dimstride[0]);
+                fip =  in_bp + j * in_minfo.dimstride[0];
                 
                 for( i = 0; i < dim[1]; i++)
                 {
@@ -414,6 +412,13 @@ t_jit_err jit_pcl_voxel_matrix_calc(t_jit_pcl_voxel *x, void *inputs, void *outp
             grid.setInputCloud (cloud);
             grid.filter (*cloud_voxel_);
             
+            /*
+            pcl::IndicesConstPtr voxel_indices;
+            voxel_indices = grid.getIndices();
+            */
+            
+            post("output size %d %d", cloud_voxel_->width, cloud_voxel_->height);
+
             err = jit_xyzrgb2jit(x, cloud_voxel_, &out_minfo, &out_matrix );
             if( err != JIT_ERR_NONE )
                 goto out;

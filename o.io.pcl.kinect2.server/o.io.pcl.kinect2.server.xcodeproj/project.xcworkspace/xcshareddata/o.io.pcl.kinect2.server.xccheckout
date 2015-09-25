@@ -5,32 +5,24 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4C548731-5634-4FDF-BD9E-3A5419B704ED</string>
+	<string>6B80F948-2D4E-4F29-92A4-C73D69D71A58</string>
 	<key>IDESourceControlProjectName</key>
-	<string>jit.pcl</string>
+	<string>o.io.pcl.kinect2.server</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</key>
 		<string>https://github.com/ramagottfried/optic.git</string>
-		<key>43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC</key>
-		<string>https://github.com/Cycling74/max6-sdk.git</string>
 		<key>73CD3912FF7E5D839C8BDA43B346354BE088DDE8</key>
 		<string>https://github.com/CNMAT/libo.git</string>
-		<key>BFE38AA7F3B3EE5D839CDF960E9B1411A92C41B2</key>
-		<string>https://github.com/CNMAT/libomax.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>jit.pcl/jit.pcl.xcodeproj</string>
+	<string>o.io.pcl.kinect2.server/o.io.pcl.kinect2.server.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1CD4C6F0F54F19FF7A485E19C6BE964280B4D8AB</key>
 		<string>../../..</string>
-		<key>43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC</key>
-		<string>../../../../max6-sdk</string>
 		<key>73CD3912FF7E5D839C8BDA43B346354BE088DDE8</key>
-		<string>../../../../libo</string>
-		<key>BFE38AA7F3B3EE5D839CDF960E9B1411A92C41B2</key>
-		<string>../../../../libomax</string>
+		<string>../../../../../libo</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ramagottfried/optic.git</string>
@@ -47,22 +39,6 @@
 			<string>73CD3912FF7E5D839C8BDA43B346354BE088DDE8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>libo</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BFE38AA7F3B3EE5D839CDF960E9B1411A92C41B2</string>
-			<key>IDESourceControlWCCName</key>
-			<string>libomax</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>43DDD4A1012A81E5C2F5DA96FCA0DABF5263B8FC</string>
-			<key>IDESourceControlWCCName</key>
-			<string>max6-sdk</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

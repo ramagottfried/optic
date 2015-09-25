@@ -33,34 +33,6 @@ END_USING_C_LINKAGE
 static void	*max_jit_freenect_pcl_class = NULL;
 
 
-/************************************************************************************/
-
-int C74_EXPORT main(void)
-{
-	t_class *max_class, *jit_class;
-	
-	jit_freenect_pcl_init();	
-
-	max_class = class_new("jit.freenect.pcl", (method)max_jit_freenect_pcl_new, (method)max_jit_freenect_pcl_free, sizeof(t_max_jit_freenect_pcl), NULL, A_GIMME, 0);
-	max_jit_class_obex_setup(max_class, calcoffset(t_max_jit_freenect_pcl, obex));
-
-	jit_class = jit_class_findbyname(gensym("jit_freenect_pcl"));
-    max_jit_class_mop_wrap(max_class, jit_class, 0);			// attrs & methods for name, type, dim, planecount, bang, outputmatrix, etc
-//    max_jit_classex_mop_wrap(max_class, jit_class, MAX_JIT_MOP_FLAGS_OWN_BANG|MAX_JIT_MOP_FLAGS_OWN_OUTPUTMATRIX); //custom bang/outputmatrix
-    
-	max_jit_class_wrap_standard(max_class, jit_class, 0);		// attrs & methods for getattributes, dumpout, maxjitclassaddmethods, etc
-
-	class_addmethod(max_class, (method)max_jit_mop_assist, "assist", A_CANT, 0);	// standard matrix-operator (mop) assist fn
-
-	class_register(CLASS_BOX, max_class);
-	max_jit_freenect_pcl_class = max_class;
-	return 0;
-}
-
-
-/************************************************************************************/
-// Object Life Cycle
-
 void *max_jit_freenect_pcl_new(t_symbol *s, long argc, t_atom *argv)
 {
 	t_max_jit_freenect_pcl	*x;
@@ -82,6 +54,32 @@ void *max_jit_freenect_pcl_new(t_symbol *s, long argc, t_atom *argv)
 	return (x);
 }
 
+void max_jit_freenect_pcl_outputmatrix(t_max_jit_freenect_pcl *x)
+{
+    long outputmode=max_jit_mop_getoutputmode(x);
+    
+    post("%s mode %ld", __func__, outputmode );
+
+    void *mop=max_jit_obex_adornment_get(x,_jit_sym_jit_mop);
+    t_jit_err err;
+    
+    if (outputmode && mop) { //always output unless output mode is none
+        if (outputmode==1) {
+            if ((err=(t_jit_err)jit_object_method(
+                                                 max_jit_obex_jitob_get(x),
+                                                 _jit_sym_matrix_calc,
+                                                 jit_object_method(mop,_jit_sym_getinputlist),
+                                                 jit_object_method(mop,_jit_sym_getoutputlist))))
+            {
+                jit_error_code(x,err); 
+            } else {
+                max_jit_mop_outputmatrix(x);
+            }
+        } else {
+            max_jit_mop_outputmatrix(x);
+        }
+    }	
+}
 
 void max_jit_freenect_pcl_free(t_max_jit_freenect_pcl *x)
 {
@@ -90,3 +88,28 @@ void max_jit_freenect_pcl_free(t_max_jit_freenect_pcl *x)
 	max_jit_object_free(x);
 }
 
+int C74_EXPORT main(void)
+{
+    t_class *max_class, *jit_class;
+    
+    jit_freenect_pcl_init();
+    
+    max_class = class_new("jit.freenect.pcl",
+                          (method)max_jit_freenect_pcl_new,
+                          (method)max_jit_freenect_pcl_free,
+                          sizeof(t_max_jit_freenect_pcl), NULL, A_GIMME, 0);
+    
+    max_jit_class_obex_setup(max_class, calcoffset(t_max_jit_freenect_pcl, obex));
+    
+    jit_class = jit_class_findbyname(gensym("jit_freenect_pcl"));
+    max_jit_class_mop_wrap(max_class, jit_class, 0);
+    max_jit_classex_mop_wrap(max_class, jit_class, MAX_JIT_MOP_FLAGS_OWN_BANG|MAX_JIT_MOP_FLAGS_OWN_OUTPUTMATRIX);
+    max_jit_class_wrap_standard(max_class, jit_class, 0);		// attrs & methods for getattributes, dumpout, maxjitclassaddmethods, etc
+    
+    class_addmethod(max_class, (method)max_jit_mop_assist, "assist", A_CANT, 0);	// standard matrix-operator (mop) assist fn
+    max_jit_class_addmethod_usurp_low(max_class, (method)max_jit_freenect_pcl_outputmatrix, "outputmatrix");
+
+    class_register(CLASS_BOX, max_class);
+    max_jit_freenect_pcl_class = max_class;
+    return 0;
+}

@@ -1,0 +1,31 @@
+######################################################################################
+# OpenNI2-FreenectDriver
+######################################################################################
+
+file(GLOB HEADERS src/*.hpp src/*.h)
+file(GLOB SOURCES src/*.cpp)
+add_library(FreenectDriver SHARED ${HEADERS} ${SOURCES})
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-function")
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -std=c++98 -stdlib=libstdc++")
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -framework IOKit -framework Foundation")
+
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib/OpenNI2-FreenectDriver)
+set_target_properties(FreenectDriver PROPERTIES
+  VERSION ${PROJECT_VER}
+  SOVERSION ${PROJECT_APIVER}
+  OUTPUT_NAME FreenectDriver)
+  
+add_definitions(-DPROJECT_VER="${PROJECT_VER}")
+
+include_directories(extern/OpenNI-Linux-x64-2.2.0.33/Include)
+include_directories(${PROJECT_SOURCE_DIR}/src)
+include_directories(${PROJECT_SOURCE_DIR}/wrappers/cpp)
+include_directories(/usr/local/Cellar/libfreenect/0.5.1/include/libfreenect/)
+include_directories(/usr/local/opt/libusb/include/libusb-1.0/)
+include_directories(${PROJECT_SOURCE_DIR}/../src)
+
+target_link_libraries(FreenectDriver /usr/local/opt/libusb/lib/libusb-1.0.a /usr/local/opt/libfreenect/lib/libfreenect.a ${MATH_LIB} )
+
+install (TARGETS FreenectDriver
+  DESTINATION "${PROJECT_LIBRARY_INSTALL_DIR}/OpenNI2-FreenectDriver")
