@@ -168,16 +168,16 @@ t_jit_err   o_jit_pcl_keypoints_matrix_calc(t_o_jit_pcl_keypoints *x, t_symbol *
         
         // return dst cloud?
         pcl::PointCloud<pcl::Normal>::Ptr normals;
-//        x->norm->calc( cloud, &normals, &bndl );
+        x->norm->calc( cloud, &normals, &bndl );
         //post("xyzrgbn %f %f %f %f %f %f", cloud->points[0].x, cloud->points[0].y, cloud->points[0].z, cloud->points[0].r, cloud->points[0].g, cloud->points[0].b);
 
         typedef pcl::PointXYZRGBNormal PointT;
         
         pcl::PointCloud<PointT>::Ptr cloudXYZRGBN(new pcl::PointCloud<PointT>);
-    //    pcl::concatenateFields( *cloud, *normals, *cloudXYZRGBN );
+        pcl::concatenateFields( *cloud, *normals, *cloudXYZRGBN );
         
         pcl::PointCloud<PointT>::Ptr filteredCloud;
-  //      x->passthrough->calc( cloudXYZRGBN, &filteredCloud, &bndl );
+        x->passthrough->calc( cloudXYZRGBN, &filteredCloud, &bndl );
         
         //post("xyzrgbn %f %f %f %f %f %f %f %f %f", cloudXYZRGBN->points[0].x, cloudXYZRGBN->points[0].y, cloudXYZRGBN->points[0].z, cloudXYZRGBN->points[0].r, cloudXYZRGBN->points[0].g, cloudXYZRGBN->points[0].b, cloudXYZRGBN->points[0].normal_x, cloudXYZRGBN->points[0].normal_y, cloudXYZRGBN->points[0].normal_z);
        

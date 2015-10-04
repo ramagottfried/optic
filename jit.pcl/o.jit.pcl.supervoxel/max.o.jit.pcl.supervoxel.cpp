@@ -277,7 +277,7 @@ t_jit_err   o_jit_pcl_supervoxel_matrix_calc(t_o_jit_pcl_supervoxel *x, t_symbol
             
             t_osc_bndl_u *bndl = osc_bundle_u_alloc();
             char buf[2048];
-            
+            ssize_t count = 0;
             for( map_iter = segment_supervoxel_map.begin(); map_iter != segment_supervoxel_map.end(); ++map_iter)
             {
                 uint32_t group_label = map_iter->first;
@@ -286,10 +286,14 @@ t_jit_err   o_jit_pcl_supervoxel_matrix_calc(t_o_jit_pcl_supervoxel *x, t_symbol
                 std::set<uint32_t>::iterator pt_id_iter;
                 for( pt_id_iter = map_iter->second.begin(); pt_id_iter != map_iter->second.end(); ++pt_id_iter)
                 {
-                    sprintf(buf, "/supervoxel/segment/%d/pt/%d", group_label, *pt_id_iter);
+                    sprintf(buf, "/supervoxel/pt/%ld", ++count);
                     
                     t_osc_msg_u *supervoxel_group = osc_message_u_allocWithAddress(buf);
                     t_osc_bndl_u *subbndl = osc_bundle_u_alloc();
+                    
+                    t_osc_msg_u *pt_num = osc_message_u_allocWithAddress((char *)"/pt_id");
+                    osc_message_u_appendInt64(pt_num, count);
+                    osc_bundle_u_addMsg(subbndl, pt_num);
                     
                     t_osc_msg_u *segment_num = osc_message_u_allocWithAddress((char *)"/group_id");
                     osc_message_u_appendInt32(segment_num, group_label);

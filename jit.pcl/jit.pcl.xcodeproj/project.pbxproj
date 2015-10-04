@@ -42,6 +42,78 @@
 		112A567B1B8FD4BD008DFFED /* libpcl_ml.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CB1B731BA800EE37CE /* libpcl_ml.1.8.0.dylib */; };
 		112A567C1B8FD4BD008DFFED /* libpcl_io_ply.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C71B731BA800EE37CE /* libpcl_io_ply.1.8.0.dylib */; };
 		112A56831B8FD56F008DFFED /* o.jit.pcl.segment.color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 112A56821B8FD56F008DFFED /* o.jit.pcl.segment.color.cpp */; };
+		112C6D001BBE2D4800C43DB0 /* commonsyms.c in Sources */ = {isa = PBXBuildFile; fileRef = 1138BD261BB8B3E600EB5A35 /* commonsyms.c */; };
+		112C6D011BBE2D4800C43DB0 /* kinect_device_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1138BD211BB8B28C00EB5A35 /* kinect_device_wrapper.cpp */; };
+		112C6D021BBE2D4800C43DB0 /* o.max.pcl.passthrough.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BC61BAC674600B1DCAC /* o.max.pcl.passthrough.cpp */; };
+		112C6D031BBE2D4800C43DB0 /* o.max.pcl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BBC1BAB69A000B1DCAC /* o.max.pcl.cpp */; };
+		112C6D051BBE2D4800C43DB0 /* o.max.pcl.normals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BBF1BAB6C5400B1DCAC /* o.max.pcl.normals.cpp */; };
+		112C6D071BBE2D4800C43DB0 /* libfreenect2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F17EBA1BB21F0800ABD1BE /* libfreenect2.a */; };
+		112C6D081BBE2D4800C43DB0 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD3A1B86DF8400C088C4 /* Carbon.framework */; };
+		112C6D091BBE2D4800C43DB0 /* libpcl_octree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CC1B731BA800EE37CE /* libpcl_octree.1.8.0.dylib */; };
+		112C6D0A1BBE2D4800C43DB0 /* libpcl_segmentation.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D31B731BA800EE37CE /* libpcl_segmentation.1.8.0.dylib */; };
+		112C6D0B1BBE2D4800C43DB0 /* libpcl_features.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C51B731BA800EE37CE /* libpcl_features.1.8.0.dylib */; };
+		112C6D0C1BBE2D4800C43DB0 /* JitterAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C11B73168C00EE37CE /* JitterAPI.framework */; };
+		112C6D0D1BBE2D4800C43DB0 /* libpcl_keypoints.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CA1B731BA800EE37CE /* libpcl_keypoints.1.8.0.dylib */; };
+		112C6D0E1BBE2D4800C43DB0 /* libpcl_search.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D21B731BA800EE37CE /* libpcl_search.1.8.0.dylib */; };
+		112C6D0F1BBE2D4800C43DB0 /* libpcl_visualization.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D71B731BA800EE37CE /* libpcl_visualization.1.8.0.dylib */; };
+		112C6D101BBE2D4800C43DB0 /* libpcl_outofcore.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CD1B731BA800EE37CE /* libpcl_outofcore.1.8.0.dylib */; };
+		112C6D111BBE2D4800C43DB0 /* libo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD341B86DE0B00C088C4 /* libo.a */; };
+		112C6D121BBE2D4800C43DB0 /* libpcl_recognition.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CF1B731BA800EE37CE /* libpcl_recognition.1.8.0.dylib */; };
+		112C6D131BBE2D4800C43DB0 /* libpcl_kdtree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C91B731BA800EE37CE /* libpcl_kdtree.1.8.0.dylib */; };
+		112C6D141BBE2D4800C43DB0 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D11B731BA800EE37CE /* libpcl_sample_consensus.1.8.0.dylib */; };
+		112C6D151BBE2D4800C43DB0 /* libpcl_2d.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C31B731BA800EE37CE /* libpcl_2d.1.8.0.dylib */; };
+		112C6D161BBE2D4800C43DB0 /* libpcl_io.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C81B731BA800EE37CE /* libpcl_io.1.8.0.dylib */; };
+		112C6D171BBE2D4800C43DB0 /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0ED1B731BE000EE37CE /* libboost_system-mt.dylib */; };
+		112C6D181BBE2D4800C43DB0 /* libpcl_registration.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D01B731BA800EE37CE /* libpcl_registration.1.8.0.dylib */; };
+		112C6D191BBE2D4800C43DB0 /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 117C03BE1B7C6D3E0016FD07 /* libboost_thread-mt.dylib */; };
+		112C6D1A1BBE2D4800C43DB0 /* libpcl_people.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CE1B731BA800EE37CE /* libpcl_people.1.8.0.dylib */; };
+		112C6D1B1BBE2D4800C43DB0 /* libpcl_common.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C41B731BA800EE37CE /* libpcl_common.1.8.0.dylib */; };
+		112C6D1C1BBE2D4800C43DB0 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0EE1B731BE000EE37CE /* libboost_system.dylib */; };
+		112C6D1D1BBE2D4800C43DB0 /* libomax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD371B86DE1500C088C4 /* libomax.a */; };
+		112C6D1E1BBE2D4800C43DB0 /* libiomp5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 114B80DF1B7AD27700E347E8 /* libiomp5.dylib */; };
+		112C6D1F1BBE2D4800C43DB0 /* libpcl_stereo.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D41B731BA800EE37CE /* libpcl_stereo.1.8.0.dylib */; };
+		112C6D201BBE2D4800C43DB0 /* libpcl_filters.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C61B731BA800EE37CE /* libpcl_filters.1.8.0.dylib */; };
+		112C6D211BBE2D4800C43DB0 /* libpcl_tracking.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D61B731BA800EE37CE /* libpcl_tracking.1.8.0.dylib */; };
+		112C6D221BBE2D4800C43DB0 /* libpcl_surface.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D51B731BA800EE37CE /* libpcl_surface.1.8.0.dylib */; };
+		112C6D231BBE2D4800C43DB0 /* libpcl_ml.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CB1B731BA800EE37CE /* libpcl_ml.1.8.0.dylib */; };
+		112C6D241BBE2D4800C43DB0 /* libpcl_io_ply.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C71B731BA800EE37CE /* libpcl_io_ply.1.8.0.dylib */; };
+		112C6D2D1BBE2D7500C43DB0 /* max.pcl.freenect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 112C6D2B1BBE2D7500C43DB0 /* max.pcl.freenect.cpp */; };
+		112C6D2E1BBE2D7A00C43DB0 /* o.freenect.grab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1138BD241BB8B29900EB5A35 /* o.freenect.grab.cpp */; };
+		1138BCFA1BB8B19B00EB5A35 /* o.max.pcl.passthrough.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BC61BAC674600B1DCAC /* o.max.pcl.passthrough.cpp */; };
+		1138BCFB1BB8B19B00EB5A35 /* o.max.pcl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BBC1BAB69A000B1DCAC /* o.max.pcl.cpp */; };
+		1138BCFC1BB8B19B00EB5A35 /* o.max.pcl.normals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BBF1BAB6C5400B1DCAC /* o.max.pcl.normals.cpp */; };
+		1138BCFF1BB8B19B00EB5A35 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD3A1B86DF8400C088C4 /* Carbon.framework */; };
+		1138BD001BB8B19B00EB5A35 /* libpcl_octree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CC1B731BA800EE37CE /* libpcl_octree.1.8.0.dylib */; };
+		1138BD011BB8B19B00EB5A35 /* libpcl_segmentation.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D31B731BA800EE37CE /* libpcl_segmentation.1.8.0.dylib */; };
+		1138BD021BB8B19B00EB5A35 /* libpcl_features.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C51B731BA800EE37CE /* libpcl_features.1.8.0.dylib */; };
+		1138BD031BB8B19B00EB5A35 /* JitterAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C11B73168C00EE37CE /* JitterAPI.framework */; };
+		1138BD041BB8B19B00EB5A35 /* libpcl_keypoints.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CA1B731BA800EE37CE /* libpcl_keypoints.1.8.0.dylib */; };
+		1138BD051BB8B19B00EB5A35 /* libpcl_search.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D21B731BA800EE37CE /* libpcl_search.1.8.0.dylib */; };
+		1138BD061BB8B19B00EB5A35 /* libpcl_visualization.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D71B731BA800EE37CE /* libpcl_visualization.1.8.0.dylib */; };
+		1138BD071BB8B19B00EB5A35 /* libpcl_outofcore.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CD1B731BA800EE37CE /* libpcl_outofcore.1.8.0.dylib */; };
+		1138BD081BB8B19B00EB5A35 /* libo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD341B86DE0B00C088C4 /* libo.a */; };
+		1138BD091BB8B19B00EB5A35 /* libpcl_recognition.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CF1B731BA800EE37CE /* libpcl_recognition.1.8.0.dylib */; };
+		1138BD0A1BB8B19B00EB5A35 /* libpcl_kdtree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C91B731BA800EE37CE /* libpcl_kdtree.1.8.0.dylib */; };
+		1138BD0B1BB8B19B00EB5A35 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D11B731BA800EE37CE /* libpcl_sample_consensus.1.8.0.dylib */; };
+		1138BD0C1BB8B19B00EB5A35 /* libpcl_2d.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C31B731BA800EE37CE /* libpcl_2d.1.8.0.dylib */; };
+		1138BD0D1BB8B19B00EB5A35 /* libpcl_io.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C81B731BA800EE37CE /* libpcl_io.1.8.0.dylib */; };
+		1138BD0E1BB8B19B00EB5A35 /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0ED1B731BE000EE37CE /* libboost_system-mt.dylib */; };
+		1138BD0F1BB8B19B00EB5A35 /* libpcl_registration.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D01B731BA800EE37CE /* libpcl_registration.1.8.0.dylib */; };
+		1138BD101BB8B19B00EB5A35 /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 117C03BE1B7C6D3E0016FD07 /* libboost_thread-mt.dylib */; };
+		1138BD111BB8B19B00EB5A35 /* libpcl_people.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CE1B731BA800EE37CE /* libpcl_people.1.8.0.dylib */; };
+		1138BD121BB8B19B00EB5A35 /* libpcl_common.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C41B731BA800EE37CE /* libpcl_common.1.8.0.dylib */; };
+		1138BD131BB8B19B00EB5A35 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0EE1B731BE000EE37CE /* libboost_system.dylib */; };
+		1138BD141BB8B19B00EB5A35 /* libomax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD371B86DE1500C088C4 /* libomax.a */; };
+		1138BD151BB8B19B00EB5A35 /* libiomp5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 114B80DF1B7AD27700E347E8 /* libiomp5.dylib */; };
+		1138BD161BB8B19B00EB5A35 /* libpcl_stereo.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D41B731BA800EE37CE /* libpcl_stereo.1.8.0.dylib */; };
+		1138BD171BB8B19B00EB5A35 /* libpcl_filters.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C61B731BA800EE37CE /* libpcl_filters.1.8.0.dylib */; };
+		1138BD181BB8B19B00EB5A35 /* libpcl_tracking.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D61B731BA800EE37CE /* libpcl_tracking.1.8.0.dylib */; };
+		1138BD191BB8B19B00EB5A35 /* libpcl_surface.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D51B731BA800EE37CE /* libpcl_surface.1.8.0.dylib */; };
+		1138BD1A1BB8B19B00EB5A35 /* libpcl_ml.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CB1B731BA800EE37CE /* libpcl_ml.1.8.0.dylib */; };
+		1138BD1B1BB8B19B00EB5A35 /* libpcl_io_ply.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C71B731BA800EE37CE /* libpcl_io_ply.1.8.0.dylib */; };
+		1138BD231BB8B28C00EB5A35 /* kinect_device_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1138BD211BB8B28C00EB5A35 /* kinect_device_wrapper.cpp */; };
+		1138BD271BB8B3E600EB5A35 /* commonsyms.c in Sources */ = {isa = PBXBuildFile; fileRef = 1138BD261BB8B3E600EB5A35 /* commonsyms.c */; };
+		1138BD281BB8B57F00EB5A35 /* libfreenect2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F17EBA1BB21F0800ABD1BE /* libfreenect2.a */; };
 		114B80E01B7AD27700E347E8 /* libiomp5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 114B80DF1B7AD27700E347E8 /* libiomp5.dylib */; };
 		117C03BF1B7C6D3E0016FD07 /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 117C03BE1B7C6D3E0016FD07 /* libboost_thread-mt.dylib */; };
 		117C03C31B7C6D500016FD07 /* jit.pcl.convexhull.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 117C03BC1B7C626E0016FD07 /* jit.pcl.convexhull.cpp */; };
@@ -326,34 +398,6 @@
 		11B67BBE1BAB6C0300B1DCAC /* o.max.pcl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BBC1BAB69A000B1DCAC /* o.max.pcl.cpp */; };
 		11B67BC11BAB6C5400B1DCAC /* o.max.pcl.normals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BBF1BAB6C5400B1DCAC /* o.max.pcl.normals.cpp */; };
 		11B67BC81BAC674600B1DCAC /* o.max.pcl.passthrough.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B67BC61BAC674600B1DCAC /* o.max.pcl.passthrough.cpp */; };
-		11D23F9D1B770F3200CF463D /* libpcl_octree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CC1B731BA800EE37CE /* libpcl_octree.1.8.0.dylib */; };
-		11D23F9E1B770F3200CF463D /* libpcl_segmentation.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D31B731BA800EE37CE /* libpcl_segmentation.1.8.0.dylib */; };
-		11D23F9F1B770F3200CF463D /* libpcl_features.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C51B731BA800EE37CE /* libpcl_features.1.8.0.dylib */; };
-		11D23FA01B770F3200CF463D /* JitterAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C11B73168C00EE37CE /* JitterAPI.framework */; };
-		11D23FA11B770F3200CF463D /* libpcl_keypoints.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CA1B731BA800EE37CE /* libpcl_keypoints.1.8.0.dylib */; };
-		11D23FA21B770F3200CF463D /* libpcl_search.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D21B731BA800EE37CE /* libpcl_search.1.8.0.dylib */; };
-		11D23FA31B770F3200CF463D /* libpcl_visualization.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D71B731BA800EE37CE /* libpcl_visualization.1.8.0.dylib */; };
-		11D23FA41B770F3200CF463D /* libpcl_outofcore.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CD1B731BA800EE37CE /* libpcl_outofcore.1.8.0.dylib */; };
-		11D23FA51B770F3200CF463D /* libpcl_recognition.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CF1B731BA800EE37CE /* libpcl_recognition.1.8.0.dylib */; };
-		11D23FA61B770F3200CF463D /* libpcl_kdtree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C91B731BA800EE37CE /* libpcl_kdtree.1.8.0.dylib */; };
-		11D23FA71B770F3200CF463D /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D11B731BA800EE37CE /* libpcl_sample_consensus.1.8.0.dylib */; };
-		11D23FA81B770F3200CF463D /* libpcl_2d.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C31B731BA800EE37CE /* libpcl_2d.1.8.0.dylib */; };
-		11D23FA91B770F3200CF463D /* libpcl_io.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C81B731BA800EE37CE /* libpcl_io.1.8.0.dylib */; };
-		11D23FAA1B770F3200CF463D /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0ED1B731BE000EE37CE /* libboost_system-mt.dylib */; };
-		11D23FAB1B770F3200CF463D /* libpcl_registration.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D01B731BA800EE37CE /* libpcl_registration.1.8.0.dylib */; };
-		11D23FAC1B770F3200CF463D /* libpcl_people.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CE1B731BA800EE37CE /* libpcl_people.1.8.0.dylib */; };
-		11D23FAD1B770F3200CF463D /* libpcl_common.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C41B731BA800EE37CE /* libpcl_common.1.8.0.dylib */; };
-		11D23FAE1B770F3200CF463D /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0EE1B731BE000EE37CE /* libboost_system.dylib */; };
-		11D23FAF1B770F3200CF463D /* libpcl_stereo.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D41B731BA800EE37CE /* libpcl_stereo.1.8.0.dylib */; };
-		11D23FB01B770F3200CF463D /* libpcl_filters.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C61B731BA800EE37CE /* libpcl_filters.1.8.0.dylib */; };
-		11D23FB11B770F3200CF463D /* libpcl_tracking.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D61B731BA800EE37CE /* libpcl_tracking.1.8.0.dylib */; };
-		11D23FB21B770F3200CF463D /* libpcl_surface.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D51B731BA800EE37CE /* libpcl_surface.1.8.0.dylib */; };
-		11D23FB31B770F3200CF463D /* libpcl_ml.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CB1B731BA800EE37CE /* libpcl_ml.1.8.0.dylib */; };
-		11D23FB41B770F3200CF463D /* libpcl_io_ply.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0C71B731BA800EE37CE /* libpcl_io_ply.1.8.0.dylib */; };
-		11D23FBF1B770F8E00CF463D /* jit.freenect.pcl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D23FBD1B770F8E00CF463D /* jit.freenect.pcl.cpp */; };
-		11D23FC01B770F8E00CF463D /* max.jit.freenect.pcl.c in Sources */ = {isa = PBXBuildFile; fileRef = 11D23FBE1B770F8E00CF463D /* max.jit.freenect.pcl.c */; };
-		11F17EBB1BB21F0800ABD1BE /* libfreenect2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F17EBA1BB21F0800ABD1BE /* libfreenect2.a */; };
-		11F17EBE1BB2359C00ABD1BE /* kinect_device_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F17EBC1BB2359C00ABD1BE /* kinect_device_wrapper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -362,6 +406,14 @@
 		1105FD3A1B86DF8400C088C4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		112A56811B8FD4BD008DFFED /* o.jit.pcl.segment.color.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.jit.pcl.segment.color.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		112A56821B8FD56F008DFFED /* o.jit.pcl.segment.color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.jit.pcl.segment.color.cpp; path = o.jit.pcl.segment.color/o.jit.pcl.segment.color.cpp; sourceTree = "<group>"; };
+		112C6D291BBE2D4800C43DB0 /* jit.pcl.freenect.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.pcl.freenect.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		112C6D2A1BBE2D7500C43DB0 /* jit.pcl.freenect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jit.pcl.freenect.cpp; path = jit.pcl.freenect/jit.pcl.freenect.cpp; sourceTree = "<group>"; };
+		112C6D2B1BBE2D7500C43DB0 /* max.pcl.freenect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = max.pcl.freenect.cpp; path = jit.pcl.freenect/max.pcl.freenect.cpp; sourceTree = "<group>"; };
+		1138BD201BB8B19B00EB5A35 /* o.freenect.grab.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.freenect.grab.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		1138BD211BB8B28C00EB5A35 /* kinect_device_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kinect_device_wrapper.cpp; path = include/kinect_device_wrapper.cpp; sourceTree = "<group>"; };
+		1138BD221BB8B28C00EB5A35 /* kinect_device_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kinect_device_wrapper.h; path = include/kinect_device_wrapper.h; sourceTree = "<group>"; };
+		1138BD241BB8B29900EB5A35 /* o.freenect.grab.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.freenect.grab.cpp; path = o.freenect.grab/o.freenect.grab.cpp; sourceTree = "<group>"; };
+		1138BD261BB8B3E600EB5A35 /* commonsyms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = commonsyms.c; path = "../../../max6-sdk/c74support/max-includes/common/commonsyms.c"; sourceTree = "<group>"; };
 		114B80DF1B7AD27700E347E8 /* libiomp5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiomp5.dylib; path = ../../../../../../../usr/local/Cellar/libiomp/20150401/lib/libiomp5.dylib; sourceTree = "<group>"; };
 		117C03BC1B7C626E0016FD07 /* jit.pcl.convexhull.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jit.pcl.convexhull.cpp; path = jit.pcl.convexhull/jit.pcl.convexhull.cpp; sourceTree = SOURCE_ROOT; };
 		117C03BE1B7C6D3E0016FD07 /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "/usr/local/Cellar/boost/1.58.0/lib/libboost_thread-mt.dylib"; sourceTree = "<absolute>"; };
@@ -422,12 +474,7 @@
 		11B67BC01BAB6C5400B1DCAC /* o.max.pcl.normals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o.max.pcl.normals.h; path = include/o.max.pcl.normals.h; sourceTree = "<group>"; };
 		11B67BC61BAC674600B1DCAC /* o.max.pcl.passthrough.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.max.pcl.passthrough.cpp; path = include/o.max.pcl.passthrough.cpp; sourceTree = "<group>"; };
 		11B67BC71BAC674600B1DCAC /* o.max.pcl.passthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o.max.pcl.passthrough.h; path = include/o.max.pcl.passthrough.h; sourceTree = "<group>"; };
-		11D23FB91B770F3200CF463D /* jit.freenect.pcl.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.freenect.pcl.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		11D23FBD1B770F8E00CF463D /* jit.freenect.pcl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jit.freenect.pcl.cpp; path = jit.freenect.pcl/jit.freenect.pcl.cpp; sourceTree = "<group>"; };
-		11D23FBE1B770F8E00CF463D /* max.jit.freenect.pcl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = max.jit.freenect.pcl.c; path = jit.freenect.pcl/max.jit.freenect.pcl.c; sourceTree = "<group>"; };
 		11F17EBA1BB21F0800ABD1BE /* libfreenect2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreenect2.a; path = ../../../../../../../usr/local/lib/libfreenect2.a; sourceTree = "<group>"; };
-		11F17EBC1BB2359C00ABD1BE /* kinect_device_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = kinect_device_wrapper.cpp; path = include/kinect_device_wrapper.cpp; sourceTree = "<group>"; };
-		11F17EBD1BB2359C00ABD1BE /* kinect_device_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kinect_device_wrapper.h; path = include/kinect_device_wrapper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +511,80 @@
 				112A567A1B8FD4BD008DFFED /* libpcl_surface.1.8.0.dylib in Frameworks */,
 				112A567B1B8FD4BD008DFFED /* libpcl_ml.1.8.0.dylib in Frameworks */,
 				112A567C1B8FD4BD008DFFED /* libpcl_io_ply.1.8.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112C6D061BBE2D4800C43DB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112C6D071BBE2D4800C43DB0 /* libfreenect2.a in Frameworks */,
+				112C6D081BBE2D4800C43DB0 /* Carbon.framework in Frameworks */,
+				112C6D091BBE2D4800C43DB0 /* libpcl_octree.1.8.0.dylib in Frameworks */,
+				112C6D0A1BBE2D4800C43DB0 /* libpcl_segmentation.1.8.0.dylib in Frameworks */,
+				112C6D0B1BBE2D4800C43DB0 /* libpcl_features.1.8.0.dylib in Frameworks */,
+				112C6D0C1BBE2D4800C43DB0 /* JitterAPI.framework in Frameworks */,
+				112C6D0D1BBE2D4800C43DB0 /* libpcl_keypoints.1.8.0.dylib in Frameworks */,
+				112C6D0E1BBE2D4800C43DB0 /* libpcl_search.1.8.0.dylib in Frameworks */,
+				112C6D0F1BBE2D4800C43DB0 /* libpcl_visualization.1.8.0.dylib in Frameworks */,
+				112C6D101BBE2D4800C43DB0 /* libpcl_outofcore.1.8.0.dylib in Frameworks */,
+				112C6D111BBE2D4800C43DB0 /* libo.a in Frameworks */,
+				112C6D121BBE2D4800C43DB0 /* libpcl_recognition.1.8.0.dylib in Frameworks */,
+				112C6D131BBE2D4800C43DB0 /* libpcl_kdtree.1.8.0.dylib in Frameworks */,
+				112C6D141BBE2D4800C43DB0 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */,
+				112C6D151BBE2D4800C43DB0 /* libpcl_2d.1.8.0.dylib in Frameworks */,
+				112C6D161BBE2D4800C43DB0 /* libpcl_io.1.8.0.dylib in Frameworks */,
+				112C6D171BBE2D4800C43DB0 /* libboost_system-mt.dylib in Frameworks */,
+				112C6D181BBE2D4800C43DB0 /* libpcl_registration.1.8.0.dylib in Frameworks */,
+				112C6D191BBE2D4800C43DB0 /* libboost_thread-mt.dylib in Frameworks */,
+				112C6D1A1BBE2D4800C43DB0 /* libpcl_people.1.8.0.dylib in Frameworks */,
+				112C6D1B1BBE2D4800C43DB0 /* libpcl_common.1.8.0.dylib in Frameworks */,
+				112C6D1C1BBE2D4800C43DB0 /* libboost_system.dylib in Frameworks */,
+				112C6D1D1BBE2D4800C43DB0 /* libomax.a in Frameworks */,
+				112C6D1E1BBE2D4800C43DB0 /* libiomp5.dylib in Frameworks */,
+				112C6D1F1BBE2D4800C43DB0 /* libpcl_stereo.1.8.0.dylib in Frameworks */,
+				112C6D201BBE2D4800C43DB0 /* libpcl_filters.1.8.0.dylib in Frameworks */,
+				112C6D211BBE2D4800C43DB0 /* libpcl_tracking.1.8.0.dylib in Frameworks */,
+				112C6D221BBE2D4800C43DB0 /* libpcl_surface.1.8.0.dylib in Frameworks */,
+				112C6D231BBE2D4800C43DB0 /* libpcl_ml.1.8.0.dylib in Frameworks */,
+				112C6D241BBE2D4800C43DB0 /* libpcl_io_ply.1.8.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1138BCFE1BB8B19B00EB5A35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1138BD281BB8B57F00EB5A35 /* libfreenect2.a in Frameworks */,
+				1138BCFF1BB8B19B00EB5A35 /* Carbon.framework in Frameworks */,
+				1138BD001BB8B19B00EB5A35 /* libpcl_octree.1.8.0.dylib in Frameworks */,
+				1138BD011BB8B19B00EB5A35 /* libpcl_segmentation.1.8.0.dylib in Frameworks */,
+				1138BD021BB8B19B00EB5A35 /* libpcl_features.1.8.0.dylib in Frameworks */,
+				1138BD031BB8B19B00EB5A35 /* JitterAPI.framework in Frameworks */,
+				1138BD041BB8B19B00EB5A35 /* libpcl_keypoints.1.8.0.dylib in Frameworks */,
+				1138BD051BB8B19B00EB5A35 /* libpcl_search.1.8.0.dylib in Frameworks */,
+				1138BD061BB8B19B00EB5A35 /* libpcl_visualization.1.8.0.dylib in Frameworks */,
+				1138BD071BB8B19B00EB5A35 /* libpcl_outofcore.1.8.0.dylib in Frameworks */,
+				1138BD081BB8B19B00EB5A35 /* libo.a in Frameworks */,
+				1138BD091BB8B19B00EB5A35 /* libpcl_recognition.1.8.0.dylib in Frameworks */,
+				1138BD0A1BB8B19B00EB5A35 /* libpcl_kdtree.1.8.0.dylib in Frameworks */,
+				1138BD0B1BB8B19B00EB5A35 /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */,
+				1138BD0C1BB8B19B00EB5A35 /* libpcl_2d.1.8.0.dylib in Frameworks */,
+				1138BD0D1BB8B19B00EB5A35 /* libpcl_io.1.8.0.dylib in Frameworks */,
+				1138BD0E1BB8B19B00EB5A35 /* libboost_system-mt.dylib in Frameworks */,
+				1138BD0F1BB8B19B00EB5A35 /* libpcl_registration.1.8.0.dylib in Frameworks */,
+				1138BD101BB8B19B00EB5A35 /* libboost_thread-mt.dylib in Frameworks */,
+				1138BD111BB8B19B00EB5A35 /* libpcl_people.1.8.0.dylib in Frameworks */,
+				1138BD121BB8B19B00EB5A35 /* libpcl_common.1.8.0.dylib in Frameworks */,
+				1138BD131BB8B19B00EB5A35 /* libboost_system.dylib in Frameworks */,
+				1138BD141BB8B19B00EB5A35 /* libomax.a in Frameworks */,
+				1138BD151BB8B19B00EB5A35 /* libiomp5.dylib in Frameworks */,
+				1138BD161BB8B19B00EB5A35 /* libpcl_stereo.1.8.0.dylib in Frameworks */,
+				1138BD171BB8B19B00EB5A35 /* libpcl_filters.1.8.0.dylib in Frameworks */,
+				1138BD181BB8B19B00EB5A35 /* libpcl_tracking.1.8.0.dylib in Frameworks */,
+				1138BD191BB8B19B00EB5A35 /* libpcl_surface.1.8.0.dylib in Frameworks */,
+				1138BD1A1BB8B19B00EB5A35 /* libpcl_ml.1.8.0.dylib in Frameworks */,
+				1138BD1B1BB8B19B00EB5A35 /* libpcl_io_ply.1.8.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,41 +926,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11D23F9C1B770F3200CF463D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11D23F9D1B770F3200CF463D /* libpcl_octree.1.8.0.dylib in Frameworks */,
-				11D23F9E1B770F3200CF463D /* libpcl_segmentation.1.8.0.dylib in Frameworks */,
-				11D23F9F1B770F3200CF463D /* libpcl_features.1.8.0.dylib in Frameworks */,
-				11D23FA01B770F3200CF463D /* JitterAPI.framework in Frameworks */,
-				11D23FA11B770F3200CF463D /* libpcl_keypoints.1.8.0.dylib in Frameworks */,
-				11D23FA21B770F3200CF463D /* libpcl_search.1.8.0.dylib in Frameworks */,
-				11D23FA31B770F3200CF463D /* libpcl_visualization.1.8.0.dylib in Frameworks */,
-				11D23FA41B770F3200CF463D /* libpcl_outofcore.1.8.0.dylib in Frameworks */,
-				11D23FA51B770F3200CF463D /* libpcl_recognition.1.8.0.dylib in Frameworks */,
-				11D23FA61B770F3200CF463D /* libpcl_kdtree.1.8.0.dylib in Frameworks */,
-				11D23FA71B770F3200CF463D /* libpcl_sample_consensus.1.8.0.dylib in Frameworks */,
-				11D23FA81B770F3200CF463D /* libpcl_2d.1.8.0.dylib in Frameworks */,
-				11D23FA91B770F3200CF463D /* libpcl_io.1.8.0.dylib in Frameworks */,
-				11D23FAA1B770F3200CF463D /* libboost_system-mt.dylib in Frameworks */,
-				11D23FAB1B770F3200CF463D /* libpcl_registration.1.8.0.dylib in Frameworks */,
-				11F17EBB1BB21F0800ABD1BE /* libfreenect2.a in Frameworks */,
-				11D23FAC1B770F3200CF463D /* libpcl_people.1.8.0.dylib in Frameworks */,
-				11D23FAD1B770F3200CF463D /* libpcl_common.1.8.0.dylib in Frameworks */,
-				11D23FAE1B770F3200CF463D /* libboost_system.dylib in Frameworks */,
-				11D23FAF1B770F3200CF463D /* libpcl_stereo.1.8.0.dylib in Frameworks */,
-				11D23FB01B770F3200CF463D /* libpcl_filters.1.8.0.dylib in Frameworks */,
-				11D23FB11B770F3200CF463D /* libpcl_tracking.1.8.0.dylib in Frameworks */,
-				11D23FB21B770F3200CF463D /* libpcl_surface.1.8.0.dylib in Frameworks */,
-				11D23FB31B770F3200CF463D /* libpcl_ml.1.8.0.dylib in Frameworks */,
-				11D23FB41B770F3200CF463D /* libpcl_io_ply.1.8.0.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112C6D2F1BBE2D8100C43DB0 /* jit.pcl.freenect */ = {
+			isa = PBXGroup;
+			children = (
+				112C6D2A1BBE2D7500C43DB0 /* jit.pcl.freenect.cpp */,
+				112C6D2B1BBE2D7500C43DB0 /* max.pcl.freenect.cpp */,
+			);
+			name = jit.pcl.freenect;
+			sourceTree = "<group>";
+		};
 		117C03E61B7C6DE00016FD07 /* jit.pcl.convexhull */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,12 +989,13 @@
 			children = (
 				11B67BC21BAB6C6500B1DCAC /* o.max.pcl.lib */,
 				11A3F0F11B731BEA00EE37CE /* lib */,
+				1138BD241BB8B29900EB5A35 /* o.freenect.grab.cpp */,
+				112C6D2F1BBE2D8100C43DB0 /* jit.pcl.freenect */,
 				117C040D1B7D576F0016FD07 /* jit.pcl.concavehull */,
 				117C03E61B7C6DE00016FD07 /* jit.pcl.convexhull */,
 				117C048C1B8261330016FD07 /* jit.pcl.filter.voxel */,
 				117C04631B7D61590016FD07 /* jit.pcl.segment.color */,
 				11B2C1A41B8422370030FF09 /* jit.pcl.segment.euclidean */,
-				11B481F11B7A6EB40006EFE5 /* jit.freenect.pcl */,
 				11A3F0B51B7314BB00EE37CE /* jit.pcl */,
 				11B2C1761B84168E0030FF09 /* o.jit.pcl */,
 				11B67BB81BA67DD100B1DCAC /* max.o.jit.pcl.supervoxel.cpp */,
@@ -911,7 +1010,6 @@
 			isa = PBXGroup;
 			children = (
 				11A3F0B31B7314BB00EE37CE /* jit.pcl.mxo */,
-				11D23FB91B770F3200CF463D /* jit.freenect.pcl.mxo */,
 				117C03E41B7C6D500016FD07 /* jit.pcl.convexhull.mxo */,
 				117C040C1B7D56E00016FD07 /* jit.pcl.concavehull.mxo */,
 				117C045C1B7D60CC0016FD07 /* jit.pcl.segment.color.mxo */,
@@ -922,6 +1020,8 @@
 				1187C4971B868A3700E1FED0 /* o.jit.pcl.supervoxel.mxo */,
 				112A56811B8FD4BD008DFFED /* o.jit.pcl.segment.color.mxo */,
 				11B67BB71BA67CA200B1DCAC /* o.jit.pcl.keypoints.mxo */,
+				1138BD201BB8B19B00EB5A35 /* o.freenect.grab.mxo */,
+				112C6D291BBE2D4800C43DB0 /* jit.pcl.freenect.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -941,6 +1041,7 @@
 				1105FD341B86DE0B00C088C4 /* libo.a */,
 				1105FD371B86DE1500C088C4 /* libomax.a */,
 				11F17EBA1BB21F0800ABD1BE /* libfreenect2.a */,
+				1138BD261BB8B3E600EB5A35 /* commonsyms.c */,
 				1105FD3A1B86DF8400C088C4 /* Carbon.framework */,
 				11A3F0C11B73168C00EE37CE /* JitterAPI.framework */,
 				11A3F0C31B731BA800EE37CE /* libpcl_2d.1.8.0.dylib */,
@@ -990,20 +1091,11 @@
 			name = jit.pcl.segment.euclidean;
 			sourceTree = "<group>";
 		};
-		11B481F11B7A6EB40006EFE5 /* jit.freenect.pcl */ = {
-			isa = PBXGroup;
-			children = (
-				11F17EBC1BB2359C00ABD1BE /* kinect_device_wrapper.cpp */,
-				11F17EBD1BB2359C00ABD1BE /* kinect_device_wrapper.h */,
-				11D23FBD1B770F8E00CF463D /* jit.freenect.pcl.cpp */,
-				11D23FBE1B770F8E00CF463D /* max.jit.freenect.pcl.c */,
-			);
-			name = jit.freenect.pcl;
-			sourceTree = "<group>";
-		};
 		11B67BC21BAB6C6500B1DCAC /* o.max.pcl.lib */ = {
 			isa = PBXGroup;
 			children = (
+				1138BD211BB8B28C00EB5A35 /* kinect_device_wrapper.cpp */,
+				1138BD221BB8B28C00EB5A35 /* kinect_device_wrapper.h */,
 				11B67BBC1BAB69A000B1DCAC /* o.max.pcl.cpp */,
 				11B67BBD1BAB69A000B1DCAC /* o.max.pcl.h */,
 				11B67BBF1BAB6C5400B1DCAC /* o.max.pcl.normals.cpp */,
@@ -1032,6 +1124,40 @@
 			name = o.jit.pcl.segment.color;
 			productName = jit.pcl;
 			productReference = 112A56811B8FD4BD008DFFED /* o.jit.pcl.segment.color.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		112C6CFE1BBE2D4800C43DB0 /* jit.pcl.freenect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 112C6D261BBE2D4800C43DB0 /* Build configuration list for PBXNativeTarget "jit.pcl.freenect" */;
+			buildPhases = (
+				112C6CFF1BBE2D4800C43DB0 /* Sources */,
+				112C6D061BBE2D4800C43DB0 /* Frameworks */,
+				112C6D251BBE2D4800C43DB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jit.pcl.freenect;
+			productName = jit.pcl;
+			productReference = 112C6D291BBE2D4800C43DB0 /* jit.pcl.freenect.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		1138BCF81BB8B19B00EB5A35 /* o.freenect.grab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1138BD1D1BB8B19B00EB5A35 /* Build configuration list for PBXNativeTarget "o.freenect.grab" */;
+			buildPhases = (
+				1138BCF91BB8B19B00EB5A35 /* Sources */,
+				1138BCFE1BB8B19B00EB5A35 /* Frameworks */,
+				1138BD1C1BB8B19B00EB5A35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = o.freenect.grab;
+			productName = jit.pcl;
+			productReference = 1138BD201BB8B19B00EB5A35 /* o.freenect.grab.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
 		117C03C01B7C6D500016FD07 /* jit.pcl.convexhull */ = {
@@ -1204,23 +1330,6 @@
 			productReference = 11B67BB71BA67CA200B1DCAC /* o.jit.pcl.keypoints.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
-		11D23F981B770F3200CF463D /* jit.freenect.pcl */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11D23FB61B770F3200CF463D /* Build configuration list for PBXNativeTarget "jit.freenect.pcl" */;
-			buildPhases = (
-				11D23F991B770F3200CF463D /* Sources */,
-				11D23F9C1B770F3200CF463D /* Frameworks */,
-				11D23FB51B770F3200CF463D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = jit.freenect.pcl;
-			productName = jit.pcl;
-			productReference = 11D23FB91B770F3200CF463D /* jit.freenect.pcl.mxo */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1248,7 +1357,6 @@
 			projectRoot = "";
 			targets = (
 				11A3F0B21B7314BB00EE37CE /* jit.pcl */,
-				11D23F981B770F3200CF463D /* jit.freenect.pcl */,
 				117C03C01B7C6D500016FD07 /* jit.pcl.convexhull */,
 				117C03E91B7D56E00016FD07 /* jit.pcl.concavehull */,
 				117C04381B7D60CC0016FD07 /* jit.pcl.segment.color */,
@@ -1259,12 +1367,28 @@
 				1187C4741B868A3700E1FED0 /* o.jit.pcl.supervoxel */,
 				112A565C1B8FD4BD008DFFED /* o.jit.pcl.segment.color */,
 				11B67B921BA67CA200B1DCAC /* o.jit.pcl.keypoints */,
+				1138BCF81BB8B19B00EB5A35 /* o.freenect.grab */,
+				112C6CFE1BBE2D4800C43DB0 /* jit.pcl.freenect */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		112A567D1B8FD4BD008DFFED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112C6D251BBE2D4800C43DB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1138BD1C1BB8B19B00EB5A35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1341,13 +1465,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11D23FB51B770F3200CF463D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1356,6 +1473,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				112A56831B8FD56F008DFFED /* o.jit.pcl.segment.color.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112C6CFF1BBE2D4800C43DB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112C6D2D1BBE2D7500C43DB0 /* max.pcl.freenect.cpp in Sources */,
+				112C6D001BBE2D4800C43DB0 /* commonsyms.c in Sources */,
+				112C6D011BBE2D4800C43DB0 /* kinect_device_wrapper.cpp in Sources */,
+				112C6D021BBE2D4800C43DB0 /* o.max.pcl.passthrough.cpp in Sources */,
+				112C6D031BBE2D4800C43DB0 /* o.max.pcl.cpp in Sources */,
+				112C6D051BBE2D4800C43DB0 /* o.max.pcl.normals.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1138BCF91BB8B19B00EB5A35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1138BD271BB8B3E600EB5A35 /* commonsyms.c in Sources */,
+				1138BD231BB8B28C00EB5A35 /* kinect_device_wrapper.cpp in Sources */,
+				1138BCFA1BB8B19B00EB5A35 /* o.max.pcl.passthrough.cpp in Sources */,
+				112C6D2E1BBE2D7A00C43DB0 /* o.freenect.grab.cpp in Sources */,
+				1138BCFB1BB8B19B00EB5A35 /* o.max.pcl.cpp in Sources */,
+				1138BCFC1BB8B19B00EB5A35 /* o.max.pcl.normals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1447,16 +1590,6 @@
 				11B67BBE1BAB6C0300B1DCAC /* o.max.pcl.cpp in Sources */,
 				11B67BC11BAB6C5400B1DCAC /* o.max.pcl.normals.cpp in Sources */,
 				11B67BBB1BA67E1B00B1DCAC /* o.jit.pcl.keypoints.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11D23F991B770F3200CF463D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11F17EBE1BB2359C00ABD1BE /* kinect_device_wrapper.cpp in Sources */,
-				11D23FBF1B770F8E00CF463D /* jit.freenect.pcl.cpp in Sources */,
-				11D23FC01B770F8E00CF463D /* max.jit.freenect.pcl.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1582,6 +1715,276 @@
 				);
 				PRELINK_LIBS = "../../../libomax/libomax.a ../../../libo/libo.a";
 				PRODUCT_NAME = o.jit.pcl.segment.color;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Release;
+		};
+		112C6D271BBE2D4800C43DB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
+					/Library/Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_UNROLL_LOOPS = NO;
+				GCC_VERSION = "";
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../../max6-sdk/c74support/jit-includes",
+					"../../../max6-sdk/c74support/max-includes",
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+					../../../libo,
+					../../../libomax,
+					include,
+					/usr/local/include,
+				);
+				INFOPLIST_FILE = "$(inherited)";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+					../../../libomax,
+					../../../libo,
+					"/Users/r/Documents/dev-lib/libo",
+					"/Users/r/Documents/dev-lib/libomax",
+					/usr/local/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DNO_TRANSLATION_SUPPORT",
+					"-fopenmp",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-D__ASSERTMACROS__",
+				);
+				PRELINK_LIBS = "../../../libomax/libomax.a ../../../libo/libo.a";
+				PRODUCT_NAME = jit.pcl.freenect;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Debug;
+		};
+		112C6D281BBE2D4800C43DB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
+					/Library/Frameworks,
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = "";
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../../max6-sdk/c74support/jit-includes",
+					"../../../max6-sdk/c74support/max-includes",
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+					../../../libo,
+					../../../libomax,
+					include,
+					/usr/local/include,
+				);
+				INFOPLIST_FILE = "$(inherited)";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+					../../../libomax,
+					../../../libo,
+					"/Users/r/Documents/dev-lib/libo",
+					"/Users/r/Documents/dev-lib/libomax",
+					/usr/local/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DNO_TRANSLATION_SUPPORT",
+					"-fopenmp",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-D__ASSERTMACROS__",
+				);
+				PRELINK_LIBS = "../../../libomax/libomax.a ../../../libo/libo.a";
+				PRODUCT_NAME = jit.pcl.freenect;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Release;
+		};
+		1138BD1E1BB8B19B00EB5A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
+					/Library/Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_UNROLL_LOOPS = NO;
+				GCC_VERSION = "";
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../../max6-sdk/c74support/jit-includes",
+					"../../../max6-sdk/c74support/max-includes",
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+					../../../libo,
+					../../../libomax,
+					include,
+					/usr/local/include,
+				);
+				INFOPLIST_FILE = "$(inherited)";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+					../../../libomax,
+					../../../libo,
+					"/Users/r/Documents/dev-lib/libo",
+					"/Users/r/Documents/dev-lib/libomax",
+					/usr/local/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DNO_TRANSLATION_SUPPORT",
+					"-fopenmp",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-D__ASSERTMACROS__",
+				);
+				PRELINK_LIBS = "../../../libomax/libomax.a ../../../libo/libo.a";
+				PRODUCT_NAME = o.freenect.grab;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Debug;
+		};
+		1138BD1F1BB8B19B00EB5A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
+					/Library/Frameworks,
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_VERSION = "";
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../../max6-sdk/c74support/jit-includes",
+					"../../../max6-sdk/c74support/max-includes",
+					/usr/local/opt/eigen/include/eigen3/,
+					"/usr/local/include/pcl-1.8/",
+					/usr/local/opt/boost/include,
+					/usr/local/opt/flann/include,
+					/usr/local/include/libiomp,
+					../../../libo,
+					../../../libomax,
+					include,
+					/usr/local/include,
+				);
+				INFOPLIST_FILE = "$(inherited)";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.58.0/lib,
+					/usr/local/Cellar/libiomp/20150401/lib,
+					../../../libomax,
+					../../../libo,
+					"/Users/r/Documents/dev-lib/libo",
+					"/Users/r/Documents/dev-lib/libomax",
+					/usr/local/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DNO_TRANSLATION_SUPPORT",
+					"-fopenmp",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-D__ASSERTMACROS__",
+				);
+				PRELINK_LIBS = "../../../libomax/libomax.a ../../../libo/libo.a";
+				PRODUCT_NAME = o.freenect.grab;
 				SDKROOT = macosx10.9;
 				SKIP_INSTALL = YES;
 				WARNING_CFLAGS = (
@@ -2821,106 +3224,6 @@
 			};
 			name = Release;
 		};
-		11D23FB71B770F3200CF463D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
-					/Library/Frameworks,
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../../../max6-sdk/c74support/jit-includes",
-					"../../../max6-sdk/c74support/max-includes",
-					/usr/local/opt/eigen/include/eigen3/,
-					"/usr/local/include/pcl-1.8/",
-					/usr/local/opt/boost/include,
-					/usr/local/opt/flann/include,
-					/usr/local/opt/libfreenect/include/libfreenect,
-					/usr/local/include,
-				);
-				INFOPLIST_FILE = "$(inherited)";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/Cellar/boost/1.58.0/lib,
-					/usr/local/Cellar/libfreenect/0.5.1/lib,
-					/usr/local/lib/libfreenect2.a,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				OTHER_CFLAGS = (
-					"-g",
-					"-DNO_TRANSLATION_SUPPORT",
-				);
-				PRODUCT_NAME = jit.freenect.pcl;
-				SDKROOT = macosx10.9;
-				SKIP_INSTALL = YES;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = mxo;
-			};
-			name = Debug;
-		};
-		11D23FB81B770F3200CF463D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/r/Documents/dev-lib/max6-sdk/c74support/jit-includes",
-					/Library/Frameworks,
-				);
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_UNROLL_LOOPS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../../../max6-sdk/c74support/jit-includes",
-					"../../../max6-sdk/c74support/max-includes",
-					/usr/local/opt/eigen/include/eigen3/,
-					"/usr/local/include/pcl-1.8/",
-					/usr/local/opt/boost/include,
-					/usr/local/opt/flann/include,
-					/usr/local/opt/libfreenect/include/libfreenect,
-					/usr/local/include,
-				);
-				INFOPLIST_FILE = "$(inherited)";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/Cellar/boost/1.58.0/lib,
-					/usr/local/Cellar/libfreenect/0.5.1/lib,
-					/usr/local/lib/libfreenect2.a,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				OTHER_CFLAGS = (
-					"-g",
-					"-DNO_TRANSLATION_SUPPORT",
-				);
-				PRODUCT_NAME = jit.freenect.pcl;
-				SDKROOT = macosx10.9;
-				SKIP_INSTALL = YES;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = mxo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2929,6 +3232,24 @@
 			buildConfigurations = (
 				112A567F1B8FD4BD008DFFED /* Debug */,
 				112A56801B8FD4BD008DFFED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		112C6D261BBE2D4800C43DB0 /* Build configuration list for PBXNativeTarget "jit.pcl.freenect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112C6D271BBE2D4800C43DB0 /* Debug */,
+				112C6D281BBE2D4800C43DB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1138BD1D1BB8B19B00EB5A35 /* Build configuration list for PBXNativeTarget "o.freenect.grab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1138BD1E1BB8B19B00EB5A35 /* Debug */,
+				1138BD1F1BB8B19B00EB5A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3028,15 +3349,6 @@
 			buildConfigurations = (
 				11B67BB51BA67CA200B1DCAC /* Debug */,
 				11B67BB61BA67CA200B1DCAC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11D23FB61B770F3200CF463D /* Build configuration list for PBXNativeTarget "jit.freenect.pcl" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11D23FB71B770F3200CF463D /* Debug */,
-				11D23FB81B770F3200CF463D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
