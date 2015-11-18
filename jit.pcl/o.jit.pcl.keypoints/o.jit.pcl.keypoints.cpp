@@ -9,7 +9,7 @@
 //#include <pcl/keypoints/narf_keypoint.h>
 
 #include <pcl/keypoints/uniform_sampling.h>
-#include <pcl/filters/voxel_grid.h>
+//#include <pcl/filters/voxel_grid.h>
 
 #include <pcl/features/fpfh.h>
 
@@ -28,10 +28,12 @@
 #include "jit.common.h"
 #include "max.jit.mop.h"
 
-//#include "o.max.pcl.h"
+
 //#include "o.max.pcl.fn_queue.h"
+#include "o.max.pcl.h"
 #include "o.max.pcl.normals.h"
 #include "o.max.pcl.passthrough.h"
+#include "o.max.pcl.voxel_grid.h"
 
 typedef struct _o_jit_pcl_keypoints
 {
@@ -56,6 +58,8 @@ typedef struct _o_jit_pcl_keypoints
     
     OPCL_normals    *norm;
     OPCL_passthrough<pcl::PointXYZRGBNormal> *passthrough;
+    OPCL_voxel_grid<pcl::PointXYZRGBNormal> *voxel_grid;
+    
 //    omax_pcl_fn_queue   *queue;
     
 } t_o_jit_pcl_keypoints;
@@ -169,7 +173,7 @@ t_jit_err   o_jit_pcl_keypoints_matrix_calc(t_o_jit_pcl_keypoints *x, t_symbol *
         // return dst cloud?
         pcl::PointCloud<pcl::Normal>::Ptr normals;
         x->norm->calc( cloud, &normals, &bndl );
-        //post("xyzrgbn %f %f %f %f %f %f", cloud->points[0].x, cloud->points[0].y, cloud->points[0].z, cloud->points[0].r, cloud->points[0].g, cloud->points[0].b);
+       
 
         typedef pcl::PointXYZRGBNormal PointT;
         
@@ -179,73 +183,19 @@ t_jit_err   o_jit_pcl_keypoints_matrix_calc(t_o_jit_pcl_keypoints *x, t_symbol *
         pcl::PointCloud<PointT>::Ptr filteredCloud;
         x->passthrough->calc( cloudXYZRGBN, &filteredCloud, &bndl );
         
+        pcl::PointCloud<PointT>::Ptr voxel_cloud;
+        x->voxel_grid->calc( filteredCloud, &voxel_cloud, &bndl );
+       
+        
+         //post("xyzrgbn %f %f %f %f %f %f", voxel_cloud->points[0].x, voxel_cloud->points[0].y, voxel_cloud->points[0].z, voxel_cloud->points[0].r, voxel_cloud->points[0].g, voxel_cloud->points[0].b);
+        
+//        post("w %ld h %ld", voxel_cloud->width, voxel_cloud->height );
+        
         //post("xyzrgbn %f %f %f %f %f %f %f %f %f", cloudXYZRGBN->points[0].x, cloudXYZRGBN->points[0].y, cloudXYZRGBN->points[0].z, cloudXYZRGBN->points[0].r, cloudXYZRGBN->points[0].g, cloudXYZRGBN->points[0].b, cloudXYZRGBN->points[0].normal_x, cloudXYZRGBN->points[0].normal_y, cloudXYZRGBN->points[0].normal_z);
        
         {
-            /*
-            typedef pcl::PointXYZRGBNormal PointT;
-            
-            pcl::PointCloud<PointT>::Ptr filteredCloud(new pcl::PointCloud<PointT>);
-            pcl::PassThrough<PointT> pass_filter;
-            pass_filter.setInputCloud(cloudXYZRGBN);
-            // Filter out all points with Z values not in the [0-2] range.
-            pass_filter.setFilterFieldName("z");
-            pass_filter.setFilterLimits(x->z_min, x->z_max );
-            pass_filter.filter(*filteredCloud);
-            */
-//            post("src size %d filtered cloud size %d", cloudXYZRGBN->size(), filteredCloud->size() );
-
-                 /*
-            
-            pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>);
-            
-            pcl::IntegralImageNormalEstimation<pcl::PointXYZRGB, pcl::Normal> normalEstimation;
-            normalEstimation.setInputCloud(cloud);
-            // Other estimation methods: COVARIANCE_MATRIX, AVERAGE_DEPTH_CHANGE, SIMPLE_3D_GRADIENT.
-            // They determine the smoothness of the result, and the running time.
-            normalEstimation.setNormalEstimationMethod(normalEstimation.AVERAGE_3D_GRADIENT);
-            // Depth threshold for computing object borders based on depth changes, in meters.
-            normalEstimation.setMaxDepthChangeFactor(0.02f);
-            // Factor that influences the size of the area used to smooth the normals.
-            normalEstimation.setNormalSmoothingSize(10.0f);
-            normalEstimation.compute(*normals);
-            */
-            
-
             
             /*
-            cloudXYZRGBN->points.resize( cloud->points.size() );
-            
-            uint32_t count = 0;
-            for( i = 0; i < cloud->points.size(); i++ )
-            {
-                if( cloud->points[i].z > x->z_min && cloud->points[i].z < x->z_max )
-                {
-                    cloudXYZRGBN->points[count].x = cloud->points[i].x;
-                    cloudXYZRGBN->points[count].y = cloud->points[i].y;
-                    cloudXYZRGBN->points[count].z = cloud->points[i].z;
-                    cloudXYZRGBN->points[count].r = cloud->points[i].r;
-                    cloudXYZRGBN->points[count].g = cloud->points[i].g;
-                    cloudXYZRGBN->points[count].b = cloud->points[i].b;
-                    cloudXYZRGBN->points[count].normal_x = normals->points[i].normal_x;
-                    cloudXYZRGBN->points[count].normal_y = normals->points[i].normal_y;
-                    cloudXYZRGBN->points[count].normal_z = normals->points[i].normal_z;
-                    count++;
-                }
-            }
-            cloudXYZRGBN->height = 1;
-            cloudXYZRGBN->width = count;
-        */
-
-     /*
-            pcl::VoxelGrid<PointT> grid;
-            pcl::PointCloud<PointT>::Ptr cloud_voxel_ (new pcl::PointCloud<PointT>);
-            
-            grid.setLeafSize (x->voxel_resolution, x->voxel_resolution, x->voxel_resolution);
-            grid.setInputCloud (cloudXYZRGBN);
-            grid.filter ( *cloud_voxel_ );
-      */
-/*
             pcl::PointCloud<PointT>::Ptr downsampledCloud(new pcl::PointCloud<PointT>);
 
             pcl::UniformSampling<PointT> filter;
@@ -261,43 +211,6 @@ t_jit_err   o_jit_pcl_keypoints_matrix_calc(t_o_jit_pcl_keypoints *x, t_symbol *
 */
             
             /*
-            
-            pcl::PointCloud<PointT>::Ptr filteredCloud(new pcl::PointCloud<PointT>);
-            pcl::PointCloud<pcl::Normal>::Ptr filteredNormals(new pcl::PointCloud<pcl::Normal>);
-            filteredCloud->height = 1;
-            filteredNormals->height = 1;
-            size_t count = 1;
-            for (size_t i = 0; i < downsampledCloud->points.size(); i++)
-            {
-                if( downsampledCloud->points[i].z > 0.0 && downsampledCloud->points[i].z < 2.0 )
-                {
-                    filteredCloud->points.push_back( downsampledCloud->points[i] );
-                    filteredNormals->points.push_back( downsampledNormals->points[i] );
-                    count++;
-                }
-            }
-            filteredCloud->width = (uint32_t)count;
-            filteredNormals->width = (uint32_t)count;
-*/
-            /*
-            pcl::PassThrough<PointT> pass_filter;
-            pass_filter.setInputCloud(downsampledCloud);
-            // Filter out all points with Z values not in the [0-2] range.
-            pass_filter.setFilterFieldName("z");
-            pass_filter.setFilterLimits(0.0, 2.0);
-            pass_filter.filter(*filteredCloud);
-            
-            pcl::IndicesConstPtr filterIndices = pass_filter.getIndices();
-            
-            pcl::ExtractIndices<pcl::Normal> extractNormals;
-            extractNormals.setIndices(filterIndices);
-            extractNormals.setInputCloud(downsampledNormals);
-            extractNormals.setNegative(false);
-            extractNormals.filter (*filteredNormals);
-             post("filterIndices size %d %d", downsampledCloud->size(), downsampledCloud->size() - filterIndices->size());
-
-            */
-/*
             post("downsampIndices size %d %d", downsampledCloud->width, downsampledCloud->height);
             post("normals size %d %d", downsampledNormals->width, downsampledNormals->height);
 
@@ -319,15 +232,15 @@ t_jit_err   o_jit_pcl_keypoints_matrix_calc(t_o_jit_pcl_keypoints *x, t_symbol *
             
             fpfh.compute(*descriptors);
  */
-/*
+
             pcl::PointCloud<PointT>::Ptr keypoints(new pcl::PointCloud<PointT>);
             pcl::ISSKeypoint3D<PointT, PointT> detector;
-            detector.setInputCloud(cloud_voxel_);
+            detector.setInputCloud(voxel_cloud);
 
             pcl::search::KdTree<PointT>::Ptr kdtree(new pcl::search::KdTree<PointT>);
             detector.setSearchMethod(kdtree);
             
-            double resolution = computeCloudResolution( cloud_voxel_ );
+            double resolution = computeCloudResolution( voxel_cloud );
             t_osc_message_u *res = osc_message_u_allocWithAddress((char *)"/resolusion");
             osc_message_u_appendDouble(res, resolution);
             osc_bundle_u_addMsg(bndl, res);
@@ -347,7 +260,7 @@ t_jit_err   o_jit_pcl_keypoints_matrix_calc(t_o_jit_pcl_keypoints *x, t_symbol *
             
             detector.compute(*keypoints);
 
-
+            char buf[2048];
             for(size_t i = 0; i < keypoints->size(); i++)
             {
                 sprintf(buf, "/keypoint/%ld/xyz", i);
@@ -357,7 +270,7 @@ t_jit_err   o_jit_pcl_keypoints_matrix_calc(t_o_jit_pcl_keypoints *x, t_symbol *
                 osc_message_u_appendDouble(mes, keypoints->points[i].z);
                 osc_bundle_u_addMsg(bndl, mes);
             }
- */
+ 
             /*
             pcl::PointCloud<int>::Ptr keypoints(new pcl::PointCloud<int>);
             
@@ -464,6 +377,7 @@ void o_jit_pcl_keypoints_free(t_o_jit_pcl_keypoints *x)
 
     delete x->norm;
     delete x->passthrough;
+    delete x->voxel_grid;
     
 }
 
@@ -493,6 +407,7 @@ void *o_jit_pcl_keypoints_new(t_symbol *s, long argc, t_atom *argv)
         
         x->norm = new OPCL_normals;
         x->passthrough = new OPCL_passthrough<pcl::PointXYZRGBNormal>;
+        x->voxel_grid = new OPCL_voxel_grid<pcl::PointXYZRGBNormal>;
         
         //no normal args, no matrices
         max_jit_attr_args(x,argc,argv); //handle attribute args
@@ -507,8 +422,8 @@ BEGIN_USING_C_LINKAGE
 int C74_EXPORT main(void)
 {
 	t_class         *c;
-    t_jit_object	*attr;
-    long            attrflags;
+//    t_jit_object	*attr;
+//    long            attrflags;
 
 	c = class_new("o.jit.pcl.keypoints", (method)o_jit_pcl_keypoints_new, (method)o_jit_pcl_keypoints_free, sizeof(t_o_jit_pcl_keypoints), NULL, A_GIMME, 0);
 	max_jit_class_obex_setup(c, calcoffset(t_o_jit_pcl_keypoints, obex));
@@ -518,78 +433,7 @@ int C74_EXPORT main(void)
     class_addmethod(c, (method)o_jit_pcl_keypoints_bang, "bang", 0);
     class_addmethod(c, (method)max_jit_mop_assist, "assist", A_CANT, 0);	// standard matrix-operator (mop) assist fn
 
-    attrflags = JIT_ATTR_GET_DEFER_LOW | JIT_ATTR_SET_USURP_LOW ;
-
-    // add attribute(s)
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "disable_transform",
-                                          _jit_sym_long,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_o_jit_pcl_keypoints, disable_transform));
-    jit_attr_addfilterset_clip(attr, 0, 1, true, true);
-    jit_class_addattr(c, attr);
-    
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "voxel_resolution",
-                                          _jit_sym_float64,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_o_jit_pcl_keypoints, voxel_resolution));
-    jit_class_addattr(c, attr);
-    
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "seed_resolution",
-                                          _jit_sym_float64,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_o_jit_pcl_keypoints, seed_resolution));
-    
-    jit_class_addattr(c, attr);
-    
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "color_importance",
-                                          _jit_sym_float64,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_o_jit_pcl_keypoints, color_importance));
-    jit_class_addattr(c, attr);
-    
-    
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "spatial_importance",
-                                          _jit_sym_float64,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_o_jit_pcl_keypoints, spatial_importance));
-    jit_class_addattr(c, attr);
-    
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "normal_importance",
-                                          _jit_sym_float64,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_o_jit_pcl_keypoints, normal_importance));
-    jit_class_addattr(c, attr);
-    
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "z_min",
-                                          _jit_sym_float64,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_o_jit_pcl_keypoints, z_min));
-    jit_class_addattr(c, attr);
-    
-    attr = (t_jit_object *)jit_object_new(_jit_sym_jit_attr_offset,
-                                          "z_max",
-                                          _jit_sym_float64,
-                                          attrflags,
-                                          (method)NULL, (method)NULL,
-                                          calcoffset(t_o_jit_pcl_keypoints, z_max));
-    jit_class_addattr(c, attr);
-
-    
-    
+//    attrflags = JIT_ATTR_GET_DEFER_LOW | JIT_ATTR_SET_USURP_LOW ;
     
 	class_register(CLASS_BOX, c);
 	o_jit_pcl_keypoints_class = c;

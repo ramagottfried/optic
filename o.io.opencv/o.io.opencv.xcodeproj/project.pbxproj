@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		110426A01AF5DBFB00E2B02D /* o.io.opencv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1104269F1AF5DBFB00E2B02D /* o.io.opencv.cpp */; };
 		110BBADE1A9FAEEA00059353 /* libopencv_ts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 110BBA8C1A9FAEEA00059353 /* libopencv_ts.a */; };
+		113CE2D21BD82C7000ECECB3 /* libo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 113CE2D11BD82C7000ECECB3 /* libo.a */; };
 		11C170951AF58A3700866A2C /* libopencv_calib3d.3.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C170851AF58A3700866A2C /* libopencv_calib3d.3.0.0.dylib */; };
 		11C170961AF58A3700866A2C /* libopencv_core.3.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C170861AF58A3700866A2C /* libopencv_core.3.0.0.dylib */; };
 		11C170971AF58A3700866A2C /* libopencv_features2d.3.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C170871AF58A3700866A2C /* libopencv_features2d.3.0.0.dylib */; };
@@ -25,7 +26,6 @@
 		11C170A21AF58A3700866A2C /* libopencv_video.3.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C170921AF58A3700866A2C /* libopencv_video.3.0.0.dylib */; };
 		11C170A31AF58A3700866A2C /* libopencv_videoio.3.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C170931AF58A3700866A2C /* libopencv_videoio.3.0.0.dylib */; };
 		11C170A41AF58A3700866A2C /* libopencv_videostab.3.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C170941AF58A3700866A2C /* libopencv_videostab.3.0.0.dylib */; };
-		11F51A831AF5E93C006E5EDD /* libo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F51A821AF5E93C006E5EDD /* libo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +44,7 @@
 		1104269F1AF5DBFB00E2B02D /* o.io.opencv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = o.io.opencv.cpp; sourceTree = "<group>"; };
 		110BBA8C1A9FAEEA00059353 /* libopencv_ts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopencv_ts.a; path = ../../../../../../usr/local/lib/libopencv_ts.a; sourceTree = "<group>"; };
 		112485181A9EA8F90032B37A /* o.io.opencv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = o.io.opencv; sourceTree = BUILT_PRODUCTS_DIR; };
+		113CE2D11BD82C7000ECECB3 /* libo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libo.a; path = ../../../libo/libo.a; sourceTree = "<group>"; };
 		11C170851AF58A3700866A2C /* libopencv_calib3d.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.3.0.0.dylib; path = /usr/local/lib/libopencv_calib3d.3.0.0.dylib; sourceTree = "<absolute>"; };
 		11C170861AF58A3700866A2C /* libopencv_core.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.0.0.dylib; path = /usr/local/lib/libopencv_core.3.0.0.dylib; sourceTree = "<absolute>"; };
 		11C170871AF58A3700866A2C /* libopencv_features2d.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.3.0.0.dylib; path = /usr/local/lib/libopencv_features2d.3.0.0.dylib; sourceTree = "<absolute>"; };
@@ -60,7 +61,6 @@
 		11C170921AF58A3700866A2C /* libopencv_video.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.3.0.0.dylib; path = /usr/local/lib/libopencv_video.3.0.0.dylib; sourceTree = "<absolute>"; };
 		11C170931AF58A3700866A2C /* libopencv_videoio.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videoio.3.0.0.dylib; path = /usr/local/lib/libopencv_videoio.3.0.0.dylib; sourceTree = "<absolute>"; };
 		11C170941AF58A3700866A2C /* libopencv_videostab.3.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.3.0.0.dylib; path = /usr/local/lib/libopencv_videostab.3.0.0.dylib; sourceTree = "<absolute>"; };
-		11F51A821AF5E93C006E5EDD /* libo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libo.a; path = ../../libo/libo.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 				11C1709E1AF58A3700866A2C /* libopencv_photo.3.0.0.dylib in Frameworks */,
 				11C1709B1AF58A3700866A2C /* libopencv_imgproc.3.0.0.dylib in Frameworks */,
 				11C170961AF58A3700866A2C /* libopencv_core.3.0.0.dylib in Frameworks */,
-				11F51A831AF5E93C006E5EDD /* libo.a in Frameworks */,
+				113CE2D21BD82C7000ECECB3 /* libo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +112,7 @@
 				11C170931AF58A3700866A2C /* libopencv_videoio.3.0.0.dylib */,
 				11C170941AF58A3700866A2C /* libopencv_videostab.3.0.0.dylib */,
 				110BBA8C1A9FAEEA00059353 /* libopencv_ts.a */,
+				113CE2D11BD82C7000ECECB3 /* libo.a */,
 			);
 			name = "opencv-lib";
 			sourceTree = "<group>";
@@ -121,7 +122,6 @@
 			children = (
 				1104269F1AF5DBFB00E2B02D /* o.io.opencv.cpp */,
 				110BBA431A9FAEB000059353 /* opencv-lib */,
-				11F51A821AF5E93C006E5EDD /* libo.a */,
 				112485191A9EA8F90032B37A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -234,6 +234,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SYMROOT = $SRCROOT/build;
 			};
 			name = Debug;
 		};
@@ -268,6 +269,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SYMROOT = $SRCROOT/build;
 			};
 			name = Release;
 		};
@@ -283,11 +285,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include,
 					/usr/local/cuda/include,
-					../../libo,
+					../../../libo,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
-					../../libo,
+					../../../libo,
 					"/Users/r/Documents/dev-lib/libo",
 				);
 				OTHER_LDFLAGS = "-lo";
@@ -309,11 +311,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include,
 					/usr/local/cuda/include,
-					../../libo,
+					../../../libo,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/lib,
-					../../libo,
+					../../../libo,
 					"/Users/r/Documents/dev-lib/libo",
 				);
 				ONLY_ACTIVE_ARCH = YES;

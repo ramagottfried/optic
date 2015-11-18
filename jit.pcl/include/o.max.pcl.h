@@ -17,7 +17,7 @@
 t_jit_err jit_xyzrgb2jit( t_object *x, pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud, t_jit_matrix_info *out_minfo, void **out_matrix );
 pcl::PointCloud<pcl::PointXYZRGB>::Ptr jit2cloudXYZRGB(char *in_bp, t_jit_matrix_info in_minfo);
 pcl::PointCloud<pcl::PointXYZRGBA>::Ptr jit2cloudXYZRGBA(char *in_bp, t_jit_matrix_info in_minfo);
-
+void xyzrgbnorm_to_bundle( pcl::PointCloud<pcl::PointXYZRGBNormal>::Ptr cloud, t_osc_bndl_u *dst_bndl );
 // base class
 
 class omax_pcl

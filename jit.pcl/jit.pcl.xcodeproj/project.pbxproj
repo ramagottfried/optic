@@ -12,6 +12,8 @@
 		1105FD381B86DE1500C088C4 /* libomax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD371B86DE1500C088C4 /* libomax.a */; };
 		1105FD391B86DE1500C088C4 /* libomax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD371B86DE1500C088C4 /* libomax.a */; };
 		1105FD3B1B86DF8400C088C4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD3A1B86DF8400C088C4 /* Carbon.framework */; };
+		1113223C1BC0F153002CBFB4 /* o.max.pcl.voxel_grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1113223A1BC0F153002CBFB4 /* o.max.pcl.voxel_grid.cpp */; };
+		111322401BC1006C002CBFB4 /* o.max.pcl.iss_keypoints.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1113223E1BC1006C002CBFB4 /* o.max.pcl.iss_keypoints.cpp */; };
 		112A56601B8FD4BD008DFFED /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105FD3A1B86DF8400C088C4 /* Carbon.framework */; };
 		112A56611B8FD4BD008DFFED /* libpcl_octree.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0CC1B731BA800EE37CE /* libpcl_octree.1.8.0.dylib */; };
 		112A56621B8FD4BD008DFFED /* libpcl_segmentation.1.8.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A3F0D31B731BA800EE37CE /* libpcl_segmentation.1.8.0.dylib */; };
@@ -404,6 +406,10 @@
 		1105FD341B86DE0B00C088C4 /* libo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libo.a; path = ../../../libo/libo.a; sourceTree = "<group>"; };
 		1105FD371B86DE1500C088C4 /* libomax.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libomax.a; path = ../../../libomax/libomax.a; sourceTree = "<group>"; };
 		1105FD3A1B86DF8400C088C4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		1113223A1BC0F153002CBFB4 /* o.max.pcl.voxel_grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.max.pcl.voxel_grid.cpp; path = include/o.max.pcl.voxel_grid.cpp; sourceTree = "<group>"; };
+		1113223D1BC0F235002CBFB4 /* o.max.pcl.voxel_grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = o.max.pcl.voxel_grid.h; path = include/o.max.pcl.voxel_grid.h; sourceTree = "<group>"; };
+		1113223E1BC1006C002CBFB4 /* o.max.pcl.iss_keypoints.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.max.pcl.iss_keypoints.cpp; path = include/o.max.pcl.iss_keypoints.cpp; sourceTree = "<group>"; };
+		1113223F1BC1006C002CBFB4 /* o.max.pcl.iss_keypoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o.max.pcl.iss_keypoints.h; path = include/o.max.pcl.iss_keypoints.h; sourceTree = "<group>"; };
 		112A56811B8FD4BD008DFFED /* o.jit.pcl.segment.color.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = o.jit.pcl.segment.color.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		112A56821B8FD56F008DFFED /* o.jit.pcl.segment.color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o.jit.pcl.segment.color.cpp; path = o.jit.pcl.segment.color/o.jit.pcl.segment.color.cpp; sourceTree = "<group>"; };
 		112C6D291BBE2D4800C43DB0 /* jit.pcl.freenect.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.pcl.freenect.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1102,6 +1108,10 @@
 				11B67BC01BAB6C5400B1DCAC /* o.max.pcl.normals.h */,
 				11B67BC61BAC674600B1DCAC /* o.max.pcl.passthrough.cpp */,
 				11B67BC71BAC674600B1DCAC /* o.max.pcl.passthrough.h */,
+				1113223A1BC0F153002CBFB4 /* o.max.pcl.voxel_grid.cpp */,
+				1113223D1BC0F235002CBFB4 /* o.max.pcl.voxel_grid.h */,
+				1113223E1BC1006C002CBFB4 /* o.max.pcl.iss_keypoints.cpp */,
+				1113223F1BC1006C002CBFB4 /* o.max.pcl.iss_keypoints.h */,
 			);
 			name = o.max.pcl.lib;
 			sourceTree = "<group>";
@@ -1586,7 +1596,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1113223C1BC0F153002CBFB4 /* o.max.pcl.voxel_grid.cpp in Sources */,
 				11B67BC81BAC674600B1DCAC /* o.max.pcl.passthrough.cpp in Sources */,
+				111322401BC1006C002CBFB4 /* o.max.pcl.iss_keypoints.cpp in Sources */,
 				11B67BBE1BAB6C0300B1DCAC /* o.max.pcl.cpp in Sources */,
 				11B67BC11BAB6C5400B1DCAC /* o.max.pcl.normals.cpp in Sources */,
 				11B67BBB1BA67E1B00B1DCAC /* o.jit.pcl.keypoints.cpp in Sources */,

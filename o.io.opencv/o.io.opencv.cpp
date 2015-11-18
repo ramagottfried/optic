@@ -407,16 +407,16 @@ void static camera_grab_resize(VideoCapture cap, Mat& resize_frame)
 
 int main(int, char**)
 {
-    printf("check2\n");
+    printf("check3\n");
     
     if(!createSocketUDP())
         return 0;
     
-    VideoCapture cap(0); // open the default camera
+    VideoCapture cap(1); // open the default camera
     if(!cap.isOpened())  // check if we succeeded
         return -1;
     
-    namedWindow("edges", 1);
+    namedWindow("edges", WINDOW_NORMAL);
 //    namedWindow("display", 1);
 
     Mat prev;

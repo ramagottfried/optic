@@ -2,6 +2,35 @@
 #include "o.max.pcl.h"
 
 
+void xyzrgbnorm_to_bundle( pcl::PointCloud<pcl::PointXYZRGBNormal>::Ptr cloud, t_osc_bndl_u *dst_bndl )
+
+{
+    const float bad_point = std::numeric_limits<float>::quiet_NaN();
+
+    t_osc_message_u *x_msg = osc_message_u_allocWithAddress((char *)"/x");
+    t_osc_message_u *y_msg = osc_message_u_allocWithAddress((char *)"/y");
+    t_osc_message_u *z_msg = osc_message_u_allocWithAddress((char *)"/z");
+    t_osc_message_u *size_msg = osc_message_u_allocWithAddress((char *)"/size");
+    osc_message_u_appendInt32(size_msg, cloud->width);
+    osc_message_u_appendInt32(size_msg, cloud->height);
+    
+    for (long i = 0; i < cloud->points.size(); i++)
+    {
+        if( cloud->points[i].x != bad_point && cloud->points[i].y != bad_point && cloud->points[i].z != bad_point)
+        {
+            osc_message_u_appendFloat(x_msg, cloud->points[i].x);
+            osc_message_u_appendFloat(y_msg, cloud->points[i].y);
+            osc_message_u_appendFloat(z_msg, cloud->points[i].z);
+        }
+    }
+    
+    osc_bundle_u_addMsg(dst_bndl, size_msg);
+    osc_bundle_u_addMsg(dst_bndl, x_msg);
+    osc_bundle_u_addMsg(dst_bndl, y_msg);
+    osc_bundle_u_addMsg(dst_bndl, z_msg);
+
+}
+
 void omax_pcl::unionAccum( t_osc_bndl_u *src, t_osc_bndl_u **src_dst )
 {
     critical_enter( m_lock );

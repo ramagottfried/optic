@@ -6,7 +6,7 @@
 
 
 template <typename PointT>
-const char * const OPCL_passthrough<PointT>::m_selectors[] = { "/passthrough/profile", "/passthrough/depthFactor", "/passthrough/smoothingSize" };
+const char * const OPCL_passthrough<PointT>::m_selectors[] = { "/passthrough/profile", "/passthrough/z_min", "/passthrough/z_max" };
 
 
 template <typename PointT>
